@@ -3,6 +3,7 @@ name: Deploy ApexTrader to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -27,7 +28,7 @@ jobs:
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/apextrader-cybergrid/' }}
         run: npm run build
 
       - name: Deploy to GitHub Pages
