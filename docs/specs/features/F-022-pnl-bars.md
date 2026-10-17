@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-022
-status: pending
+status: done
 depends: [F-021]
 estimate: 15m
 ```
@@ -13,7 +13,11 @@ Bar chart: sum `pnl` by calendar day; green/red from chartTheme.
 
 ## Acceptance criteria
 
-- [ ] D11: group by `created_at` date (local or UTC — document choice in spec notes)
+- [x] D11: group by `created_at` date (local or UTC — document choice in spec notes)
+
+## Notes
+
+- **Timezone:** sums grouped by **local calendar day** (`Date` from `trades.created_at` in the browser).
 
 ## Files allowed
 

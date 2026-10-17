@@ -29,8 +29,9 @@ Solo dev may commit directly to `main` once CI is green.
 | `src/components/Auth.jsx` | §5.2 | Sign-up/in + errors (F-009–F-010) |
 | `src/components/Dashboard.jsx` | §5.2 | Header F-012 + 12-col layout F-013 |
 | `src/components/TradeLogger.jsx` | §5.2 | F-015/016 form + `log_trade` RPC |
-| `src/components/EquityChart.jsx` | §5.2 | Stub |
-| `src/components/LevelGrid.jsx` | §5.2 | Stub |
+| `src/components/EquityChart.jsx` | §5.2 | F-021 Recharts area chart |
+| `src/components/DailyPnlChart.jsx` | §5.2 | F-022 daily P&L bars |
+| `src/components/LevelGrid.jsx` | §5.2 | F-023 42-level matrix |
 | `src/lib/formulas.js` | §5.1 | Implemented |
 | `src/lib/supabase.js` | §5.1 | Implemented |
 | `src/lib/chartTheme.js` | UI_STYLE_GUIDE | Implemented |

@@ -81,7 +81,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | Layout F-013; data F-014; trade F-015–018; risk F-019; milestones F-020+ |
+| Dashboard | Feature-complete UI F-024; responsive F-025; test/sign-off F-026–027 |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -91,11 +91,11 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-020`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-025`**
 
-**Read:** [features/F-020-milestones.md](./specs/features/F-020-milestones.md)
+**Read:** [features/F-025-responsive.md](./specs/features/F-025-responsive.md)
 
-**Goal:** **F-020** — D1–D4 milestones card.
+**Goal:** **F-025** — Mobile responsive pass.
 
 ---
 
@@ -173,3 +173,8 @@ Do this before writing code:
 | 2026-10-17 | F-017 post-trade refresh via `onTradeLogged` (IMP-037). Next F-018 feedback. |
 | 2026-10-17 | F-018 confetti + trigger-based audio (IMP-038). Next F-019 risk panel. |
 | 2026-10-17 | F-019 risk metrics panel (IMP-039). Next F-020 milestones. |
+| 2026-10-17 | F-020 D1–D4 milestones card (IMP-040). Next F-021 equity chart. |
+| 2026-10-17 | F-021 equity area chart (IMP-041). Next F-022 daily P&L bars. |
+| 2026-10-17 | F-022 daily P&L bars (IMP-042). Next F-023 level grid. |
+| 2026-10-17 | F-023 42-level grid (IMP-043). Next F-024 loading/errors. |
+| 2026-10-17 | F-024 loading/error polish (IMP-044). Next F-025 responsive. |

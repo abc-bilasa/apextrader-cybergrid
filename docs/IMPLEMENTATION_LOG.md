@@ -37,6 +37,11 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-044 | 2026-10-17 | FEATURE | ui | F-024: auth/trade/dashboard errors; empty trades hint; sync status | `src/components/Auth.jsx`, `Dashboard.jsx`, `TradeLogger.jsx` | — | Cursor |
+| IMP-043 | 2026-10-17 | FEATURE | ui | F-023: 42-level scrollable grid; active row + `getLevelMetrics` | `src/components/LevelGrid.jsx` | — | Cursor |
+| IMP-042 | 2026-10-17 | FEATURE | ui | F-022: daily P&L bar chart (local day sum, profit/loss colors) | `src/components/DailyPnlChart.jsx`, `src/components/Dashboard.jsx` | D11 | Cursor |
+| IMP-041 | 2026-10-17 | FEATURE | ui | F-021: equity area chart (`ending_capital`, `chartTheme`) | `src/components/EquityChart.jsx` | — | Cursor |
+| IMP-040 | 2026-10-17 | FEATURE | dashboard | F-020: D1–D4 milestones 2×2 grid from `getLevelMetrics` | `src/components/Dashboard.jsx` | — | Cursor |
 | IMP-039 | 2026-10-17 | FEATURE | dashboard | F-019: risk metrics panel via `getLevelMetrics` | `src/components/Dashboard.jsx` | — | Cursor |
 | IMP-038 | 2026-10-17 | FEATURE | ui | F-018: confetti on `TARGET_MET`; tones from RPC `trigger`; safe audio | `src/components/Dashboard.jsx` | — | Cursor |
 | IMP-037 | 2026-10-17 | FEATURE | dashboard | F-017: `onTradeLogged` reloads account + trades; header updates in place | `src/components/Dashboard.jsx`, `src/components/TradeLogger.jsx` | — | Cursor |
@@ -95,4 +100,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-040**
+**IMP-045**

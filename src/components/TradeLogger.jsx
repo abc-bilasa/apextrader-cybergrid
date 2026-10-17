@@ -27,20 +27,25 @@ export default function TradeLogger({ onTradeLogged }) {
     }
 
     setSubmitting(true);
-    const { data, error } = await supabase.rpc('log_trade', {
-      p_pnl: parsed.value,
-      p_notes: notes.trim() || null,
-    });
-    setSubmitting(false);
+    try {
+      const { data, error } = await supabase.rpc('log_trade', {
+        p_pnl: parsed.value,
+        p_notes: notes.trim() || null,
+      });
 
-    if (error) {
-      setFieldError(error.message);
-      return;
+      if (error) {
+        setFieldError(error.message);
+        return;
+      }
+
+      setPnl('');
+      setNotes('');
+      if (onTradeLogged) await onTradeLogged(data);
+    } catch {
+      setFieldError('Trade could not be saved. Check your connection and try again.');
+    } finally {
+      setSubmitting(false);
     }
-
-    setPnl('');
-    setNotes('');
-    if (onTradeLogged) await onTradeLogged(data);
   };
 
   return (

@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-020
-status: pending
+status: done
 depends: [F-019]
 estimate: 15m
 ```
@@ -13,7 +13,7 @@ Four milestone tiles D1–D4 with INR amounts.
 
 ## Acceptance criteria
 
-- [ ] Grid 2x2 per UI_STYLE_GUIDE / PRD
+- [x] Grid 2x2 per UI_STYLE_GUIDE / PRD
 
 ## Files allowed
 

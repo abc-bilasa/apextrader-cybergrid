@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-023
-status: pending
+status: done
 depends: [F-014]
 estimate: 15m
 ```
@@ -13,8 +13,8 @@ estimate: 15m
 
 ## Acceptance criteria
 
-- [ ] Scrollable list max-height per UI_STYLE_GUIDE
-- [ ] `getLevelMetrics` per row
+- [x] Scrollable list max-height per UI_STYLE_GUIDE
+- [x] `getLevelMetrics` per row
 
 ## Files allowed
 

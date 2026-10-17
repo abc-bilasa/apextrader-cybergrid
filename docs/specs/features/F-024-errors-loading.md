@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-024
-status: pending
+status: done
 depends: [F-017]
 estimate: 15m
 ```
@@ -13,8 +13,8 @@ RPC/auth failures show user-visible messages; no silent failures.
 
 ## Acceptance criteria
 
-- [ ] `.cyber-alert-error` for auth and trade errors
-- [ ] Dashboard handles empty trades gracefully
+- [x] `.cyber-alert-error` for auth and trade errors
+- [x] Dashboard handles empty trades gracefully
 
 ## Files allowed
 

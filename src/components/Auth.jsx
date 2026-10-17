@@ -21,13 +21,23 @@ export default function Auth() {
     setError('');
 
     setLoading(true);
-    const authResult = isSignUp
-      ? await supabase.auth.signUp({ email: email.trim(), password })
-      : await supabase.auth.signInWithPassword({ email: email.trim(), password });
-    setLoading(false);
+    try {
+      const authResult = isSignUp
+        ? await supabase.auth.signUp({ email: email.trim(), password })
+        : await supabase.auth.signInWithPassword({ email: email.trim(), password });
 
-    if (authResult.error) {
-      setError(authResult.error.message);
+      if (authResult.error) {
+        setError(authResult.error.message);
+        return;
+      }
+
+      if (isSignUp && !authResult.data.session) {
+        setError('Account created — check your email to confirm, then sign in.');
+      }
+    } catch {
+      setError('Could not reach the auth service. Check your connection and try again.');
+    } finally {
+      setLoading(false);
     }
   };
 

@@ -24,11 +24,11 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-017 | Refresh after trade | yes | yes | n/a | [F-017](./F-017-trade-refresh.md) |
 | F-018 | Confetti + audio | yes | yes | n/a | [F-018](./F-018-trade-feedback.md) |
 | F-019 | Risk metrics panel | yes | yes | n/a | [F-019](./F-019-risk-metrics.md) |
-| F-020 | D1–D4 milestones | no | no | no | — |
-| F-021 | Equity chart | no | no | no | — |
-| F-022 | Daily P&L bars | no | no | no | — |
-| F-023 | Level grid | no | no | no | — |
-| F-024 | Loading + errors | no | no | no | — |
+| F-020 | D1–D4 milestones | yes | yes | n/a | [F-020](./F-020-milestones.md) |
+| F-021 | Equity chart | yes | yes | n/a | [F-021](./F-021-equity-chart.md) |
+| F-022 | Daily P&L bars | yes | yes | n/a | [F-022](./F-022-pnl-bars.md) |
+| F-023 | Level grid | yes | yes | n/a | [F-023](./F-023-level-grid.md) |
+| F-024 | Loading + errors | yes | yes | n/a | [F-024](./F-024-errors-loading.md) |
 | F-025 | Responsive pass | no | no | no | — |
 | F-026 | Manual T1/T4 | no | no | no | — |
 | F-027 | Production smoke | no | no | no | — |

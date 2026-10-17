@@ -4,11 +4,20 @@ import { LogOut, Zap } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { formatINR, getLevelMetrics } from '../lib/formulas';
 import TradeLogger from './TradeLogger';
+import DailyPnlChart from './DailyPnlChart';
 import EquityChart from './EquityChart';
 import LevelGrid from './LevelGrid';
 
 const DEFAULT_LEVEL = 1;
 const DEFAULT_CAPITAL = 10000;
+
+function friendlyDataError(message) {
+  if (!message) return 'Something went wrong loading your data.';
+  if (message.includes('JSON object requested, multiple (or no) rows returned')) {
+    return 'Trading account not found. Sign out and sign in again, or contact support.';
+  }
+  return message;
+}
 
 function playTradeTone(isHigh) {
   try {
@@ -84,11 +93,31 @@ function RiskMetricsPanel({ level }) {
   );
 }
 
-function PanelPlaceholder({ title, children }) {
+function MilestonesPanel({ level }) {
+  const { d1, d2, d3, d4 } = getLevelMetrics(level);
+  const tiles = [
+    { id: 'D1', label: 'D1 · 10%', amount: d1 },
+    { id: 'D2', label: 'D2 · 10%', amount: d2 },
+    { id: 'D3', label: 'D3 · 10%', amount: d3 },
+    { id: 'D4', label: 'D4 · 20%', amount: d4 },
+  ];
+
   return (
     <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">
-      <h2 className="cyber-section-title mb-3">{title}</h2>
-      {children ?? <p className="text-xs text-slate-500">Coming in a later feature slice.</p>}
+      <h2 className="cyber-section-title mb-4">Daily milestones</h2>
+      <div className="grid grid-cols-2 gap-3">
+        {tiles.map((tile) => (
+          <div
+            key={tile.id}
+            className="rounded-lg border border-cyan-500/20 bg-slate-900/50 p-3 text-center"
+          >
+            <p className="text-xs uppercase tracking-wider text-slate-400">{tile.label}</p>
+            <p className="font-mono cyber-metric cyber-text-profit text-sm mt-1 tabular-nums">
+              {formatINR(tile.amount)}
+            </p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
@@ -98,32 +127,40 @@ export default function Dashboard({ session }) {
   const [account, setAccount] = useState(null);
   const [trades, setTrades] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState('');
 
   const loadDashboardData = useCallback(async ({ showLoader = true } = {}) => {
     if (showLoader) setLoading(true);
+    else setRefreshing(true);
     setError('');
 
-    const [accountRes, tradesRes] = await Promise.all([
-      supabase.from('trading_accounts').select('*').single(),
-      supabase.from('trades').select('*').order('created_at', { ascending: true }),
-    ]);
+    try {
+      const [accountRes, tradesRes] = await Promise.all([
+        supabase.from('trading_accounts').select('*').single(),
+        supabase.from('trades').select('*').order('created_at', { ascending: true }),
+      ]);
 
-    if (accountRes.error) {
-      setError(accountRes.error.message);
-      setAccount(null);
-    } else {
-      setAccount(accountRes.data);
-    }
+      if (accountRes.error) {
+        setError(friendlyDataError(accountRes.error.message));
+        setAccount(null);
+      } else {
+        setAccount(accountRes.data);
+      }
 
-    if (tradesRes.error) {
-      setError((prev) => prev || tradesRes.error.message);
+      if (tradesRes.error) {
+        setError((prev) => prev || friendlyDataError(tradesRes.error.message));
+        setTrades([]);
+      } else {
+        setTrades(tradesRes.data ?? []);
+      }
+    } catch {
+      setError('Could not load dashboard data. Check your connection and try again.');
       setTrades([]);
-    } else {
-      setTrades(tradesRes.data ?? []);
+    } finally {
+      if (showLoader) setLoading(false);
+      else setRefreshing(false);
     }
-
-    if (showLoader) setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -173,6 +210,9 @@ export default function Dashboard({ session }) {
           <span className="text-slate-400 max-w-[12rem] truncate hidden sm:inline" title={email}>
             {email}
           </span>
+          {refreshing ? (
+            <span className="text-xs text-cyan-400/80 font-mono" role="status">Syncing…</span>
+          ) : null}
           <button
             type="button"
             onClick={handleSignOut}
@@ -190,15 +230,26 @@ export default function Dashboard({ session }) {
         </div>
       ) : null}
 
+      {!error && trades.length === 0 ? (
+        <p
+          className="mt-4 text-xs text-slate-400 border border-cyan-500/15 rounded-lg px-4 py-3 bg-slate-900/40"
+          role="status"
+        >
+          No trades yet — log your first trade below. Equity and daily P&amp;L charts will update
+          after you commit.
+        </p>
+      ) : null}
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
         <div className="lg:col-span-4 flex flex-col gap-6">
           <RiskMetricsPanel level={level} />
+          <MilestonesPanel level={level} />
           <TradeLogger onTradeLogged={handleTradeLogged} />
         </div>
 
         <div className="lg:col-span-5 flex flex-col gap-6">
           <EquityChart trades={trades} initialCapital={chartBase} />
-          <PanelPlaceholder title="Daily P&L" />
+          <DailyPnlChart trades={trades} />
         </div>
 
         <div className="lg:col-span-3">
