@@ -81,7 +81,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | Header F-012; layout/charts/grid still stub (F-013+) |
+| Dashboard | Header F-012 + 12-col layout F-013; live data F-014+ |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -91,11 +91,11 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-013`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-014`**
 
-**Read:** [features/F-013-dashboard-layout.md](./specs/features/F-013-dashboard-layout.md)
+**Read:** [features/F-014-dashboard-data.md](./specs/features/F-014-dashboard-data.md)
 
-**Goal:** **F-013** — 12-column dashboard layout (left / center / right per UI_STYLE_GUIDE).
+**Goal:** **F-014** — load `trading_accounts` + trades from Supabase.
 
 ---
 
@@ -167,3 +167,4 @@ Do this before writing code:
 | 2026-10-17 | F-004 done — git init + first commit at app root; IMP-024. Next F-005 GitHub push. |
 | 2026-10-17 | F-005 done — push to abc-bilasa/apextrader-cybergrid; IMP-025. Next F-006 Actions secrets. |
 | 2026-10-17 | **END Session 1:** F-002–F-012 + F-006/007 Pages live (12/27). Next F-013 layout (IMP-032). |
+| 2026-10-17 | START: Session 2 — F-013 dashboard 12-column layout. |

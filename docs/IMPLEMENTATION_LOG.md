@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-033 | 2026-10-17 | FEATURE | ui | F-013: dashboard 12-column grid (4/5/3) + stub panels | `src/components/Dashboard.jsx` | — | Cursor |
 | IMP-032 | 2026-10-17 | DOCS | process | Session 1 close: handoff + DEVELOPMENT map; 12/27 features; next F-013 | `docs/SESSION_HANDOFF.md`, `docs/DEVELOPMENT.md` | — | Cursor |
 | IMP-031 | 2026-10-17 | TOOLING | deploy | F-006/F-007: GitHub Pages live; auth on production verified by Amit | `docs/GITHUB_PAGES_SETUP.md`, `app-features/F-006-github-actions.md`, `app-features/F-007-ci-smoke.md` | D10 | Amit |
 | IMP-030 | 2026-10-17 | FEATURE | ui | F-012: dashboard header bar (placeholders) | `src/components/Dashboard.jsx` | — | Cursor |
@@ -88,4 +89,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-033**
+**IMP-034**

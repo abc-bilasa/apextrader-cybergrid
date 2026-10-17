@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** `F-013`  
+**Next feature to build:** `F-014`  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -19,7 +19,7 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-010 | Sign-in, sign-out, session gate | 15m | F-009 | done | [F-010](./features/F-010-auth-session.md) |
 | F-011 | Supabase Auth redirect URLs | 15m | F-005 | done | [F-011](./features/F-011-auth-urls.md) |
 | F-012 | Dashboard header bar | 15m | F-010 | done | [F-012](./features/F-012-dashboard-header.md) |
-| F-013 | Dashboard 12-column layout | 15m | F-012 | pending | [F-013](./features/F-013-dashboard-layout.md) |
+| F-013 | Dashboard 12-column layout | 15m | F-012 | done | [F-013](./features/F-013-dashboard-layout.md) |
 | F-014 | Load account + trades | 15m | F-013, F-002 | pending | [F-014](./features/F-014-dashboard-data.md) |
 | F-015 | TradeLogger form UI | 15m | F-013 | pending | [F-015](./features/F-015-trade-form.md) |
 | F-016 | Wire `log_trade` RPC | 15m | F-015, F-014 | pending | [F-016](./features/F-016-trade-rpc.md) |
@@ -37,7 +37,7 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 
 ## Progress
 
-- **Done:** 12 / 27  
+- **Done:** 13 / 27  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

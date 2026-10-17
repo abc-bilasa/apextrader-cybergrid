@@ -1,10 +1,22 @@
 import { LogOut, Zap } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { formatINR } from '../lib/formulas';
+import TradeLogger from './TradeLogger';
+import EquityChart from './EquityChart';
+import LevelGrid from './LevelGrid';
 
 /** Placeholders until F-014 loads `trading_accounts`. */
 const PLACEHOLDER_LEVEL = 1;
 const PLACEHOLDER_CAPITAL = 10000;
+
+function PanelPlaceholder({ title, children }) {
+  return (
+    <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">
+      <h2 className="cyber-section-title mb-3">{title}</h2>
+      {children ?? <p className="text-xs text-slate-500">Coming in a later feature slice.</p>}
+    </section>
+  );
+}
 
 export default function Dashboard({ session }) {
   const email = session?.user?.email ?? 'trader';
@@ -46,7 +58,21 @@ export default function Dashboard({ session }) {
         </div>
       </header>
 
-      <p className="text-slate-500 text-sm mt-6 px-1">Dashboard layout — F-013+.</p>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+        <div className="lg:col-span-4 flex flex-col gap-6">
+          <PanelPlaceholder title="Risk & milestones" />
+          <TradeLogger />
+        </div>
+
+        <div className="lg:col-span-5 flex flex-col gap-6">
+          <EquityChart trades={[]} initialCapital={PLACEHOLDER_CAPITAL} />
+          <PanelPlaceholder title="Daily P&L" />
+        </div>
+
+        <div className="lg:col-span-3">
+          <LevelGrid activeLevel={PLACEHOLDER_LEVEL} />
+        </div>
+      </div>
     </div>
   );
 }

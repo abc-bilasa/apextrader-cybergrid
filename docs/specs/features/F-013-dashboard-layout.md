@@ -2,7 +2,8 @@
 
 ```yaml
 id: F-013
-status: pending
+status: done
+completed: 2026-10-17
 depends: [F-012]
 estimate: 15m
 ```
@@ -13,8 +14,8 @@ estimate: 15m
 
 ## Acceptance criteria
 
-- [ ] `lg:grid-cols-12` with correct col-spans
-- [ ] Mobile stacks single column
+- [x] `lg:grid-cols-12` with correct col-spans
+- [x] Mobile stacks single column
 
 ## Files allowed
 
