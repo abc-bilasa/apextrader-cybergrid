@@ -2,7 +2,8 @@
 
 ```yaml
 id: F-014
-status: pending
+status: done
+completed: 2026-10-17
 depends: [F-013, F-002]
 estimate: 15m
 ```
@@ -13,9 +14,9 @@ Dashboard loads `trading_accounts` + `trades` for session user; header shows rea
 
 ## Acceptance criteria
 
-- [ ] `select` on `trading_accounts` single row
-- [ ] `trades` ordered by `created_at`
-- [ ] Loading state `.cyber-loading` while fetching
+- [x] `select` on `trading_accounts` single row
+- [x] `trades` ordered by `created_at`
+- [x] Loading state `.cyber-loading` while fetching
 
 ## Files allowed
 

@@ -81,7 +81,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | Header F-012 + 12-col layout F-013; live data F-014+ |
+| Dashboard | Layout F-013; account + trades load F-014; trade RPC F-016+ |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -91,11 +91,11 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-014`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-015`**
 
-**Read:** [features/F-014-dashboard-data.md](./specs/features/F-014-dashboard-data.md)
+**Read:** [features/F-015-trade-form.md](./specs/features/F-015-trade-form.md)
 
-**Goal:** **F-014** — load `trading_accounts` + trades from Supabase.
+**Goal:** **F-015** — TradeLogger form UI.
 
 ---
 
