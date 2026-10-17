@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-027 | 2026-10-17 | FEATURE | auth | F-009: `signUp` + error banner + loading in Auth | `src/components/Auth.jsx`, `app-features/F-009-auth-signup.md` | D6 | Cursor |
 | IMP-026 | 2026-10-17 | FEATURE | auth | F-008: Auth UI shell (style guide, sign-in/up toggle, no API) | `src/components/Auth.jsx`, `docs/specs/BACKLOG.md` | — | Cursor |
 | IMP-025 | 2026-10-17 | TOOLING | deploy | F-005: remote `abc-bilasa/apextrader-cybergrid`; `main` pushed | `docs/ENVIRONMENT.md`, `app-features/F-005-github-push.md` | D9, D10 | Amit + Cursor |
 | IMP-024 | 2026-10-17 | TOOLING | process | F-004: `git init` at app root; first commit on `main` (no `.env.local`) | `.git/`, `app-features/F-004-git-init.md` | D9 | Cursor |
@@ -82,4 +83,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-027**
+**IMP-028**

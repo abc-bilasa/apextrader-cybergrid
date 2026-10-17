@@ -90,11 +90,11 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-009`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-010`**
 
-**Read:** [features/F-009-auth-signup.md](./specs/features/F-009-auth-signup.md)
+**Read:** [features/F-010-auth-session.md](./specs/features/F-010-auth-session.md)
 
-**Goal:** **F-008** — Auth UI shell (F-006/F-007 CI deferred by Amit).
+**Goal:** **F-010** — sign-in, sign-out, session gate.
 
 **Deferred:** F-006 Actions secrets, F-007 Pages smoke — resume before production deploy.
 

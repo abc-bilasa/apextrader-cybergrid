@@ -13,7 +13,7 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-006 | Actions secrets + base path | no | no | no | — |
 | F-007 | CI / Pages smoke | no | no | no | — |
 | F-008 | Auth UI shell | yes | yes | n/a | [F-008](./F-008-auth-ui.md) |
-| F-009 | Sign-up | no | no | no | — |
+| F-009 | Sign-up | yes | partial | n/a | [F-009](./F-009-auth-signup.md) |
 | F-010 | Sign-in / session | no | no | no | — |
 | F-011 | Auth redirect URLs | no | no | no | — |
 | F-012 | Dashboard header | no | no | no | — |
@@ -33,4 +33,4 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-026 | Manual T1/T4 | no | no | no | — |
 | F-027 | Production smoke | no | no | no | — |
 
-**Counts:** Built 6 · Tested 6 · Deployed 2 (Supabase + GitHub)
+**Counts:** Built 7 · Tested 6 (+1 partial F-009) · Deployed 2

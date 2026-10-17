@@ -2,7 +2,8 @@
 
 ```yaml
 id: F-009
-status: pending
+status: done
+completed: 2026-10-17
 depends: [F-008, F-002]
 estimate: 15m
 ```
@@ -13,8 +14,8 @@ User can sign up with email/password; errors shown via `.cyber-alert-error`.
 
 ## Acceptance criteria
 
-- [ ] `supabase.auth.signUp` wired
-- [ ] Error messages visible; loading state on submit
+- [x] `supabase.auth.signUp` wired
+- [x] Error messages visible; loading state on submit
 
 ## Files allowed
 

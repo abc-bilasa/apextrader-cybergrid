@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** `F-009`  
+**Next feature to build:** `F-010`  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -15,7 +15,7 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-006 | Actions secrets + `VITE_BASE_PATH` | 15m | F-005 | pending | [F-006](./features/F-006-github-actions.md) |
 | F-007 | CI green + Pages asset smoke | 15m | F-006 | pending | [F-007](./features/F-007-ci-smoke.md) |
 | F-008 | Auth UI shell (style guide) | 15m | F-003 | done | [F-008](./features/F-008-auth-ui.md) |
-| F-009 | Sign-up + error banner | 15m | F-008 | pending | [F-009](./features/F-009-auth-signup.md) |
+| F-009 | Sign-up + error banner | 15m | F-008 | done | [F-009](./features/F-009-auth-signup.md) |
 | F-010 | Sign-in, sign-out, session gate | 15m | F-009 | pending | [F-010](./features/F-010-auth-session.md) |
 | F-011 | Supabase Auth redirect URLs | 15m | F-005 | pending | [F-011](./features/F-011-auth-urls.md) |
 | F-012 | Dashboard header bar | 15m | F-010 | pending | [F-012](./features/F-012-dashboard-header.md) |
@@ -37,7 +37,7 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 
 ## Progress
 
-- **Done:** 6 / 27 (F-006/F-007 deferred)  
+- **Done:** 7 / 27 (F-006/F-007 deferred)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

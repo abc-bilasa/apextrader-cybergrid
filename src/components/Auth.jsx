@@ -1,16 +1,41 @@
 import { useState } from 'react';
 import { Zap } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 export default function Auth() {
   const [mode, setMode] = useState('sign-in');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const isSignUp = mode === 'sign-up';
 
-  const handleSubmit = (e) => {
+  const switchMode = (next) => {
+    setMode(next);
+    setError('');
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // F-009 / F-010: wire Supabase auth
+    setError('');
+
+    if (!isSignUp) {
+      setError('Sign-in is not wired yet — use Sign up or wait for the next release.');
+      return;
+    }
+
+    setLoading(true);
+    const { error: signUpError } = await supabase.auth.signUp({
+      email: email.trim(),
+      password,
+    });
+    setLoading(false);
+
+    if (signUpError) {
+      setError(signUpError.message);
+      return;
+    }
   };
 
   return (
@@ -22,6 +47,12 @@ export default function Auth() {
           <p className="text-xs uppercase tracking-widest text-slate-400 mt-1">Cyber-Grid journal</p>
         </div>
 
+        {error ? (
+          <div className="cyber-alert-error mb-5" role="alert">
+            {error}
+          </div>
+        ) : null}
+
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="cyber-label" htmlFor="auth-email">Email</label>
@@ -30,6 +61,7 @@ export default function Auth() {
               type="email"
               autoComplete="email"
               required
+              disabled={loading}
               className="cyber-input w-full mt-1"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -44,14 +76,19 @@ export default function Auth() {
               autoComplete={isSignUp ? 'new-password' : 'current-password'}
               required
               minLength={6}
+              disabled={loading}
               className="cyber-input w-full mt-1"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
-          <button type="submit" className="cyber-btn-primary cyber-glow w-full">
-            {isSignUp ? 'Create account' : 'Sign in'}
+          <button
+            type="submit"
+            disabled={loading}
+            className="cyber-btn-primary cyber-glow w-full disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {loading ? 'Working…' : isSignUp ? 'Create account' : 'Sign in'}
           </button>
         </form>
 
@@ -60,7 +97,7 @@ export default function Auth() {
           <button
             type="button"
             className="text-cyan-400 hover:text-cyber-neon underline-offset-2 hover:underline"
-            onClick={() => setMode(isSignUp ? 'sign-in' : 'sign-up')}
+            onClick={() => switchMode(isSignUp ? 'sign-in' : 'sign-up')}
           >
             {isSignUp ? 'Sign in' : 'Sign up'}
           </button>
