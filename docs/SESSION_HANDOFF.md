@@ -76,7 +76,7 @@ Do this before writing code:
 
 | Area | Status |
 |------|--------|
-| Repo on GitHub | Not created (local git OK — F-004) |
+| Repo on GitHub | https://github.com/abc-bilasa/apextrader-cybergrid (F-005) |
 | Supabase project | Created; `001` applied (3 tables) |
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
@@ -90,11 +90,11 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-005`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-006`**
 
-**Read:** [features/F-005-github-push.md](./specs/features/F-005-github-push.md)
+**Read:** [features/F-006-github-actions.md](./specs/features/F-006-github-actions.md)
 
-**Goal:** **F-005** — create GitHub repo `apextrader-cybergrid`, add remote, push `main`.
+**Goal:** **F-006** — GitHub Actions secrets (`VITE_SUPABASE_*`) + `VITE_BASE_PATH` variable.
 
 ---
 
@@ -164,3 +164,4 @@ Do this before writing code:
 | 2026-10-17 | F-002 done — 3 tables confirmed; IMP-022. Next F-003 `.env.local`. |
 | 2026-10-17 | F-003 done — `.env.local` + dev server OK; IMP-023. Next F-004 git init. |
 | 2026-10-17 | F-004 done — git init + first commit at app root; IMP-024. Next F-005 GitHub push. |
+| 2026-10-17 | F-005 done — push to abc-bilasa/apextrader-cybergrid; IMP-025. Next F-006 Actions secrets. |

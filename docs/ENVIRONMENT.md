@@ -76,9 +76,9 @@ Update this table when created—**no API keys here**.
 
 | Item | Value |
 |------|--------|
-| GitHub user/org | _TBD_ (set at F-005 push) |
+| GitHub user/org | `abc-bilasa` |
 | Repository name | `apextrader-cybergrid` |
-| Production URL | `https://<github-user>.github.io/apextrader-cybergrid/` |
+| Production URL | `https://abc-bilasa.github.io/apextrader-cybergrid/` |
 | `VITE_BASE_PATH` | `/apextrader-cybergrid/` |
 | Supabase project name | _TBD_ (F-002) |
 | Supabase project ref | _TBD_ (F-002) |

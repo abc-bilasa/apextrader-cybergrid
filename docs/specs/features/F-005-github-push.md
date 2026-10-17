@@ -4,9 +4,9 @@
 id: F-005
 title: GitHub remote + push main
 estimate: 15m
-status: pending
+status: done
 depends: [F-004]
-completed: null
+completed: 2026-10-17
 ```
 
 ## Outcome
@@ -15,8 +15,8 @@ Code on GitHub `main`; remote URL in ENVIRONMENT registry.
 
 ## Acceptance criteria
 
-- [ ] Repo `apextrader-cybergrid` (or chosen name) on GitHub
-- [ ] `git push -u origin main` succeeds
+- [x] Repo `apextrader-cybergrid` on GitHub (`abc-bilasa`)
+- [x] `git push -u origin main` succeeds
 
 ## Files allowed to touch
 

@@ -62,7 +62,8 @@ apextrader-cybergrid/
 - [x] F-002: Supabase `001` applied
 - [x] F-003: `.env.local` + local dev
 - [x] F-004: git repo at app root, first commit on `main`
-- [ ] **Next:** F-005 — GitHub remote + push
+- [x] F-005: [GitHub](https://github.com/abc-bilasa/apextrader-cybergrid) `main` pushed
+- [ ] **Next:** F-006 — Actions secrets + `VITE_BASE_PATH`
 - [ ] UI per PRD (Auth, Dashboard, charts, level grid) — F-008+
 - [ ] GitHub repo + Actions + Pages live — F-004–F-007
 
