@@ -22,23 +22,23 @@ Do this before writing code:
 
 **Cursor:** invoke skill `apextrader-session-close` (or say “close session”).
 
-- [x] **Last updated** date + who *(2026-10-17, sitting close — F-002 partial)*
+- [x] **Last updated** date + who *(2026-10-17, Session 1 close — Amit)*
 - [x] **Current state** table accurate
-- [x] **Next session** set (**F-002** finish → **F-003**)
+- [x] **Next session** set (**F-013**)
 - [x] **Completed checklist** updated
 - [x] **Blockers** updated
 - [x] **Session log** appended
 - [x] [DEVELOPMENT.md](./DEVELOPMENT.md) file map current
-- [x] [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) through **IMP-021**
-- [x] [DECISIONS.md](./DECISIONS.md) — no new locks (D4-A LOCKED from F-001)
+- [x] [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) through **IMP-032**
+- [x] [DECISIONS.md](./DECISIONS.md) — no new locks (D4-A LOCKED)
 
 ---
 
 ## Last updated
 
 - **Date:** 2026-10-17  
-- **By:** Amit + Cursor  
-- **Session focus:** F-002 onboarding (APPLY steps, feature map, status); **no Supabase SQL applied this sitting**  
+- **By:** Amit + Cursor (Session 1)  
+- **Session focus:** F-002→F-012 + deploy (F-006/007); Supabase + GitHub Pages live; auth sign-up/in verified  
 
 ---
 
@@ -80,7 +80,8 @@ Do this before writing code:
 | Supabase project | Created; `001` applied (3 tables) |
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
-| Auth / Dashboard / charts / grid | Stubs — implement per `UI_STYLE_GUIDE.md` |
+| Auth | F-008–F-010 done (sign-up/in, sign-out) |
+| Dashboard | Header F-012; layout/charts/grid still stub (F-013+) |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -90,13 +91,11 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-010`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-013`**
 
-**Read:** [features/F-010-auth-session.md](./specs/features/F-010-auth-session.md)
+**Read:** [features/F-013-dashboard-layout.md](./specs/features/F-013-dashboard-layout.md)
 
-**Goal:** **F-010** — sign-in, sign-out, session gate.
-
-**Deferred:** F-006 Actions secrets, F-007 Pages smoke — resume before production deploy.
+**Goal:** **F-013** — 12-column dashboard layout (left / center / right per UI_STYLE_GUIDE).
 
 ---
 
@@ -104,7 +103,7 @@ Do this before writing code:
 
 | Blocker | Owner | Notes |
 |---------|--------|-------|
-| _none_ | — | F-003: need API URL + anon key in `.env.local` only |
+| _none_ | — | — |
 
 ---
 
@@ -126,9 +125,9 @@ Do this before writing code:
 - [x] Anti-rework gates + migration SQL file  
 - [x] UI style guide + global theme  
 - [x] RULEBOOK + efficient workflow  
-- [ ] **Session A** — accounts & repo *(next)*  
-- [ ] Session B — database apply + verify *(merge with Session 1 fast path)*  
-- [ ] Session C — auth + shell  
+- [x] **Session A** — accounts & repo (F-004–F-005, Pages F-006/007)  
+- [x] Session B — database apply + verify (F-002)  
+- [x] Session C — auth shell + sign-up/in (F-008–F-010); dashboard header F-012  
 
 ### Week 2–3
 
@@ -138,7 +137,7 @@ Do this before writing code:
 
 ## Notes for next developer / AI
 
-- **Start prompt:** `Goal: Finish F-002 (Supabase apply) or F-003 after F-002 applied. Read docs/SESSION_HANDOFF.md + supabase/APPLY.md.`  
+- **Start prompt:** `Goal: F-013 dashboard layout. Read docs/SESSION_HANDOFF.md + UI_STYLE_GUIDE §4.`  
 - PRD: [`../PRD.txt`](../PRD.txt)  
 - UI work: always [UI_STYLE_GUIDE.md](./UI_STYLE_GUIDE.md)  
 - Do not re-scaffold or duplicate docs unless a gap is found  
@@ -167,3 +166,4 @@ Do this before writing code:
 | 2026-10-17 | F-003 done — `.env.local` + dev server OK; IMP-023. Next F-004 git init. |
 | 2026-10-17 | F-004 done — git init + first commit at app root; IMP-024. Next F-005 GitHub push. |
 | 2026-10-17 | F-005 done — push to abc-bilasa/apextrader-cybergrid; IMP-025. Next F-006 Actions secrets. |
+| 2026-10-17 | **END Session 1:** F-002–F-012 + F-006/007 Pages live (12/27). Next F-013 layout (IMP-032). |

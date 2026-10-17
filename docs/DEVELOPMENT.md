@@ -26,8 +26,8 @@ Solo dev may commit directly to `main` once CI is green.
 
 | File | PRD reference | Status |
 |------|---------------|--------|
-| `src/components/Auth.jsx` | §5.2 | UI shell (F-008); auth API F-009+ |
-| `src/components/Dashboard.jsx` | §5.2 | Stub |
+| `src/components/Auth.jsx` | §5.2 | Sign-up/in + errors (F-009–F-010) |
+| `src/components/Dashboard.jsx` | §5.2 | Header bar F-012; layout F-013+ |
 | `src/components/TradeLogger.jsx` | §5.2 | Stub |
 | `src/components/EquityChart.jsx` | §5.2 | Stub |
 | `src/components/LevelGrid.jsx` | §5.2 | Stub |
@@ -38,6 +38,8 @@ Solo dev may commit directly to `main` once CI is green.
 | `src/App.jsx` | §5.2 | Session shell done |
 | `supabase/migrations/001_*.sql` | §3 | **Applied** (immutable per D13; use `002_` for changes) |
 | `supabase/APPLY.md` | F-002 | Dashboard apply + verify steps |
+| `supabase/AUTH_URLS.md` | F-011 | Supabase redirect URLs |
+| `docs/GITHUB_PAGES_SETUP.md` | F-006/007 | Pages deploy checklist |
 
 Update this table as features land.
 
