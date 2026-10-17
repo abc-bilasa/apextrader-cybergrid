@@ -1,0 +1,36 @@
+---
+description: ApexTrader Cyber-Grid — rule book (workflow, efficiency, architecture, UI)
+alwaysApply: true
+---
+
+# ApexTrader Cyber-Grid
+
+Full rule book: `docs/RULEBOOK.md`. Spec backlog: `docs/specs/BACKLOG.md`. One feature per task (~15m). Skills: session-open/close, `apextrader-feature-build`.
+
+## Before coding
+
+1. Read `docs/SESSION_HANDOFF.md`, latest `docs/IMPLEMENTATION_LOG.md`, and `docs/RULEBOOK.md` §2.
+2. **One slice per task** — follow critical path in RULEBOOK (no full-app requests).
+3. Read `docs/DECISIONS.md` only for auth/RPC/rules; `docs/UI_STYLE_GUIDE.md` only for UI.
+4. Do not re-ingest full `PRD.txt` if DECISIONS + handoff + slice docs suffice.
+5. If `PRE_BUILD_SIGNOFF` is not DONE, do not apply DB or ship RPC integration.
+6. Precedence: DECISIONS (LOCKED) > DECISIONS (DEFAULT) > `PRD.txt` > chat.
+
+## Efficient deploy
+
+- One Supabase project for MVP; deploy GitHub Actions early; set `VITE_BASE_PATH` before first prod build.
+- Git root = this repo; push `main` to deploy (D10). No alternate hosts without DECISIONS update.
+
+## UI / theme
+
+- `.cyber-*` from `src/index.css`; charts from `src/lib/chartTheme.js`; no one-off colors/fonts.
+
+## Architecture
+
+- Level/capital only via `supabase.rpc('log_trade', …)`; no service_role in client.
+- After math changes: `npm run verify:formulas`.
+- Never edit applied `001_initial_schema.sql`; add `002_*.sql` (D13); log SQL in IMPLEMENTATION_LOG.
+
+## End of task
+
+Append `IMP-###` to `docs/IMPLEMENTATION_LOG.md`; on feature done update `app-features/` + INDEX; SESSION_HANDOFF END ritual.

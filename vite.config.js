@@ -1,0 +1,8 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// Set base to '/<repo-name>/' when deploying to GitHub Pages (not user/org root site).
+export default defineConfig({
+  plugins: [react()],
+  base: process.env.VITE_BASE_PATH || '/',
+});
