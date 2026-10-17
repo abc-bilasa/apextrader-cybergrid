@@ -2,7 +2,8 @@
 
 ```yaml
 id: F-010
-status: pending
+status: done
+completed: 2026-10-17
 depends: [F-009]
 estimate: 15m
 ```
@@ -13,9 +14,9 @@ Sign-in works; `App.jsx` shows Dashboard when session exists; sign-out clears se
 
 ## Acceptance criteria
 
-- [ ] `signInWithPassword` wired
-- [ ] `App.jsx` session gate unchanged behavior but functional
-- [ ] Sign-out from dashboard or auth flow
+- [x] `signInWithPassword` wired
+- [x] `App.jsx` session gate unchanged behavior but functional
+- [x] Sign-out from dashboard or auth flow
 
 ## Files allowed
 

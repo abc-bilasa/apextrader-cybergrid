@@ -20,21 +20,14 @@ export default function Auth() {
     e.preventDefault();
     setError('');
 
-    if (!isSignUp) {
-      setError('Sign-in is not wired yet — use Sign up or wait for the next release.');
-      return;
-    }
-
     setLoading(true);
-    const { error: signUpError } = await supabase.auth.signUp({
-      email: email.trim(),
-      password,
-    });
+    const authResult = isSignUp
+      ? await supabase.auth.signUp({ email: email.trim(), password })
+      : await supabase.auth.signInWithPassword({ email: email.trim(), password });
     setLoading(false);
 
-    if (signUpError) {
-      setError(signUpError.message);
-      return;
+    if (authResult.error) {
+      setError(authResult.error.message);
     }
   };
 

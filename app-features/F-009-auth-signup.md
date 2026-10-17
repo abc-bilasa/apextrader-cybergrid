@@ -7,7 +7,7 @@ spec: ../docs/specs/features/F-009-auth-signup.md
 imp: IMP-027
 completed: 2026-10-17
 built: yes
-tested: partial
+tested: yes
 deployed: n/a
 ```
 
@@ -24,7 +24,7 @@ deployed: n/a
 | Check | Result | Notes |
 |-------|--------|-------|
 | `npm run build` | pass | |
-| Manual sign-up + `trading_accounts` | manual | Amit: sign up in dev, check Supabase Table Editor |
+| Manual sign-up + `trading_accounts` | pass | Amit confirmed 1 row in `trading_accounts` |
 
 ## Notes
 

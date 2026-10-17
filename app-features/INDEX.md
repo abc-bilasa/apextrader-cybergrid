@@ -13,8 +13,8 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-006 | Actions secrets + base path | no | no | no | — |
 | F-007 | CI / Pages smoke | no | no | no | — |
 | F-008 | Auth UI shell | yes | yes | n/a | [F-008](./F-008-auth-ui.md) |
-| F-009 | Sign-up | yes | partial | n/a | [F-009](./F-009-auth-signup.md) |
-| F-010 | Sign-in / session | no | no | no | — |
+| F-009 | Sign-up | yes | yes | n/a | [F-009](./F-009-auth-signup.md) |
+| F-010 | Sign-in / session | yes | partial | n/a | [F-010](./F-010-auth-session.md) |
 | F-011 | Auth redirect URLs | no | no | no | — |
 | F-012 | Dashboard header | no | no | no | — |
 | F-013 | Dashboard layout | no | no | no | — |
