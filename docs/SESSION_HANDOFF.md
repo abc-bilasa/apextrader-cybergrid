@@ -90,11 +90,13 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-006`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-009`**
 
-**Read:** [features/F-006-github-actions.md](./specs/features/F-006-github-actions.md)
+**Read:** [features/F-009-auth-signup.md](./specs/features/F-009-auth-signup.md)
 
-**Goal:** **F-006** — GitHub Actions secrets (`VITE_SUPABASE_*`) + `VITE_BASE_PATH` variable.
+**Goal:** **F-008** — Auth UI shell (F-006/F-007 CI deferred by Amit).
+
+**Deferred:** F-006 Actions secrets, F-007 Pages smoke — resume before production deploy.
 
 ---
 

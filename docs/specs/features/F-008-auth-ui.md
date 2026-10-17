@@ -2,7 +2,8 @@
 
 ```yaml
 id: F-008
-status: pending
+status: done
+completed: 2026-10-17
 depends: [F-003]
 estimate: 15m
 ```
@@ -13,9 +14,9 @@ Auth screen matches UI_STYLE_GUIDE (layout, classes); form fields present; no AP
 
 ## Acceptance criteria
 
-- [ ] `Auth.jsx` uses `.cyber-card`, `.cyber-input`, `.cyber-btn-primary`, `.cyber-label`
-- [ ] Toggle sign-up / sign-in mode UI
-- [ ] `npm run build` passes
+- [x] `Auth.jsx` uses `.cyber-card`, `.cyber-input`, `.cyber-btn-primary`, `.cyber-label`
+- [x] Toggle sign-up / sign-in mode UI
+- [x] `npm run build` passes
 
 ## Files allowed
 
