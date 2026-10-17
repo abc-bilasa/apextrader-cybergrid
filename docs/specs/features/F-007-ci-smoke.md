@@ -4,9 +4,9 @@
 id: F-007
 title: CI green + Pages loads
 estimate: 15m
-status: pending
+status: done
 depends: [F-006]
-completed: null
+completed: 2026-10-17
 ```
 
 ## Outcome
@@ -15,8 +15,8 @@ Latest `main` deploy succeeds; Pages URL loads JS/CSS (no 404).
 
 ## Acceptance criteria
 
-- [ ] GitHub Actions job green
-- [ ] Pages URL opens; no blank white screen from asset 404
+- [x] GitHub Actions job green
+- [x] Pages URL opens; no blank white screen from asset 404
 
 ## Verify
 

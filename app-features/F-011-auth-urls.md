@@ -6,9 +6,9 @@ title: Supabase Auth redirect URLs
 spec: ../docs/specs/features/F-011-auth-urls.md
 imp: IMP-029
 completed: 2026-10-17
-built: partial
-tested: n/a
-deployed: n/a
+built: yes
+tested: yes
+deployed: yes
 ```
 
 ## Summary
@@ -18,7 +18,7 @@ Documented localhost + GitHub Pages URLs in ENVIRONMENT + `supabase/AUTH_URLS.md
 ## Built
 
 - [x] `docs/ENVIRONMENT.md`, `supabase/AUTH_URLS.md`
-- [ ] Supabase dashboard URL configuration (manual — Amit)
+- [x] Supabase dashboard URL configuration (production redirect URLs)
 
 ## Notes
 

@@ -52,8 +52,8 @@ Fill [ENVIRONMENT.md](./ENVIRONMENT.md) **Project registry** (no secrets):
 
 ## E. Auth URLs (before first production deploy)
 
-- [ ] Supabase Site URL + Redirect URLs include `http://localhost:5173/**`
-- [ ] Same for `https://<user>.github.io/<repo>/**` (even if deploy is later)
+- [x] Supabase Site URL + Redirect URLs include `http://localhost:5173/**`
+- [x] Same for `https://abc-bilasa.github.io/apextrader-cybergrid/**` (F-011, 2026-10-17)
 
 *(Section E — feature F-011 / after F-005.)*
 

@@ -10,12 +10,12 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-003 | `.env.local` | yes | yes | n/a | [F-003](./F-003-env-local.md) |
 | F-004 | Git init + first commit | yes | yes | n/a | [F-004](./F-004-git-init.md) |
 | F-005 | GitHub push | yes | yes | yes | [F-005](./F-005-github-push.md) |
-| F-006 | Actions secrets + base path | no | no | no | — |
-| F-007 | CI / Pages smoke | no | no | no | — |
+| F-006 | Actions secrets + base path | yes | yes | yes | [F-006](./F-006-github-actions.md) |
+| F-007 | CI / Pages smoke | yes | yes | yes | [F-007](./F-007-ci-smoke.md) |
 | F-008 | Auth UI shell | yes | yes | n/a | [F-008](./F-008-auth-ui.md) |
 | F-009 | Sign-up | yes | yes | n/a | [F-009](./F-009-auth-signup.md) |
 | F-010 | Sign-in / session | yes | partial | n/a | [F-010](./F-010-auth-session.md) |
-| F-011 | Auth redirect URLs | partial | n/a | n/a | [F-011](./F-011-auth-urls.md) |
+| F-011 | Auth redirect URLs | yes | yes | yes | [F-011](./F-011-auth-urls.md) |
 | F-012 | Dashboard header | yes | yes | n/a | [F-012](./F-012-dashboard-header.md) |
 | F-013 | Dashboard layout | no | no | no | — |
 | F-014 | Load account + trades | no | no | no | — |

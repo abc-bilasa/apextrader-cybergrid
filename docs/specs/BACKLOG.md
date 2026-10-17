@@ -12,8 +12,8 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-003 | `.env.local` + ENVIRONMENT registry | 15m | F-002 | done | [F-003](./features/F-003-env-local.md) |
 | F-004 | Git init in repo root + first commit | 15m | — | done | [F-004](./features/F-004-git-init.md) |
 | F-005 | GitHub remote + push `main` | 15m | F-004 | done | [F-005](./features/F-005-github-push.md) |
-| F-006 | Actions secrets + `VITE_BASE_PATH` | 15m | F-005 | pending | [F-006](./features/F-006-github-actions.md) |
-| F-007 | CI green + Pages asset smoke | 15m | F-006 | pending | [F-007](./features/F-007-ci-smoke.md) |
+| F-006 | Actions secrets + `VITE_BASE_PATH` | 15m | F-005 | done | [F-006](./features/F-006-github-actions.md) |
+| F-007 | CI green + Pages asset smoke | 15m | F-006 | done | [F-007](./features/F-007-ci-smoke.md) |
 | F-008 | Auth UI shell (style guide) | 15m | F-003 | done | [F-008](./features/F-008-auth-ui.md) |
 | F-009 | Sign-up + error banner | 15m | F-008 | done | [F-009](./features/F-009-auth-signup.md) |
 | F-010 | Sign-in, sign-out, session gate | 15m | F-009 | done | [F-010](./features/F-010-auth-session.md) |
@@ -37,7 +37,7 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 
 ## Progress
 
-- **Done:** 10 / 27 (F-006/F-007 deferred)  
+- **Done:** 12 / 27  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

@@ -68,7 +68,7 @@ Do this before writing code:
 | [PRE_BUILD_SIGNOFF](./PRE_BUILD_SIGNOFF.md) | **DONE** (F-001, D4-A) |
 | Migration `001` applied in Supabase | **DONE** (F-002, 2026-10-17) |
 | `package-lock.json` committed to git | **DONE** (F-004, `main` @ app root) |
-| GitHub Actions deploy verified | **NOT DONE** |
+| GitHub Actions deploy verified | **DONE** (2026-10-17, Pages live) |
 
 ---
 
@@ -83,7 +83,7 @@ Do this before writing code:
 | Auth / Dashboard / charts / grid | Stubs — implement per `UI_STYLE_GUIDE.md` |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
-| Production URL | — |
+| Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
 | Documentation | Complete for multi-week build (see RULEBOOK index) |
 
 ---
@@ -113,8 +113,8 @@ Do this before writing code:
 | Item | Status |
 |------|--------|
 | `.env.local` | Created locally |
-| GitHub Actions secrets | Not set |
-| Supabase Auth URLs | Not configured |
+| GitHub Actions secrets | Set (VITE_SUPABASE_*) |
+| Supabase Auth URLs | Configured (local + Pages) |
 
 ---
 
