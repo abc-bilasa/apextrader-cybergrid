@@ -67,7 +67,7 @@ Do this before writing code:
 |------|--------|
 | [PRE_BUILD_SIGNOFF](./PRE_BUILD_SIGNOFF.md) | **DONE** (F-001, D4-A) |
 | Migration `001` applied in Supabase | **DONE** (F-002, 2026-10-17) |
-| `package-lock.json` committed to git | **NOT DONE** (local only; no remote yet) |
+| `package-lock.json` committed to git | **DONE** (F-004, `main` @ app root) |
 | GitHub Actions deploy verified | **NOT DONE** |
 
 ---
@@ -76,7 +76,7 @@ Do this before writing code:
 
 | Area | Status |
 |------|--------|
-| Repo on GitHub | Not created |
+| Repo on GitHub | Not created (local git OK — F-004) |
 | Supabase project | Created; `001` applied (3 tables) |
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
@@ -90,11 +90,11 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-004`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-005`**
 
-**Read:** [features/F-004-git-init.md](./specs/features/F-004-git-init.md)
+**Read:** [features/F-005-github-push.md](./specs/features/F-005-github-push.md)
 
-**Goal:** **F-004** — `git init` inside `apextrader-cybergrid/` only (not user home); first commit with `package-lock.json`.
+**Goal:** **F-005** — create GitHub repo `apextrader-cybergrid`, add remote, push `main`.
 
 ---
 
@@ -163,3 +163,4 @@ Do this before writing code:
 | 2026-10-17 | START: Finish F-002 — Supabase project + apply `001` (or close feature if **`F-002 applied`**). |
 | 2026-10-17 | F-002 done — 3 tables confirmed; IMP-022. Next F-003 `.env.local`. |
 | 2026-10-17 | F-003 done — `.env.local` + dev server OK; IMP-023. Next F-004 git init. |
+| 2026-10-17 | F-004 done — git init + first commit at app root; IMP-024. Next F-005 GitHub push. |

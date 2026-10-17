@@ -61,7 +61,8 @@ apextrader-cybergrid/
 - [x] F-001: PRE_BUILD gate + D4-A locked
 - [x] F-002: Supabase `001` applied
 - [x] F-003: `.env.local` + local dev
-- [ ] **Next:** F-004 — git init in `apextrader-cybergrid/` + first commit
+- [x] F-004: git repo at app root, first commit on `main`
+- [ ] **Next:** F-005 — GitHub remote + push
 - [ ] UI per PRD (Auth, Dashboard, charts, level grid) — F-008+
 - [ ] GitHub repo + Actions + Pages live — F-004–F-007
 

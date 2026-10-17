@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** `F-004`  
+**Next feature to build:** `F-005`  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -10,7 +10,7 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-001 | PRE_BUILD sign-off + lock D4 | 15m | — | done | [F-001](./features/F-001-pre-build-signoff.md) |
 | F-002 | Supabase project + apply `001` SQL | 15m | F-001 | done | [F-002](./features/F-002-supabase-migration.md) |
 | F-003 | `.env.local` + ENVIRONMENT registry | 15m | F-002 | done | [F-003](./features/F-003-env-local.md) |
-| F-004 | Git init in repo root + first commit | 15m | — | pending | [F-004](./features/F-004-git-init.md) |
+| F-004 | Git init in repo root + first commit | 15m | — | done | [F-004](./features/F-004-git-init.md) |
 | F-005 | GitHub remote + push `main` | 15m | F-004 | pending | [F-005](./features/F-005-github-push.md) |
 | F-006 | Actions secrets + `VITE_BASE_PATH` | 15m | F-005 | pending | [F-006](./features/F-006-github-actions.md) |
 | F-007 | CI green + Pages asset smoke | 15m | F-006 | pending | [F-007](./features/F-007-ci-smoke.md) |
@@ -37,7 +37,7 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 
 ## Progress
 
-- **Done:** 3 / 27  
+- **Done:** 4 / 27  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

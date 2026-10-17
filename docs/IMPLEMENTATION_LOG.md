@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-024 | 2026-10-17 | TOOLING | process | F-004: `git init` at app root; first commit on `main` (no `.env.local`) | `.git/`, `app-features/F-004-git-init.md` | D9 | Cursor |
 | IMP-023 | 2026-10-17 | CONFIG | deploy | F-003: local `.env.local` + dev server verified (`npm.cmd run dev`) | `.env.example`, `app-features/F-003-env-local.md`, `docs/specs/BACKLOG.md` | D9 | Amit + Cursor |
 | IMP-022 | 2026-10-17 | SQL | database | F-002: `001_initial_schema.sql` applied on Supabase; 3 tables verified | `supabase/migrations/001_initial_schema.sql`, `docs/specs/BACKLOG.md`, `app-features/F-002-supabase-migration.md` | D13 | Amit + Cursor |
 | IMP-021 | 2026-10-17 | DOCS | process | Session close: handoff refreshed; F-002 partial (awaiting Supabase apply); BACKLOG sync | `docs/SESSION_HANDOFF.md`, `docs/specs/BACKLOG.md`, `README.md` | — | Cursor |
@@ -79,4 +80,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-024**
+**IMP-025**
