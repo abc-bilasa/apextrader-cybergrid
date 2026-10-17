@@ -1,13 +1,88 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import confetti from 'canvas-confetti';
 import { LogOut, Zap } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-import { formatINR } from '../lib/formulas';
+import { formatINR, getLevelMetrics } from '../lib/formulas';
 import TradeLogger from './TradeLogger';
 import EquityChart from './EquityChart';
 import LevelGrid from './LevelGrid';
 
 const DEFAULT_LEVEL = 1;
 const DEFAULT_CAPITAL = 10000;
+
+function playTradeTone(isHigh) {
+  try {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    const ctx = new Ctx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.frequency.value = isHigh ? 587.33 : 220;
+    gain.gain.setValueAtTime(0.1, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.25);
+  } catch {
+    // AudioContext blocked or unavailable
+  }
+}
+
+function celebrateTargetMet() {
+  try {
+    confetti({
+      particleCount: 120,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#22d3ee', '#34d399', '#a78bfa'],
+    });
+  } catch {
+    // canvas-confetti unavailable
+  }
+  playTradeTone(true);
+}
+
+function feedbackForTradeTrigger(trigger) {
+  if (trigger === 'TARGET_MET') celebrateTargetMet();
+  else if (trigger === 'DRAWDOWN_HIT') playTradeTone(false);
+}
+
+function RiskMetricsPanel({ level }) {
+  const metrics = getLevelMetrics(level);
+
+  return (
+    <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">
+      <h2 className="cyber-section-title mb-4">Risk metrics</h2>
+      <dl className="space-y-3 text-sm">
+        <div className="flex justify-between items-baseline gap-4">
+          <dt className="text-slate-400">Base capital</dt>
+          <dd className="font-mono cyber-metric text-slate-100 tabular-nums">
+            {formatINR(metrics.baseCapital)}
+          </dd>
+        </div>
+        <div className="flex justify-between items-baseline gap-4">
+          <dt className="text-slate-400">Target (+50%)</dt>
+          <dd className="font-mono cyber-metric cyber-text-profit tabular-nums">
+            {formatINR(metrics.targetPlanned)}
+          </dd>
+        </div>
+        <div className="flex justify-between items-baseline gap-4">
+          <dt className="text-slate-400">Daily DD (−30%)</dt>
+          <dd className="font-mono cyber-metric cyber-text-risk tabular-nums">
+            {formatINR(metrics.dailyDrawdownLimit)}
+          </dd>
+        </div>
+        <div className="flex justify-between items-baseline gap-4">
+          <dt className="text-slate-400">Max DD (−60%)</dt>
+          <dd className="font-mono cyber-metric cyber-text-risk tabular-nums">
+            {formatINR(metrics.maxDrawdownLimit)}
+          </dd>
+        </div>
+      </dl>
+    </section>
+  );
+}
 
 function PanelPlaceholder({ title, children }) {
   return (
@@ -25,43 +100,43 @@ export default function Dashboard({ session }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    let cancelled = false;
+  const loadDashboardData = useCallback(async ({ showLoader = true } = {}) => {
+    if (showLoader) setLoading(true);
+    setError('');
 
-    async function loadDashboardData() {
-      setLoading(true);
-      setError('');
+    const [accountRes, tradesRes] = await Promise.all([
+      supabase.from('trading_accounts').select('*').single(),
+      supabase.from('trades').select('*').order('created_at', { ascending: true }),
+    ]);
 
-      const [accountRes, tradesRes] = await Promise.all([
-        supabase.from('trading_accounts').select('*').single(),
-        supabase.from('trades').select('*').order('created_at', { ascending: true }),
-      ]);
-
-      if (cancelled) return;
-
-      if (accountRes.error) {
-        setError(accountRes.error.message);
-        setAccount(null);
-      } else {
-        setAccount(accountRes.data);
-      }
-
-      if (tradesRes.error) {
-        setError((prev) => prev || tradesRes.error.message);
-        setTrades([]);
-      } else {
-        setTrades(tradesRes.data ?? []);
-      }
-
-      setLoading(false);
+    if (accountRes.error) {
+      setError(accountRes.error.message);
+      setAccount(null);
+    } else {
+      setAccount(accountRes.data);
     }
 
-    loadDashboardData();
+    if (tradesRes.error) {
+      setError((prev) => prev || tradesRes.error.message);
+      setTrades([]);
+    } else {
+      setTrades(tradesRes.data ?? []);
+    }
 
-    return () => {
-      cancelled = true;
-    };
-  }, [session?.user?.id]);
+    if (showLoader) setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    loadDashboardData();
+  }, [session?.user?.id, loadDashboardData]);
+
+  const handleTradeLogged = useCallback(
+    async (rpcResult) => {
+      feedbackForTradeTrigger(rpcResult?.trigger);
+      await loadDashboardData({ showLoader: false });
+    },
+    [loadDashboardData],
+  );
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
@@ -117,8 +192,8 @@ export default function Dashboard({ session }) {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
         <div className="lg:col-span-4 flex flex-col gap-6">
-          <PanelPlaceholder title="Risk & milestones" />
-          <TradeLogger />
+          <RiskMetricsPanel level={level} />
+          <TradeLogger onTradeLogged={handleTradeLogged} />
         </div>
 
         <div className="lg:col-span-5 flex flex-col gap-6">

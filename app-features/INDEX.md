@@ -19,11 +19,11 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-012 | Dashboard header | yes | yes | n/a | [F-012](./F-012-dashboard-header.md) |
 | F-013 | Dashboard layout | yes | yes | n/a | [F-013](./F-013-dashboard-layout.md) |
 | F-014 | Load account + trades | yes | yes | n/a | [F-014](./F-014-dashboard-data.md) |
-| F-015 | Trade form UI | no | no | no | — |
-| F-016 | `log_trade` RPC | no | no | no | — |
-| F-017 | Refresh after trade | no | no | no | — |
-| F-018 | Confetti + audio | no | no | no | — |
-| F-019 | Risk metrics panel | no | no | no | — |
+| F-015 | Trade form UI | yes | yes | n/a | [F-015](./F-015-trade-form.md) |
+| F-016 | `log_trade` RPC | yes | yes | n/a | [F-016](./F-016-trade-rpc.md) |
+| F-017 | Refresh after trade | yes | yes | n/a | [F-017](./F-017-trade-refresh.md) |
+| F-018 | Confetti + audio | yes | yes | n/a | [F-018](./F-018-trade-feedback.md) |
+| F-019 | Risk metrics panel | yes | yes | n/a | [F-019](./F-019-risk-metrics.md) |
 | F-020 | D1–D4 milestones | no | no | no | — |
 | F-021 | Equity chart | no | no | no | — |
 | F-022 | Daily P&L bars | no | no | no | — |

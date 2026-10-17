@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-016
-status: pending
+status: done
 depends: [F-015, F-014]
 estimate: 15m
 ```
@@ -13,8 +13,8 @@ Submit calls `supabase.rpc('log_trade', { p_pnl, p_notes })`; errors surfaced.
 
 ## Acceptance criteria
 
-- [ ] Only RPC mutates progression (D2)
-- [ ] Success clears form fields
+- [x] Only RPC mutates progression (D2)
+- [x] Success clears form fields
 
 ## Files allowed
 

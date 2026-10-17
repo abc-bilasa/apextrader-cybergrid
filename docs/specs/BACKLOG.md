@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** `F-015`  
+**Next feature to build:** `F-020`  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -21,11 +21,11 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-012 | Dashboard header bar | 15m | F-010 | done | [F-012](./features/F-012-dashboard-header.md) |
 | F-013 | Dashboard 12-column layout | 15m | F-012 | done | [F-013](./features/F-013-dashboard-layout.md) |
 | F-014 | Load account + trades | 15m | F-013, F-002 | done | [F-014](./features/F-014-dashboard-data.md) |
-| F-015 | TradeLogger form UI | 15m | F-013 | pending | [F-015](./features/F-015-trade-form.md) |
-| F-016 | Wire `log_trade` RPC | 15m | F-015, F-014 | pending | [F-016](./features/F-016-trade-rpc.md) |
-| F-017 | Refresh UI after trade | 15m | F-016 | pending | [F-017](./features/F-017-trade-refresh.md) |
-| F-018 | Confetti + trade sounds | 15m | F-016 | pending | [F-018](./features/F-018-trade-feedback.md) |
-| F-019 | Risk metrics left panel | 15m | F-014 | pending | [F-019](./features/F-019-risk-metrics.md) |
+| F-015 | TradeLogger form UI | 15m | F-013 | done | [F-015](./features/F-015-trade-form.md) |
+| F-016 | Wire `log_trade` RPC | 15m | F-015, F-014 | done | [F-016](./features/F-016-trade-rpc.md) |
+| F-017 | Refresh UI after trade | 15m | F-016 | done | [F-017](./features/F-017-trade-refresh.md) |
+| F-018 | Confetti + trade sounds | 15m | F-016 | done | [F-018](./features/F-018-trade-feedback.md) |
+| F-019 | Risk metrics left panel | 15m | F-014 | done | [F-019](./features/F-019-risk-metrics.md) |
 | F-020 | D1–D4 milestones card | 15m | F-019 | pending | [F-020](./features/F-020-milestones.md) |
 | F-021 | Equity chart | 15m | F-014 | pending | [F-021](./features/F-021-equity-chart.md) |
 | F-022 | Daily P&L bar chart | 15m | F-021 | pending | [F-022](./features/F-022-pnl-bars.md) |

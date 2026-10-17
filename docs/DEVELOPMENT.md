@@ -28,7 +28,7 @@ Solo dev may commit directly to `main` once CI is green.
 |------|---------------|--------|
 | `src/components/Auth.jsx` | §5.2 | Sign-up/in + errors (F-009–F-010) |
 | `src/components/Dashboard.jsx` | §5.2 | Header F-012 + 12-col layout F-013 |
-| `src/components/TradeLogger.jsx` | §5.2 | Stub |
+| `src/components/TradeLogger.jsx` | §5.2 | F-015/016 form + `log_trade` RPC |
 | `src/components/EquityChart.jsx` | §5.2 | Stub |
 | `src/components/LevelGrid.jsx` | §5.2 | Stub |
 | `src/lib/formulas.js` | §5.1 | Implemented |

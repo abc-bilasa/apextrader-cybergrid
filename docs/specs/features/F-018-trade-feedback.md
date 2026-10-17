@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-018
-status: pending
+status: done
 depends: [F-016]
 estimate: 15m
 ```
@@ -13,8 +13,8 @@ estimate: 15m
 
 ## Acceptance criteria
 
-- [ ] Uses RPC result `trigger` field
-- [ ] Audio fail-safe (no crash if AudioContext blocked)
+- [x] Uses RPC result `trigger` field
+- [x] Audio fail-safe (no crash if AudioContext blocked)
 
 ## Files allowed
 

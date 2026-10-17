@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-019
-status: pending
+status: done
 depends: [F-014]
 estimate: 15m
 ```
@@ -13,8 +13,8 @@ Left panel shows base capital, +50% target, −30% / −60% limits via `getLevel
 
 ## Acceptance criteria
 
-- [ ] `.cyber-metric`, `.cyber-text-profit`, `.cyber-text-risk`
-- [ ] Values match `formulas.js` for `current_level`
+- [x] `.cyber-metric`, `.cyber-text-profit`, `.cyber-text-risk`
+- [x] Values match `formulas.js` for `current_level`
 
 ## Files allowed
 

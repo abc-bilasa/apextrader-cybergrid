@@ -81,7 +81,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | Layout F-013; account + trades load F-014; trade RPC F-016+ |
+| Dashboard | Layout F-013; data F-014; trade F-015–018; risk F-019; milestones F-020+ |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -91,11 +91,11 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-015`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-020`**
 
-**Read:** [features/F-015-trade-form.md](./specs/features/F-015-trade-form.md)
+**Read:** [features/F-020-milestones.md](./specs/features/F-020-milestones.md)
 
-**Goal:** **F-015** — TradeLogger form UI.
+**Goal:** **F-020** — D1–D4 milestones card.
 
 ---
 
@@ -168,3 +168,8 @@ Do this before writing code:
 | 2026-10-17 | F-005 done — push to abc-bilasa/apextrader-cybergrid; IMP-025. Next F-006 Actions secrets. |
 | 2026-10-17 | **END Session 1:** F-002–F-012 + F-006/007 Pages live (12/27). Next F-013 layout (IMP-032). |
 | 2026-10-17 | START: Session 2 — F-013 dashboard 12-column layout. |
+| 2026-10-17 | F-013/F-014 done (IMP-033/034). F-015 TradeLogger form UI (IMP-035). Next F-016 RPC. |
+| 2026-10-17 | F-016 `log_trade` wired in TradeLogger (IMP-036). Next F-017 dashboard refresh. |
+| 2026-10-17 | F-017 post-trade refresh via `onTradeLogged` (IMP-037). Next F-018 feedback. |
+| 2026-10-17 | F-018 confetti + trigger-based audio (IMP-038). Next F-019 risk panel. |
+| 2026-10-17 | F-019 risk metrics panel (IMP-039). Next F-020 milestones. |

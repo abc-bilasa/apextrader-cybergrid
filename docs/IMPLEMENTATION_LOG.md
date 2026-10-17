@@ -37,6 +37,11 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-039 | 2026-10-17 | FEATURE | dashboard | F-019: risk metrics panel via `getLevelMetrics` | `src/components/Dashboard.jsx` | — | Cursor |
+| IMP-038 | 2026-10-17 | FEATURE | ui | F-018: confetti on `TARGET_MET`; tones from RPC `trigger`; safe audio | `src/components/Dashboard.jsx` | — | Cursor |
+| IMP-037 | 2026-10-17 | FEATURE | dashboard | F-017: `onTradeLogged` reloads account + trades; header updates in place | `src/components/Dashboard.jsx`, `src/components/TradeLogger.jsx` | — | Cursor |
+| IMP-036 | 2026-10-17 | FEATURE | trading | F-016: TradeLogger submits `log_trade` RPC; errors + clear on success | `src/components/TradeLogger.jsx` | D2 | Cursor |
+| IMP-035 | 2026-10-17 | FEATURE | ui | F-015: TradeLogger P&L + notes form; client PnL validation | `src/components/TradeLogger.jsx` | — | Cursor |
 | IMP-034 | 2026-10-17 | FEATURE | dashboard | F-014: load `trading_accounts` + `trades`; header live level/capital | `src/components/Dashboard.jsx` | — | Cursor |
 | IMP-033 | 2026-10-17 | FEATURE | ui | F-013: dashboard 12-column grid (4/5/3) + stub panels | `src/components/Dashboard.jsx` | — | Cursor |
 | IMP-032 | 2026-10-17 | DOCS | process | Session 1 close: handoff + DEVELOPMENT map; 12/27 features; next F-013 | `docs/SESSION_HANDOFF.md`, `docs/DEVELOPMENT.md` | — | Cursor |
@@ -90,4 +95,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-035**
+**IMP-040**

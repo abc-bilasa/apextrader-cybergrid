@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-017
-status: pending
+status: done
 depends: [F-016]
 estimate: 15m
 ```
@@ -13,8 +13,8 @@ After trade, dashboard reloads account + trades; header capital/level update.
 
 ## Acceptance criteria
 
-- [ ] `onTradeLogged` callback from TradeLogger to Dashboard
-- [ ] T6: refresh shows new values
+- [x] `onTradeLogged` callback from TradeLogger to Dashboard
+- [x] T6: refresh shows new values
 
 ## Files allowed
 
