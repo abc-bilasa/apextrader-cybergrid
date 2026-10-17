@@ -2,7 +2,8 @@
 
 ```yaml
 id: F-011
-status: pending
+status: done
+completed: 2026-10-17
 depends: [F-005]
 estimate: 15m
 ```
@@ -13,8 +14,8 @@ Supabase Auth Site URL + Redirect URLs include localhost and GitHub Pages URL.
 
 ## Acceptance criteria
 
-- [ ] Documented in ENVIRONMENT.md with actual URLs
-- [ ] Dashboard settings updated in Supabase (manual step recorded in IMP log)
+- [x] Documented in ENVIRONMENT.md with actual URLs
+- [ ] Dashboard settings updated in Supabase (manual — see `supabase/AUTH_URLS.md`)
 
 ## Files allowed
 

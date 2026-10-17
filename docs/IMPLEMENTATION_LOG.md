@@ -37,6 +37,8 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-030 | 2026-10-17 | FEATURE | ui | F-012: dashboard header bar (placeholders) | `src/components/Dashboard.jsx` | — | Cursor |
+| IMP-029 | 2026-10-17 | DOCS | deploy | F-011: Auth URL registry + `supabase/AUTH_URLS.md` | `docs/ENVIRONMENT.md`, `supabase/AUTH_URLS.md` | — | Cursor |
 | IMP-028 | 2026-10-17 | FEATURE | auth | F-010: `signInWithPassword` + Dashboard sign-out | `src/components/Auth.jsx`, `src/components/Dashboard.jsx` | — | Cursor |
 | IMP-027 | 2026-10-17 | FEATURE | auth | F-009: `signUp` + error banner + loading in Auth | `src/components/Auth.jsx`, `app-features/F-009-auth-signup.md` | D6 | Cursor |
 | IMP-026 | 2026-10-17 | FEATURE | auth | F-008: Auth UI shell (style guide, sign-in/up toggle, no API) | `src/components/Auth.jsx`, `docs/specs/BACKLOG.md` | — | Cursor |
@@ -84,4 +86,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-029**
+**IMP-031**

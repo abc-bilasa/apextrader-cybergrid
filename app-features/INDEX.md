@@ -15,8 +15,8 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-008 | Auth UI shell | yes | yes | n/a | [F-008](./F-008-auth-ui.md) |
 | F-009 | Sign-up | yes | yes | n/a | [F-009](./F-009-auth-signup.md) |
 | F-010 | Sign-in / session | yes | partial | n/a | [F-010](./F-010-auth-session.md) |
-| F-011 | Auth redirect URLs | no | no | no | — |
-| F-012 | Dashboard header | no | no | no | — |
+| F-011 | Auth redirect URLs | partial | n/a | n/a | [F-011](./F-011-auth-urls.md) |
+| F-012 | Dashboard header | yes | yes | n/a | [F-012](./F-012-dashboard-header.md) |
 | F-013 | Dashboard layout | no | no | no | — |
 | F-014 | Load account + trades | no | no | no | — |
 | F-015 | Trade form UI | no | no | no | — |

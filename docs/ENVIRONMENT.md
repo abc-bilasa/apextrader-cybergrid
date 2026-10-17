@@ -54,10 +54,12 @@ Dashboard → **Authentication** → **URL configuration**
 
 | Field | Local dev | Production (GitHub Pages) |
 |-------|-----------|-------------------------|
-| Site URL | `http://localhost:5173` | `https://<user>.github.io/<repo>/` |
-| Redirect URLs | `http://localhost:5173/**` | `https://<user>.github.io/<repo>/**` |
+| Site URL | `http://localhost:5173` | `https://abc-bilasa.github.io/apextrader-cybergrid/` |
+| Redirect URLs | `http://localhost:5173/**` | `https://abc-bilasa.github.io/apextrader-cybergrid/**` |
 
-Add both if you use the same Supabase project for dev and prod.
+Add **both** redirect URL patterns in Supabase (see [`supabase/AUTH_URLS.md`](../supabase/AUTH_URLS.md)).
+
+**F-011 (2026-10-17):** URLs documented; apply in Supabase dashboard (manual).
 
 ### Email confirmation
 

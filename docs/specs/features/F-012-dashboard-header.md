@@ -2,7 +2,8 @@
 
 ```yaml
 id: F-012
-status: pending
+status: done
+completed: 2026-10-17
 depends: [F-010]
 estimate: 15m
 ```
@@ -13,8 +14,8 @@ Header shows brand, level placeholder, capital placeholder, email, sign-out per 
 
 ## Acceptance criteria
 
-- [ ] UI_STYLE_GUIDE compliance
-- [ ] Lucide icons; `.cyber-card` header bar
+- [x] UI_STYLE_GUIDE compliance
+- [x] Lucide icons; `.cyber-card` header bar
 
 ## Files allowed
 
