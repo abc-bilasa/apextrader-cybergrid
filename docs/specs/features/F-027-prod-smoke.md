@@ -2,7 +2,7 @@
 
 ```yaml
 id: F-027
-status: pending
+status: done
 depends: [F-007, F-010]
 estimate: 15m
 ```
@@ -13,9 +13,9 @@ TESTING.md P1–P4 pass on GitHub Pages URL.
 
 ## Acceptance criteria
 
-- [ ] Sign-in on production
-- [ ] One `log_trade` on production
-- [ ] Release checklist ticked in TESTING.md
+- [x] Sign-in on production
+- [x] One `log_trade` on production
+- [x] Release checklist ticked in TESTING.md
 
 ## Files allowed
 

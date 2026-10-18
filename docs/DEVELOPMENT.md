@@ -27,7 +27,7 @@ Solo dev may commit directly to `main` once CI is green.
 | File | PRD reference | Status |
 |------|---------------|--------|
 | `src/components/Auth.jsx` | §5.2 | Sign-up/in + errors (F-009–F-010) |
-| `src/components/Dashboard.jsx` | §5.2 | Header F-012 + 12-col layout F-013 |
+| `src/components/Dashboard.jsx` | §5.2 | Full dashboard F-012–F-025 (layout, panels, refresh, feedback) |
 | `src/components/TradeLogger.jsx` | §5.2 | F-015/016 form + `log_trade` RPC |
 | `src/components/EquityChart.jsx` | §5.2 | F-021 Recharts area chart |
 | `src/components/DailyPnlChart.jsx` | §5.2 | F-022 daily P&L bars |

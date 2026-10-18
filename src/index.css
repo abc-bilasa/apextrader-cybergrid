@@ -90,6 +90,17 @@
   }
 
   .cyber-chart-wrap {
-    @apply h-64 w-full;
+    @apply h-56 w-full min-w-0 xl:h-64;
+  }
+
+  /* F-025: level matrix scroll height on small viewports (U2) */
+  .cyber-dashboard-level-panel .overflow-y-auto {
+    max-height: min(28rem, 55vh);
+  }
+
+  @media (min-width: 1280px) {
+    .cyber-dashboard-level-panel .overflow-y-auto {
+      max-height: 600px;
+    }
   }
 }

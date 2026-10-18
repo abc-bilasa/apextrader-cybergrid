@@ -29,8 +29,8 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-022 | Daily P&L bars | yes | yes | n/a | [F-022](./F-022-pnl-bars.md) |
 | F-023 | Level grid | yes | yes | n/a | [F-023](./F-023-level-grid.md) |
 | F-024 | Loading + errors | yes | yes | n/a | [F-024](./F-024-errors-loading.md) |
-| F-025 | Responsive pass | no | no | no | — |
-| F-026 | Manual T1/T4 | no | no | no | — |
-| F-027 | Production smoke | no | no | no | — |
+| F-025 | Responsive pass | yes | yes | n/a | [F-025](./F-025-responsive.md) |
+| F-026 | Manual T1/T4 | n/a | yes | n/a | [F-026](./F-026-test-t1-t4.md) |
+| F-027 | Production smoke | n/a | yes | yes | [F-027](./F-027-prod-smoke.md) |
 
 **Counts:** Built 7 · Tested 6 (+1 partial F-009) · Deployed 2

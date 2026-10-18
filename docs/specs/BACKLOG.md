@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** `F-025`  
+**Next feature to build:** _none — MVP backlog complete (27/27)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -31,13 +31,13 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-022 | Daily P&L bar chart | 15m | F-021 | done | [F-022](./features/F-022-pnl-bars.md) |
 | F-023 | 42-level grid + active row | 15m | F-014 | done | [F-023](./features/F-023-level-grid.md) |
 | F-024 | Loading + error states | 15m | F-017 | done | [F-024](./features/F-024-errors-loading.md) |
-| F-025 | Mobile responsive pass | 15m | F-023 | pending | [F-025](./features/F-025-responsive.md) |
-| F-026 | Manual tests T1/T4 sign-off | 15m | F-017 | pending | [F-026](./features/F-026-test-t1-t4.md) |
-| F-027 | Production smoke P1–P4 | 15m | F-007, F-010 | pending | [F-027](./features/F-027-prod-smoke.md) |
+| F-025 | Mobile responsive pass | 15m | F-023 | done | [F-025](./features/F-025-responsive.md) |
+| F-026 | Manual tests T1/T4 sign-off | 15m | F-017 | done | [F-026](./features/F-026-test-t1-t4.md) |
+| F-027 | Production smoke P1–P4 | 15m | F-007, F-010 | done | [F-027](./features/F-027-prod-smoke.md) |
 
 ## Progress
 
-- **Done:** 14 / 27  
+- **Done:** 27 / 27  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

@@ -189,18 +189,18 @@ export default function Dashboard({ session }) {
   }
 
   return (
-    <div className="min-h-screen bg-cyber-dark text-slate-100 p-4 md:p-6">
+    <div className="min-h-screen bg-cyber-dark text-slate-100 p-4 md:p-6 overflow-x-hidden min-w-0">
       <header
-        className="cyber-card rounded-xl border border-cyan-500/20 p-4 flex flex-wrap items-center justify-between gap-4"
+        className="cyber-card rounded-xl border border-cyan-500/20 p-4 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-between gap-4"
       >
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-3 min-w-0 shrink-0">
           <Zap className="w-7 h-7 text-cyan-400 shrink-0" aria-hidden />
           <span className="text-lg font-black tracking-wider text-cyan-400 truncate">
             APEX TRADER
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm w-full sm:w-auto sm:justify-end">
           <span className="font-mono cyber-metric text-slate-100">
             LV <span className="text-cyan-400">{level}</span>/42
           </span>
@@ -240,19 +240,19 @@ export default function Dashboard({ session }) {
         </p>
       ) : null}
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
-        <div className="lg:col-span-4 flex flex-col gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 md:gap-6 mt-6 min-w-0">
+        <div className="xl:col-span-4 flex flex-col gap-4 md:gap-6 min-w-0">
           <RiskMetricsPanel level={level} />
           <MilestonesPanel level={level} />
           <TradeLogger onTradeLogged={handleTradeLogged} />
         </div>
 
-        <div className="lg:col-span-5 flex flex-col gap-6">
+        <div className="xl:col-span-5 flex flex-col gap-4 md:gap-6 min-w-0">
           <EquityChart trades={trades} initialCapital={chartBase} />
           <DailyPnlChart trades={trades} />
         </div>
 
-        <div className="lg:col-span-3">
+        <div className="cyber-dashboard-level-panel xl:col-span-3 min-w-0 min-h-0">
           <LevelGrid activeLevel={level} />
         </div>
       </div>

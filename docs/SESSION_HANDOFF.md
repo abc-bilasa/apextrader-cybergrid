@@ -22,14 +22,14 @@ Do this before writing code:
 
 **Cursor:** invoke skill `apextrader-session-close` (or say “close session”).
 
-- [x] **Last updated** date + who *(2026-10-17, Session 1 close — Amit)*
+- [x] **Last updated** date + who *(2026-10-17, Session 2 close — Amit + Cursor)*
 - [x] **Current state** table accurate
-- [x] **Next session** set (**F-013**)
+- [x] **Next session** set (MVP complete — optional deploy / automation)
 - [x] **Completed checklist** updated
 - [x] **Blockers** updated
-- [x] **Session log** appended
+- [x] **Session log** appended (`END Session 2`)
 - [x] [DEVELOPMENT.md](./DEVELOPMENT.md) file map current
-- [x] [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) through **IMP-032**
+- [x] [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) through **IMP-048**
 - [x] [DECISIONS.md](./DECISIONS.md) — no new locks (D4-A LOCKED)
 
 ---
@@ -37,8 +37,9 @@ Do this before writing code:
 ## Last updated
 
 - **Date:** 2026-10-17  
-- **By:** Amit + Cursor (Session 1)  
-- **Session focus:** F-002→F-012 + deploy (F-006/007); Supabase + GitHub Pages live; auth sign-up/in verified  
+- **By:** Amit + Cursor  
+- **Session focus:** F-013→F-027 — **MVP backlog complete (27/27)**  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (last deploy `5552cd3`; push pending for F-025–F-027 docs-only + responsive CSS)  
 
 ---
 
@@ -81,21 +82,20 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | Feature-complete UI F-024; responsive F-025; test/sign-off F-026–027 |
+| Dashboard | **MVP complete** — F-001–F-027 done |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
-| Documentation | Complete for multi-week build (see RULEBOOK index) |
+| Local git | **Uncommitted** F-025–F-027 on `main` (deploy to sync Pages with responsive + sign-offs) |
+| Documentation | MVP docs + TESTING sign-offs complete |
 
 ---
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **Next feature: `F-025`**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **MVP complete** (no pending features)
 
-**Read:** [features/F-025-responsive.md](./specs/features/F-025-responsive.md)
-
-**Goal:** **F-025** — Mobile responsive pass.
+**Optional next:** deploy latest `main` (F-025 responsive + doc sign-offs); Vitest/Playwright per TESTING.md future automation.
 
 ---
 
@@ -104,6 +104,30 @@ Do this before writing code:
 | Blocker | Owner | Notes |
 |---------|--------|-------|
 | _none_ | — | — |
+
+---
+
+## Manual test sign-off (F-026)
+
+Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in Node + `npm run verify:formulas` (2026-10-17).
+
+| Case | Input | Expected | Result | Notes |
+|------|--------|----------|--------|-------|
+| **T1** | PnL +1000 @ L1 | Cap ₹11,000; L1; `NONE` | **PASS** | Sim output `cap:11000, lv:1, tr:NONE` |
+| **T4** | PnL −3000 @ L1 (from 10k) | Cap ₹7,000; L1; `DRAWDOWN_HIT` | **PASS** | Sim output `cap:7000, lv:1, tr:DRAWDOWN_HIT` |
+
+**UI spot-check (optional):** On production or local, log T1-sized trade and confirm header/charts update (covered in F-017 deploy verification).
+
+---
+
+## Production smoke (F-027)
+
+| Check | Result | Notes |
+|-------|--------|-------|
+| P1 Assets | **PASS** | 2026-10-17 automated — Pages 200 |
+| P2 Sign-in | **PASS** | Amit verified on production |
+| P3 `log_trade` | **PASS** | Amit verified on production |
+| P4 Session refresh | **PASS** | Amit verified on production |
 
 ---
 
@@ -131,13 +155,14 @@ Do this before writing code:
 
 ### Week 2–3
 
-- [ ] Sessions D–I (see [ROADMAP.md](./ROADMAP.md))
+- [x] Session 2 — F-013→F-027 (dashboard, trading, charts, grid, polish, test/smoke sign-off)
+- [ ] Optional: Vitest / Playwright ([TESTING.md](./TESTING.md) future automation)
 
 ---
 
 ## Notes for next developer / AI
 
-- **Start prompt:** `Goal: F-013 dashboard layout. Read docs/SESSION_HANDOFF.md + UI_STYLE_GUIDE §4.`  
+- **Start prompt:** `MVP done. Read SESSION_HANDOFF.md — deploy if needed, or add Vitest per TESTING.md.`  
 - PRD: [`../PRD.txt`](../PRD.txt)  
 - UI work: always [UI_STYLE_GUIDE.md](./UI_STYLE_GUIDE.md)  
 - Do not re-scaffold or duplicate docs unless a gap is found  
@@ -178,3 +203,8 @@ Do this before writing code:
 | 2026-10-17 | F-022 daily P&L bars (IMP-042). Next F-023 level grid. |
 | 2026-10-17 | F-023 42-level grid (IMP-043). Next F-024 loading/errors. |
 | 2026-10-17 | F-024 loading/error polish (IMP-044). Next F-025 responsive. |
+| 2026-10-17 | F-025 responsive dashboard (IMP-045). Next F-026 manual tests. |
+| 2026-10-17 | F-026 T1/T4 sign-off (IMP-046). Next F-027 prod smoke. |
+| 2026-10-17 | F-027 production smoke P1–P4 (IMP-047). **Backlog 27/27 complete.** |
+| 2026-10-17 | **END Session 2:** MVP shipped in repo (F-013–F-027); prod deploy `5552cd3`; local commit+push pending for F-025–F-027 (IMP-048). |
+| 2026-10-18 | START: Session 3 — sync deploy (uncommitted F-025–F-027) or post-MVP maintenance. |

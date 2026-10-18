@@ -64,7 +64,7 @@ apextrader-cybergrid/
 - [x] F-004: git repo at app root, first commit on `main`
 - [x] F-005: [GitHub](https://github.com/abc-bilasa/apextrader-cybergrid) `main` pushed
 - [x] F-006/F-007: [GitHub Pages](https://abc-bilasa.github.io/apextrader-cybergrid/) live
-- [ ] **Next:** F-013 — dashboard 12-column layout
-- [ ] UI per PRD (charts, grid, trades) — F-013+
+- [x] **F-001–F-027:** MVP feature backlog complete (2026-10-17)
+- [ ] **Optional:** `git commit` + push latest `main` (F-025 responsive + test docs) if not yet deployed
 
 **Owner:** Amit · **Stack:** Vite 5, React 18, Tailwind 3, Supabase, Recharts
