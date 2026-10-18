@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _F-030 quick-log — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
+**Next feature to build:** _F-031 D1–D4 pacing — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -36,10 +36,11 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-027 | Production smoke P1–P4 | 15m | F-007, F-010 | done | [F-027](./features/F-027-prod-smoke.md) |
 | F-028 | Level history panel | 30m | F-017 | done | [F-028](./features/F-028-level-history-panel.md) |
 | F-029 | Drawdown & promotion headroom | 30m | F-019 | done | [F-029](./features/F-029-headroom-meter.md) |
+| F-030 | Quick-log trade capture | 30m | F-016 | done | [F-030](./features/F-030-quick-log.md) |
 
 ## Progress
 
-- **Done:** 29 / 29 (F-001–F-029)  
+- **Done:** 30 / 30 (F-001–F-030)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

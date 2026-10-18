@@ -22,7 +22,7 @@ Market-backed ideas from journal/risk/prop-firm research (2025–2026). **Not sc
 | Rank | Proposed ID | Feature | Impact | Complexity | Score | Primary justification |
 |------|-------------|---------|--------|------------|-------|------------------------|
 | 1 | **F-029** | **Drawdown & promotion headroom meter** — **shipped** | 5 | 2 | 8 | See [F-029 spec](./features/F-029-headroom-meter.md). |
-| 2 | **F-030** | **Quick-log / low-friction trade capture** | 5 | 2 | 8 | Journals die after bad days and context switches; presets (+/− amounts), amount-first flow, mobile PWA sheet. Protects action #1 (log trade) before analytics. |
+| 2 | **F-030** | **Quick-log / low-friction trade capture** — **shipped** | 5 | 2 | 8 | See [F-030 spec](./features/F-030-quick-log.md). |
 | 3 | **F-031** | **D1–D4 intraday pacing** | 4 | 2 | 6 | PRD milestones become a live session plan: today’s cumulative P&L vs D1→D4 for active level. Reduces early oversizing and “all-or-nothing” target thinking. |
 | 4 | **F-032** | **Pre-submit outcome preview (`simulate_trade`)** | 5 | 3 | 7 | Demotion feels unfair if discovered only after submit; read-only RPC mirroring `log_trade` shows capital, level, `trigger` before commit. Reinforces server-side truth moat. |
 | 5 | **F-033** | **Prop-style consistency rule tracker** | 4 | 3 | 5 | Single-day profit cap (% of period total) is a common payout failure mode; extends existing daily P&L grouping (D11). High value for challenge-minded users. |

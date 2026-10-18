@@ -95,7 +95,7 @@ Do this before writing code:
 
 **Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-029 shipped**
 
-**Next:** Deploy F-029; then **F-030** quick-log per [FEATURE_CANDIDATES.md](./specs/FEATURE_CANDIDATES.md).
+**Next:** Deploy F-030; then **F-031** intraday D1–D4 pacing.
 
 ---
 
@@ -213,3 +213,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | Deploy `c8e551b` — F-028 to Pages (Actions success). |
 | 2026-10-18 | F-029 headroom panel (IMP-053); verify + build pass. |
 | 2026-10-18 | Deploy `43281ea` — F-029 to Pages (Actions success). |
+| 2026-10-18 | F-030 quick-log presets (IMP-055); build pass. |

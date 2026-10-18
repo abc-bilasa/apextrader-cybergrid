@@ -31,7 +31,7 @@ Solo dev may commit directly to `main` once CI is green.
 | `src/components/LevelHistory.jsx` | ROADMAP optional | F-028 level transition list |
 | `src/components/HeadroomPanel.jsx` | F-029 | DD/promotion headroom vs `log_trade` rules |
 | `src/lib/formulas.js` | §5.1 | `getLevelMetrics`, `getHeadroomMetrics`, `formatINR` |
-| `src/components/TradeLogger.jsx` | §5.2 | F-015/016 form + `log_trade` RPC |
+| `src/components/TradeLogger.jsx` | §5.2 | F-015/016/030 quick presets + custom `log_trade` |
 | `src/components/EquityChart.jsx` | §5.2 | F-021 Recharts area chart |
 | `src/components/DailyPnlChart.jsx` | §5.2 | F-022 daily P&L bars |
 | `src/components/LevelGrid.jsx` | §5.2 | F-023 42-level matrix |
