@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
 - **Session focus:** F-029 risk headroom meter (local; deploy pending)  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `b05115f`, 2026-10-18 — F-030 quick-log)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `af0dfaa`, 2026-10-18 — F-031–F-033)  
 
 ---
 
@@ -82,7 +82,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | F-001–F-030 on production |
+| Dashboard | F-001–F-033 on production (apply `002` for F-032 preview RPC) |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -93,7 +93,7 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-030 shipped**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-033 shipped**
 
 **Next:** Deploy F-031–F-033; apply `002_simulate_trade.sql`; then F-034 discipline stats.
 
@@ -218,3 +218,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | F-031 intraday pacing (IMP-057). |
 | 2026-10-18 | F-032 simulate_trade + preview UI (IMP-058). |
 | 2026-10-18 | F-033 consistency rule panel (IMP-059). |
+| 2026-10-18 | Deploy `af0dfaa` — F-031–F-033 to Pages. |

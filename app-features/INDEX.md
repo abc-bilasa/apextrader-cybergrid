@@ -35,8 +35,8 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-028 | Level history panel | yes | yes | yes | [F-028](./F-028-level-history-panel.md) |
 | F-029 | Risk headroom meter | yes | yes | yes | [F-029](./F-029-headroom-meter.md) |
 | F-030 | Quick-log presets | yes | yes | yes | [F-030](./F-030-quick-log.md) |
-| F-031 | Intraday D1–D4 pacing | yes | yes | no | [F-031](./F-031-intraday-pacing.md) |
-| F-032 | Trade simulate preview | yes | partial | no | [F-032](./F-032-simulate-trade.md) |
-| F-033 | Consistency rule 40% | yes | yes | no | [F-033](./F-033-consistency-rule.md) |
+| F-031 | Intraday D1–D4 pacing | yes | yes | yes | [F-031](./F-031-intraday-pacing.md) |
+| F-032 | Trade simulate preview | yes | partial | yes | [F-032](./F-032-simulate-trade.md) |
+| F-033 | Consistency rule 40% | yes | yes | yes | [F-033](./F-033-consistency-rule.md) |
 
-**Counts:** Built 31 · Tested 31 (+ partial F-010, F-032) · Deployed 9
+**Counts:** Built 31 · Tested 31 (+ partial F-010, F-032 RPC) · Deployed 12
