@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-049 | 2026-10-18 | TOOLING | deploy | Session 3: push `20e875a` — F-025–F-027 to GitHub Pages (Actions #14) | `main`, `.github/workflows/deploy.yml` | D10 | Cursor |
 | IMP-048 | 2026-10-17 | DOCS | process | Session 2 close: handoff END, README MVP status, DEVELOPMENT map | `docs/SESSION_HANDOFF.md`, `README.md`, `docs/DEVELOPMENT.md` | — | Cursor |
 | IMP-047 | 2026-10-17 | VERIFY | deploy | F-027: prod smoke P1–P4 + release checklist; MVP backlog complete | `docs/TESTING.md`, `docs/SESSION_HANDOFF.md`, `docs/specs/BACKLOG.md` | — | Cursor |
 | IMP-046 | 2026-10-17 | VERIFY | testing | F-026: T1/T4 RPC simulation PASS; TESTING + handoff sign-off | `docs/TESTING.md`, `docs/SESSION_HANDOFF.md` | — | Cursor |
@@ -104,4 +105,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-049**
+**IMP-050**

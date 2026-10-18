@@ -8,7 +8,7 @@ imp: IMP-045
 completed: 2026-10-17
 built: yes
 tested: yes
-deployed: n/a
+deployed: yes
 ```
 
 ## Summary

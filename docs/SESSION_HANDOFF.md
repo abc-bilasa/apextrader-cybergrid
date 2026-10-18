@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-17  
 - **By:** Amit + Cursor  
 - **Session focus:** F-013→F-027 — **MVP backlog complete (27/27)**  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (last deploy `5552cd3`; push pending for F-025–F-027 docs-only + responsive CSS)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `20e875a`, 2026-10-18 — full MVP incl. F-025 responsive)  
 
 ---
 
@@ -86,7 +86,7 @@ Do this before writing code:
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
-| Local git | **Uncommitted** F-025–F-027 on `main` (deploy to sync Pages with responsive + sign-offs) |
+| Local git | `main` synced with `origin/main` @ `20e875a` |
 | Documentation | MVP docs + TESTING sign-offs complete |
 
 ---
@@ -208,3 +208,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-17 | F-027 production smoke P1–P4 (IMP-047). **Backlog 27/27 complete.** |
 | 2026-10-17 | **END Session 2:** MVP shipped in repo (F-013–F-027); prod deploy `5552cd3`; local commit+push pending for F-025–F-027 (IMP-048). |
 | 2026-10-18 | START: Session 3 — sync deploy (uncommitted F-025–F-027) or post-MVP maintenance. |
+| 2026-10-18 | Deploy `20e875a` — F-025 responsive + F-026/F-027 sign-off docs; Pages #14 success. |
