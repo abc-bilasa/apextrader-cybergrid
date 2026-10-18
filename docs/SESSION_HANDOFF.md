@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
 - **Session focus:** F-039 rule profiles (local; deploy pending)  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `9a14b3e`, 2026-10-18 — F-037 CSV import)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `1c33fbb`, 2026-10-18 — F-038 cool-down, F-039 rule profiles)  
 
 ---
 

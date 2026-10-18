@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-072 | 2026-10-18 | TOOLING | deploy | Push `1c33fbb` — F-038–F-039 to GitHub Pages | `main` | D10 | Cursor |
 | IMP-071 | 2026-10-18 | DECISION | process | D15 DEFAULT: rule profile keys + RPC/UI alignment | `DECISIONS.md` | D15 | Cursor |
 | IMP-070 | 2026-10-18 | SQL | database | F-039: `rule_profile` column + profile-aware `log_trade` / `simulate_trade` | `004_rule_profiles.sql` | D13, D15 | Cursor |
 | IMP-069 | 2026-10-18 | FEATURE | dashboard | F-039: RuleProfilePanel + formulas per profile | `ruleProfiles.js`, `RuleProfilePanel.jsx` | D15 | Cursor |
@@ -127,4 +128,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-072**
+**IMP-073**
