@@ -33,6 +33,6 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-026 | Manual T1/T4 | n/a | yes | n/a | [F-026](./F-026-test-t1-t4.md) |
 | F-027 | Production smoke | n/a | yes | yes | [F-027](./F-027-prod-smoke.md) |
 | F-028 | Level history panel | yes | yes | yes | [F-028](./F-028-level-history-panel.md) |
-| F-029 | Risk headroom meter | yes | yes | no | [F-029](./F-029-headroom-meter.md) |
+| F-029 | Risk headroom meter | yes | yes | yes | [F-029](./F-029-headroom-meter.md) |
 
-**Counts:** Built 27 · Tested 28 (+ partial F-010) · Deployed 7
+**Counts:** Built 27 · Tested 28 (+ partial F-010) · Deployed 8

@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-054 | 2026-10-18 | TOOLING | deploy | Push `43281ea` — F-029 headroom to GitHub Pages | `main`, Actions #39123227588 | D10 | Cursor |
 | IMP-053 | 2026-10-18 | FEATURE | dashboard | F-029: `getHeadroomMetrics` + HeadroomPanel (DD tiers, promotion gap) | `formulas.js`, `HeadroomPanel.jsx`, `verify-formulas.mjs` | — | Cursor |
 | IMP-052 | 2026-10-18 | DOCS | product | Post-MVP feature candidates F-029–F-039 ranked by impact vs complexity | `docs/specs/FEATURE_CANDIDATES.md`, `BACKLOG.md`, `docs/README.md` | — | Cursor |
 | IMP-051 | 2026-10-18 | TOOLING | deploy | Push `c8e551b` — F-028 level history to GitHub Pages | `main`, Actions run success | D10 | Cursor |
@@ -109,4 +110,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-054**
+**IMP-055**

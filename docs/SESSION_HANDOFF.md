@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
 - **Session focus:** F-029 risk headroom meter (local; deploy pending)  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `c8e551b`, 2026-10-18 — F-028 level history)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `43281ea`, 2026-10-18 — F-029 headroom)  
 
 ---
 
@@ -82,7 +82,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | F-001–F-029 in repo; F-029 deploy pending |
+| Dashboard | F-001–F-029 on production |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -93,7 +93,7 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-029 done** in repo (uncommitted F-029 until push)
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-029 shipped**
 
 **Next:** Deploy F-029; then **F-030** quick-log per [FEATURE_CANDIDATES.md](./specs/FEATURE_CANDIDATES.md).
 
@@ -212,3 +212,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | F-028 level history panel + INDEX counts (IMP-050). Next: commit + deploy. |
 | 2026-10-18 | Deploy `c8e551b` — F-028 to Pages (Actions success). |
 | 2026-10-18 | F-029 headroom panel (IMP-053); verify + build pass. |
+| 2026-10-18 | Deploy `43281ea` — F-029 to Pages (Actions success). |
