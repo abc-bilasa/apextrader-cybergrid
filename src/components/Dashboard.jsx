@@ -7,6 +7,7 @@ import TradeLogger from './TradeLogger';
 import DailyPnlChart from './DailyPnlChart';
 import EquityChart from './EquityChart';
 import LevelGrid from './LevelGrid';
+import LevelHistory from './LevelHistory';
 
 const DEFAULT_LEVEL = 1;
 const DEFAULT_CAPITAL = 10000;
@@ -126,6 +127,7 @@ export default function Dashboard({ session }) {
   const email = session?.user?.email ?? 'trader';
   const [account, setAccount] = useState(null);
   const [trades, setTrades] = useState([]);
+  const [levelHistory, setLevelHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState('');
@@ -136,9 +138,14 @@ export default function Dashboard({ session }) {
     setError('');
 
     try {
-      const [accountRes, tradesRes] = await Promise.all([
+      const [accountRes, tradesRes, historyRes] = await Promise.all([
         supabase.from('trading_accounts').select('*').single(),
         supabase.from('trades').select('*').order('created_at', { ascending: true }),
+        supabase
+          .from('level_history')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(50),
       ]);
 
       if (accountRes.error) {
@@ -154,9 +161,17 @@ export default function Dashboard({ session }) {
       } else {
         setTrades(tradesRes.data ?? []);
       }
+
+      if (historyRes.error) {
+        setError((prev) => prev || friendlyDataError(historyRes.error.message));
+        setLevelHistory([]);
+      } else {
+        setLevelHistory(historyRes.data ?? []);
+      }
     } catch {
       setError('Could not load dashboard data. Check your connection and try again.');
       setTrades([]);
+      setLevelHistory([]);
     } finally {
       if (showLoader) setLoading(false);
       else setRefreshing(false);
@@ -245,6 +260,7 @@ export default function Dashboard({ session }) {
           <RiskMetricsPanel level={level} />
           <MilestonesPanel level={level} />
           <TradeLogger onTradeLogged={handleTradeLogged} />
+          <LevelHistory entries={levelHistory} />
         </div>
 
         <div className="xl:col-span-5 flex flex-col gap-4 md:gap-6 min-w-0">

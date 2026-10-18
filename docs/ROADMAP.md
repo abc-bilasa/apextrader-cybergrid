@@ -50,7 +50,7 @@ Rough plan for **multiple sittings**. Check off items in [SESSION_HANDOFF.md](./
 - [ ] Loading / empty states
 - [ ] User-visible errors (auth, RPC failures)
 - [ ] Mobile layout pass (responsive grid)
-- [ ] Optional: level history panel (read `level_history`)
+- [x] Optional: level history panel (read `level_history`) — **F-028**
 
 ## Week 3 — Production & PWA (optional)
 

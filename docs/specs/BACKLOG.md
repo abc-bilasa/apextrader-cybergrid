@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _none — MVP backlog complete (27/27)_  
+**Next feature to build:** _none — backlog F-001–F-028 complete (MVP + F-028 level history)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -34,6 +34,7 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-025 | Mobile responsive pass | 15m | F-023 | done | [F-025](./features/F-025-responsive.md) |
 | F-026 | Manual tests T1/T4 sign-off | 15m | F-017 | done | [F-026](./features/F-026-test-t1-t4.md) |
 | F-027 | Production smoke P1–P4 | 15m | F-007, F-010 | done | [F-027](./features/F-027-prod-smoke.md) |
+| F-028 | Level history panel | 30m | F-017 | done | [F-028](./features/F-028-level-history-panel.md) |
 
 ## Progress
 
