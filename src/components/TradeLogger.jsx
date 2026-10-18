@@ -20,7 +20,7 @@ function formatPresetLabel(amount) {
   return `${prefix}₹${abs}`;
 }
 
-export default function TradeLogger({ onTradeLogged }) {
+export default function TradeLogger({ onTradeLogged, tradeLoggingBlocked = false }) {
   const [pnl, setPnl] = useState('');
   const [notes, setNotes] = useState('');
   const [fieldError, setFieldError] = useState('');
@@ -78,6 +78,10 @@ export default function TradeLogger({ onTradeLogged }) {
 
   const commitTrade = useCallback(
     async (value, noteText) => {
+      if (tradeLoggingBlocked) {
+        setFieldError('Cool-down active — wait for the timer or enable override above.');
+        return;
+      }
       setFieldError('');
       setSubmitting(true);
       try {
@@ -102,7 +106,7 @@ export default function TradeLogger({ onTradeLogged }) {
         setQuickAmount(null);
       }
     },
-    [onTradeLogged],
+    [onTradeLogged, tradeLoggingBlocked],
   );
 
   const handleQuickLog = async (amount) => {
@@ -134,6 +138,15 @@ export default function TradeLogger({ onTradeLogged }) {
       </h2>
       <p className="text-xs text-slate-400 mb-4">Tap a preset to log instantly, or enter a custom amount below.</p>
 
+      {tradeLoggingBlocked ? (
+        <div
+          className="mb-4 text-xs text-rose-200 border border-rose-500/30 rounded-lg px-3 py-2 bg-rose-950/30"
+          role="status"
+        >
+          Logging paused during loss-streak cool-down.
+        </div>
+      ) : null}
+
       {fieldError ? (
         <div className="cyber-alert-error mb-4" role="alert">
           {fieldError}
@@ -153,7 +166,7 @@ export default function TradeLogger({ onTradeLogged }) {
               <button
                 key={amount}
                 type="button"
-                disabled={submitting}
+                disabled={submitting || tradeLoggingBlocked}
                 aria-label={`Log trade ${formatPresetLabel(amount)}`}
                 className={`min-h-[44px] rounded-lg border font-mono text-sm font-semibold tabular-nums transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
                   isLoss
@@ -184,7 +197,7 @@ export default function TradeLogger({ onTradeLogged }) {
               inputMode="decimal"
               autoComplete="off"
               placeholder="e.g. 500 or -200"
-              disabled={submitting}
+              disabled={submitting || tradeLoggingBlocked}
               className="cyber-input flex-1 min-w-[8rem] disabled:opacity-50"
               value={pnl}
               onChange={(e) => {
@@ -197,7 +210,7 @@ export default function TradeLogger({ onTradeLogged }) {
                 <button
                   key={`fill-${amount}`}
                   type="button"
-                  disabled={submitting}
+                  disabled={submitting || tradeLoggingBlocked}
                   className="px-2 py-1 rounded border border-slate-600 text-[10px] font-mono text-slate-400 hover:border-cyan-500/40 hover:text-cyan-300 disabled:opacity-50"
                   onClick={() => applyPresetToField(amount)}
                 >
@@ -225,7 +238,7 @@ export default function TradeLogger({ onTradeLogged }) {
           <textarea
             id="trade-notes"
             rows={3}
-            disabled={submitting}
+            disabled={submitting || tradeLoggingBlocked}
             className="cyber-input w-full mt-2 resize-y min-h-[4.5rem] disabled:opacity-50"
             placeholder="Setup, symbol, lesson…"
             value={notes}
@@ -235,7 +248,7 @@ export default function TradeLogger({ onTradeLogged }) {
 
         <button
           type="submit"
-          disabled={submitting}
+          disabled={submitting || tradeLoggingBlocked}
           className="cyber-btn-primary cyber-glow w-full disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {submitting && quickAmount === null ? 'Committing…' : 'Commit custom trade'}

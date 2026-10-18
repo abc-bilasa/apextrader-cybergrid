@@ -1,22 +1,28 @@
+import { resolveRuleProfile } from './ruleProfiles.js';
+
 /** @param {number} level Level 1–42 */
-export function getLevelMetrics(level) {
+/** @param {string} [ruleProfileId] D15 profile key */
+export function getLevelMetrics(level, ruleProfileId) {
   const l = Math.max(1, Math.min(42, parseInt(level, 10) || 1));
+  const profile = resolveRuleProfile(ruleProfileId);
   const baseCapital = 10000 * Math.pow(1.5, l - 1);
-  const dailyDrawdownLimit = baseCapital * 0.3;
-  const maxDrawdownLimit = baseCapital * 0.6;
-  const targetPlanned = baseCapital * 0.5;
+  const dailyDrawdownLimit = baseCapital * profile.dailyDrawdownPct;
+  const maxDrawdownLimit = baseCapital * profile.maxDrawdownPct;
+  const targetPlanned = baseCapital * profile.promotionTargetPct;
+  const targetFrac = profile.promotionTargetPct;
 
   return {
     level: l,
+    ruleProfileId: profile.id,
     baseCapital,
     dailyDrawdownLimit,
     maxDrawdownLimit,
     targetPlanned,
-    d1: baseCapital * 0.1,
-    d2: baseCapital * 0.1,
-    d3: baseCapital * 0.1,
-    d4: baseCapital * 0.2,
-    finalCapital: baseCapital * 1.5,
+    d1: baseCapital * targetFrac * 0.2,
+    d2: baseCapital * targetFrac * 0.2,
+    d3: baseCapital * targetFrac * 0.2,
+    d4: baseCapital * targetFrac * 0.4,
+    finalCapital: baseCapital + targetPlanned,
   };
 }
 
@@ -31,8 +37,8 @@ export function getLevelMetrics(level) {
  * @param {number} level
  * @param {number} todayPnl Sum of today's trade P&L (local calendar day, D11)
  */
-export function getIntradayPacingMetrics(level, todayPnl) {
-  const { d1, d2, d3, d4, targetPlanned } = getLevelMetrics(level);
+export function getIntradayPacingMetrics(level, todayPnl, ruleProfileId) {
+  const { d1, d2, d3, d4, targetPlanned } = getLevelMetrics(level, ruleProfileId);
   const pnl = Number(todayPnl);
   const safePnl = Number.isFinite(pnl) ? pnl : 0;
 
@@ -76,9 +82,9 @@ export function getIntradayPacingMetrics(level, todayPnl) {
   };
 }
 
-export function getHeadroomMetrics(level, currentCapital) {
+export function getHeadroomMetrics(level, currentCapital, ruleProfileId) {
   const { level: l, baseCapital, dailyDrawdownLimit, maxDrawdownLimit, targetPlanned, finalCapital } =
-    getLevelMetrics(level);
+    getLevelMetrics(level, ruleProfileId);
   const capital = Number(currentCapital);
   const safeCapital = Number.isFinite(capital) ? capital : baseCapital;
 

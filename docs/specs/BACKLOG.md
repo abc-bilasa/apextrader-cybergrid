@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _F-038 loss-streak cool-down — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
+**Next feature to build:** _Post–F-039 candidates TBD — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -44,10 +44,12 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-035 | Session review form | 30m | F-010 | done | [F-035](./features/F-035-session-review.md) |
 | F-036 | Trade journal table | 30m | F-014 | done | [F-036](./features/F-036-trade-journal-table.md) |
 | F-037 | Broker CSV import | 45m | F-016 | done | [F-037](./features/F-037-csv-import.md) |
+| F-038 | Loss-streak cool-down | 30m | F-034 | done | [F-038](./features/F-038-loss-streak-cooldown.md) |
+| F-039 | Rule profiles | 45m | F-014 | done | [F-039](./features/F-039-rule-profiles.md) |
 
 ## Progress
 
-- **Done:** 37 / 37 (F-001–F-037)  
+- **Done:** 39 / 39 (F-001–F-039)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

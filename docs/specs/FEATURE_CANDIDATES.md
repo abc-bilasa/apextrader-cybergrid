@@ -30,8 +30,8 @@ Market-backed ideas from journal/risk/prop-firm research (2025–2026). **Not sc
 | 7 | **F-035** | **Guided 5-minute session review** — **shipped** | 4 | 3 | 5 | See [F-035 spec](./features/F-035-session-review.md); apply `003`. |
 | 8 | **F-036** | **Trade journal table (paginated history)** — **shipped** | 4 | 3 | 5 | See [F-036 spec](./features/F-036-trade-journal-table.md). |
 | 9 | **F-037** | **Broker CSV import → session P&L** — **shipped** | 5 | 4 | 6 | See [F-037 spec](./features/F-037-csv-import.md). |
-| 10 | **F-038** | **Loss-streak cool-down / optional trade lock** | 4 | 4 | 4 | Revenge trading after consecutive losses; soft UI timer or hard RPC gate. Requires DECISIONS on enforcement vs advisory. |
-| 11 | **F-039** | **Multi-account / rule profiles** | 5 | 5 | 5 | Personal Cyber-Grid vs prop/sim presets (different DD/targets); `002_*.sql`, RPC parameterization, migration. Strategic but largest build. |
+| 10 | **F-038** | **Loss-streak cool-down / optional trade lock** — **shipped** | 4 | 4 | 4 | See [F-038 spec](./features/F-038-loss-streak-cooldown.md); D14 advisory UI. |
+| 11 | **F-039** | **Multi-account / rule profiles** — **shipped (phase 1)** | 5 | 5 | 5 | Rule profile switcher + `004_rule_profiles.sql`; multi-row accounts deferred. |
 
 ---
 

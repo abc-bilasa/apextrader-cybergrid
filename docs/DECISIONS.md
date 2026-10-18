@@ -139,6 +139,26 @@ Record **product and technical choices** here so future sessions (and agents) do
 
 ---
 
+## D15 — Rule profiles (promotion / daily DD)
+
+| | |
+|---|---|
+| **Status** | DEFAULT (F-039, 2026-10-18) |
+| **Decision** | `trading_accounts.rule_profile` selects thresholds for **`log_trade`** and **`simulate_trade`**. Keys: `cyber_grid` (30% DD / 50% target), `prop_challenge_10` (10% / 10%), `prop_scalping_5` (5% / 5%). SQL: `rule_profile_pcts` in `004_rule_profiles.sql`; JS mirror: `ruleProfiles.js`. |
+| **Rejected (for now)** | Multiple `trading_accounts` rows per user; custom user-defined % without migration. |
+
+---
+
+## D14 — Loss-streak cool-down enforcement
+
+| | |
+|---|---|
+| **Status** | DEFAULT (F-038, 2026-10-18) |
+| **Decision** | **Advisory UI only:** after **3** consecutive losses, block quick/custom log and CSV import for **15 minutes** from the last trade timestamp. User may **override** in the dashboard; `log_trade` is **not** rejected server-side. |
+| **Rejected (for now)** | Hard RPC gate in `004+` — requires new DECISIONS lock + migration. |
+
+---
+
 ## Gate: lock before Supabase apply
 
 These must be **LOCKED** or explicitly accepted in [PRE_BUILD_SIGNOFF.md](./PRE_BUILD_SIGNOFF.md) before running `001`:
@@ -159,3 +179,5 @@ These must be **LOCKED** or explicitly accepted in [PRE_BUILD_SIGNOFF.md](./PRE_
 | 2026-10-17 | D12, D13 | RPC tie-break + migration immutability |
 | 2026-10-17 | — | See IMP-004, IMP-007, IMP-012 in [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) |
 | 2026-10-17 | D4 | LOCKED D4-A via feature F-001 (IMP-019) |
+| 2026-10-18 | D14 | DEFAULT advisory loss-streak cool-down (F-038) |
+| 2026-10-18 | D15 | DEFAULT rule profiles on trading account (F-039) |

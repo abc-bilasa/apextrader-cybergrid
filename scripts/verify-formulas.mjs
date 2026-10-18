@@ -5,45 +5,13 @@
  */
 
 import { parseTradeCsv } from '../src/lib/csvTradeImport.js';
+import {
+  COOLDOWN_LOSS_THRESHOLD,
+  getLossStreakCooldown,
+} from '../src/lib/lossStreakCooldown.js';
+import { getHeadroomMetrics, getLevelMetrics } from '../src/lib/formulas.js';
 
 const LEVELS = [1, 2, 3, 4, 42];
-
-function getLevelMetrics(level) {
-  const l = Math.max(1, Math.min(42, parseInt(level, 10) || 1));
-  const baseCapital = 10000 * Math.pow(1.5, l - 1);
-  return {
-    level: l,
-    baseCapital,
-    dailyDrawdownLimit: baseCapital * 0.3,
-    maxDrawdownLimit: baseCapital * 0.6,
-    targetPlanned: baseCapital * 0.5,
-    finalCapital: baseCapital * 1.5,
-    d1: baseCapital * 0.1,
-    d2: baseCapital * 0.1,
-    d3: baseCapital * 0.1,
-    d4: baseCapital * 0.2,
-  };
-}
-
-function getHeadroomMetrics(level, currentCapital) {
-  const { level: l, baseCapital, dailyDrawdownLimit, maxDrawdownLimit, targetPlanned } =
-    getLevelMetrics(level);
-  const capital = Number(currentCapital);
-  const drawdownFromBase = Math.max(0, baseCapital - capital);
-  const profitAboveBase = capital - baseCapital;
-  const dailyDrawdownRemaining = Math.max(0, dailyDrawdownLimit - drawdownFromBase);
-  const demotionFloorCapital = baseCapital - dailyDrawdownLimit;
-  const maxLossBeforeDemotion = Math.max(0, capital - demotionFloorCapital);
-  const canPromote = l < 42 && profitAboveBase >= targetPlanned;
-  const promotionGapCapital = l < 42 ? Math.max(0, targetPlanned - profitAboveBase) : 0;
-  return {
-    demotionFloorCapital,
-    dailyDrawdownRemaining,
-    maxLossBeforeDemotion,
-    canPromote,
-    promotionGapCapital,
-  };
-}
 
 /** Mirror SQL: POWER(1.5, level-1) * 10000 */
 function sqlBaseCap(level) {
@@ -155,6 +123,43 @@ TCS,-300`;
 const csvResult = parseTradeCsv(csvSample);
 if (!csvResult.ok || csvResult.rowCount !== 2 || Math.abs(csvResult.totalPnl - 900.5) > 0.01) {
   console.error('CSV import parse failed', csvResult);
+  failed = true;
+}
+
+const now = Date.parse('2026-10-18T12:00:00.000Z');
+const cooldownTrades = [
+  { trade_type: 'LOSS', pnl: -100, created_at: '2026-10-18T11:30:00.000Z' },
+  { trade_type: 'LOSS', pnl: -100, created_at: '2026-10-18T11:40:00.000Z' },
+  { trade_type: 'LOSS', pnl: -100, created_at: '2026-10-18T11:50:00.000Z' },
+];
+const cooldownActive = getLossStreakCooldown(cooldownTrades, now);
+if (
+  COOLDOWN_LOSS_THRESHOLD !== 3 ||
+  !cooldownActive.active ||
+  cooldownActive.remainingMs !== 5 * 60 * 1000
+) {
+  console.error('Loss-streak cooldown: expected 5m remaining at 3 losses', cooldownActive);
+  failed = true;
+}
+const cooldownClear = getLossStreakCooldown(
+  [
+    ...cooldownTrades,
+    { trade_type: 'PROFIT', pnl: 50, created_at: '2026-10-18T11:55:00.000Z' },
+  ],
+  now,
+);
+if (cooldownClear.active || cooldownClear.streak !== 0) {
+  console.error('Loss-streak cooldown: profit should clear streak', cooldownClear);
+  failed = true;
+}
+
+const propL1 = getLevelMetrics(1, 'prop_challenge_10');
+if (
+  propL1.targetPlanned !== 1000 ||
+  propL1.dailyDrawdownLimit !== 1000 ||
+  propL1.d1 !== 200
+) {
+  console.error('Rule profile prop_challenge_10 @ L1 mismatch', propL1);
   failed = true;
 }
 

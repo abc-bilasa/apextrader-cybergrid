@@ -38,7 +38,7 @@ Do this before writing code:
 
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
-- **Session focus:** F-029 risk headroom meter (local; deploy pending)  
+- **Session focus:** F-039 rule profiles (local; deploy pending)  
 - **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `9a14b3e`, 2026-10-18 — F-037 CSV import)  
 
 ---
@@ -93,9 +93,9 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-037 shipped**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-039 shipped**
 
-**Next:** Apply `002`/`003` in Supabase; F-038 cool-down.
+**Next:** Apply `002`–`004` in Supabase; deploy F-038 + F-039; promote next candidate in FEATURE_CANDIDATES.
 
 ---
 
@@ -105,6 +105,7 @@ Do this before writing code:
 |---------|--------|-------|
 | Apply `002_simulate_trade.sql` | Amit | F-032 trade preview |
 | Apply `003_session_reviews.sql` | Amit | F-035 save reviews |
+| Apply `004_rule_profiles.sql` | Amit | F-039 profile switch + RPC rules |
 
 ---
 

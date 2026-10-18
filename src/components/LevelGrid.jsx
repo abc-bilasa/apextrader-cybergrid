@@ -3,7 +3,7 @@ import { formatINR, getLevelMetrics } from '../lib/formulas';
 
 const LEVELS = Array.from({ length: 42 }, (_, i) => i + 1);
 
-export default function LevelGrid({ activeLevel = 1 }) {
+export default function LevelGrid({ activeLevel = 1, ruleProfileId }) {
   const activeRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function LevelGrid({ activeLevel = 1 }) {
       <h2 className="cyber-section-title mb-3">42-level matrix</h2>
       <div className="flex-1 overflow-y-auto space-y-2 pr-1 max-h-[600px]">
         {LEVELS.map((lvl) => {
-          const metrics = getLevelMetrics(lvl);
+          const metrics = getLevelMetrics(lvl, ruleProfileId);
           const isActive = lvl === activeLevel;
 
           return (

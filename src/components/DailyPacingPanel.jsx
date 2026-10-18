@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 import { formatINR, getIntradayPacingMetrics } from '../lib/formulas';
 import { sumPnlForLocalDay, todayLocalDateKey } from '../lib/tradeDay';
 
-export default function DailyPacingPanel({ level, trades = [] }) {
+export default function DailyPacingPanel({ level, trades = [], ruleProfileId }) {
   const todayKey = todayLocalDateKey();
   const todayPnl = useMemo(() => sumPnlForLocalDay(trades, todayKey), [trades, todayKey]);
-  const pacing = getIntradayPacingMetrics(level, todayPnl);
+  const pacing = getIntradayPacingMetrics(level, todayPnl, ruleProfileId);
 
   const pnlClass =
     pacing.todayPnl > 0 ? 'text-emerald-400' : pacing.todayPnl < 0 ? 'text-rose-400' : 'text-slate-300';

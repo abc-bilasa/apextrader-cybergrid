@@ -42,5 +42,7 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-035 | Session review | yes | partial | yes | [F-035](./F-035-session-review.md) |
 | F-036 | Trade journal table | yes | yes | yes | [F-036](./F-036-trade-journal-table.md) |
 | F-037 | CSV import | yes | yes | yes | [F-037](./F-037-csv-import.md) |
+| F-038 | Loss-streak cool-down | yes | yes | no | [F-038](./F-038-loss-streak-cooldown.md) |
+| F-039 | Rule profiles | yes | yes | no | [F-039](./F-039-rule-profiles.md) |
 
-**Counts:** Built 35 · Tested 34 (+ partial F-010, F-032, F-035 DB) · Deployed 16
+**Counts:** Built 37 · Tested 36 (+ partial F-010, F-032, F-035/F-039 DB) · Deployed 16

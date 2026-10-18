@@ -1,4 +1,4 @@
-import { localDateKey, todayLocalDateKey } from './tradeDay';
+import { localDateKey, todayLocalDateKey } from './tradeDay.js';
 
 const REVENGE_WINDOW_MS = 15 * 60 * 1000;
 

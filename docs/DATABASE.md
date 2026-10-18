@@ -35,6 +35,10 @@ Run `supabase/migrations/002_simulate_trade.sql` in SQL Editor after `001`. Gran
 
 Run `supabase/migrations/003_session_reviews.sql` — table `session_reviews` (one review per user per `review_day` text `YYYY-MM-DD`).
 
+## Migration 004 (F-039)
+
+Run `supabase/migrations/004_rule_profiles.sql` — column `trading_accounts.rule_profile`, function `rule_profile_pcts`, updated `log_trade` + `simulate_trade` (D15).
+
 Extensions: `uuid-ossp` (or `gen_random_uuid()` on newer Postgres—align with Supabase default).
 
 ## Business rules (RPC)

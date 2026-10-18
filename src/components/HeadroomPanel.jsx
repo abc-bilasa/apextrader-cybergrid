@@ -36,8 +36,8 @@ function ProgressRow({ label, valueLabel, pct, tier }) {
   );
 }
 
-export default function HeadroomPanel({ level, currentCapital }) {
-  const h = getHeadroomMetrics(level, currentCapital);
+export default function HeadroomPanel({ level, currentCapital, ruleProfileId }) {
+  const h = getHeadroomMetrics(level, currentCapital, ruleProfileId);
 
   return (
     <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">

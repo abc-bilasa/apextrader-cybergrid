@@ -3,6 +3,8 @@ import confetti from 'canvas-confetti';
 import { LogOut, Zap } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { formatINR, getLevelMetrics } from '../lib/formulas';
+import { DEFAULT_RULE_PROFILE } from '../lib/ruleProfiles';
+import RuleProfilePanel from './RuleProfilePanel';
 import TradeLogger from './TradeLogger';
 import DailyPnlChart from './DailyPnlChart';
 import EquityChart from './EquityChart';
@@ -15,6 +17,8 @@ import DisciplinePanel from './DisciplinePanel';
 import SessionReviewPanel from './SessionReviewPanel';
 import TradeJournalTable from './TradeJournalTable';
 import CsvImportPanel from './CsvImportPanel';
+import CooldownPanel from './CooldownPanel';
+import { useLossStreakCooldown } from '../hooks/useLossStreakCooldown';
 
 const DEFAULT_LEVEL = 1;
 const DEFAULT_CAPITAL = 10000;
@@ -65,8 +69,8 @@ function feedbackForTradeTrigger(trigger) {
   else if (trigger === 'DRAWDOWN_HIT') playTradeTone(false);
 }
 
-function RiskMetricsPanel({ level }) {
-  const metrics = getLevelMetrics(level);
+function RiskMetricsPanel({ level, ruleProfileId }) {
+  const metrics = getLevelMetrics(level, ruleProfileId);
 
   return (
     <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">
@@ -101,8 +105,8 @@ function RiskMetricsPanel({ level }) {
   );
 }
 
-function MilestonesPanel({ level }) {
-  const { d1, d2, d3, d4 } = getLevelMetrics(level);
+function MilestonesPanel({ level, ruleProfileId }) {
+  const { d1, d2, d3, d4 } = getLevelMetrics(level, ruleProfileId);
   const tiles = [
     { id: 'D1', label: 'D1 · 10%', amount: d1 },
     { id: 'D2', label: 'D2 · 10%', amount: d2 },
@@ -203,8 +207,26 @@ export default function Dashboard({ session }) {
 
   const level = account?.current_level ?? DEFAULT_LEVEL;
   const capital = Number(account?.current_capital ?? DEFAULT_CAPITAL);
+  const ruleProfileId = account?.rule_profile ?? DEFAULT_RULE_PROFILE;
+
+  const handleRuleProfileChanged = useCallback(
+    async (nextId) => {
+      setAccount((prev) => (prev ? { ...prev, rule_profile: nextId } : prev));
+      await loadDashboardData({ showLoader: false });
+    },
+    [loadDashboardData],
+  );
   const chartBase =
     trades.length > 0 ? Number(trades[0].starting_capital) : capital;
+
+  const cooldown = useLossStreakCooldown(trades);
+  const [cooldownOverride, setCooldownOverride] = useState(false);
+
+  useEffect(() => {
+    if (!cooldown.active) setCooldownOverride(false);
+  }, [cooldown.active]);
+
+  const tradeLoggingBlocked = cooldown.active && !cooldownOverride;
 
   if (loading) {
     return <div className="cyber-loading min-h-screen">LOADING APEX MATRIX...</div>;
@@ -264,12 +286,28 @@ export default function Dashboard({ session }) {
 
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 md:gap-6 mt-6 min-w-0">
         <div className="xl:col-span-4 flex flex-col gap-4 md:gap-6 min-w-0">
-          <RiskMetricsPanel level={level} />
-          <HeadroomPanel level={level} currentCapital={capital} />
-          <MilestonesPanel level={level} />
-          <DailyPacingPanel level={level} trades={trades} />
-          <TradeLogger onTradeLogged={handleTradeLogged} />
-          <CsvImportPanel onTradeLogged={handleTradeLogged} />
+          <RuleProfilePanel
+            accountId={account?.id}
+            ruleProfileId={ruleProfileId}
+            onProfileChanged={handleRuleProfileChanged}
+          />
+          <RiskMetricsPanel level={level} ruleProfileId={ruleProfileId} />
+          <HeadroomPanel level={level} currentCapital={capital} ruleProfileId={ruleProfileId} />
+          <MilestonesPanel level={level} ruleProfileId={ruleProfileId} />
+          <DailyPacingPanel level={level} trades={trades} ruleProfileId={ruleProfileId} />
+          <CooldownPanel
+            cooldown={cooldown}
+            overrideEnabled={cooldownOverride}
+            onOverrideChange={setCooldownOverride}
+          />
+          <TradeLogger
+            onTradeLogged={handleTradeLogged}
+            tradeLoggingBlocked={tradeLoggingBlocked}
+          />
+          <CsvImportPanel
+            onTradeLogged={handleTradeLogged}
+            tradeLoggingBlocked={tradeLoggingBlocked}
+          />
           <LevelHistory entries={levelHistory} />
           <SessionReviewPanel userId={session?.user?.id} />
         </div>
@@ -283,7 +321,7 @@ export default function Dashboard({ session }) {
         </div>
 
         <div className="cyber-dashboard-level-panel xl:col-span-3 min-w-0 min-h-0">
-          <LevelGrid activeLevel={level} />
+          <LevelGrid activeLevel={level} ruleProfileId={ruleProfileId} />
         </div>
       </div>
     </div>

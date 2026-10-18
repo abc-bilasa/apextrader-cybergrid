@@ -37,6 +37,11 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-071 | 2026-10-18 | DECISION | process | D15 DEFAULT: rule profile keys + RPC/UI alignment | `DECISIONS.md` | D15 | Cursor |
+| IMP-070 | 2026-10-18 | SQL | database | F-039: `rule_profile` column + profile-aware `log_trade` / `simulate_trade` | `004_rule_profiles.sql` | D13, D15 | Cursor |
+| IMP-069 | 2026-10-18 | FEATURE | dashboard | F-039: RuleProfilePanel + formulas per profile | `ruleProfiles.js`, `RuleProfilePanel.jsx` | D15 | Cursor |
+| IMP-068 | 2026-10-18 | DECISION | process | D14 DEFAULT: advisory 3-loss / 15m UI cool-down | `DECISIONS.md` | D14 | Cursor |
+| IMP-067 | 2026-10-18 | FEATURE | dashboard | F-038: loss-streak cool-down panel + block log/CSV with override | `lossStreakCooldown.js`, `CooldownPanel.jsx`, `TradeLogger.jsx` | D14 | Cursor |
 | IMP-066 | 2026-10-18 | TOOLING | deploy | Push `9a14b3e` — F-037 CSV import to GitHub Pages | `main` | D10 | Cursor |
 | IMP-065 | 2026-10-18 | FEATURE | trading | F-037: CSV P&L import panel → aggregated `log_trade` | `csvTradeImport.js`, `CsvImportPanel.jsx` | — | Cursor |
 | IMP-064 | 2026-10-18 | TOOLING | deploy | Push `b3efe26` — F-034–F-036 to GitHub Pages | `main` | D10 | Cursor |
@@ -122,4 +127,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-067**
+**IMP-072**

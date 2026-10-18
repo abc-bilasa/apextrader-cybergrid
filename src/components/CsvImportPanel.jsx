@@ -4,7 +4,7 @@ import { supabase } from '../lib/supabase';
 import { formatINR } from '../lib/formulas';
 import { parseTradeCsv } from '../lib/csvTradeImport';
 
-export default function CsvImportPanel({ onTradeLogged }) {
+export default function CsvImportPanel({ onTradeLogged, tradeLoggingBlocked = false }) {
   const inputRef = useRef(null);
   const [parsed, setParsed] = useState(null);
   const [parseError, setParseError] = useState('');
@@ -35,6 +35,10 @@ export default function CsvImportPanel({ onTradeLogged }) {
 
   const handleImport = async () => {
     if (!parsed?.ok) return;
+    if (tradeLoggingBlocked) {
+      setFieldError('Cool-down active — wait for the timer or enable override above.');
+      return;
+    }
     setSubmitting(true);
     setFieldError('');
 
@@ -110,7 +114,7 @@ export default function CsvImportPanel({ onTradeLogged }) {
           </ul>
           <button
             type="button"
-            disabled={submitting}
+            disabled={submitting || tradeLoggingBlocked}
             className="cyber-btn-primary w-full disabled:opacity-50"
             onClick={handleImport}
           >

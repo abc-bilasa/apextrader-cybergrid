@@ -60,3 +60,19 @@ After `001` (and optionally `002`):
 2. Confirm table `session_reviews` exists.
 
 Tell Cursor: **`F-035 applied`** when save review works.
+
+---
+
+## Apply migration 004 (F-039 — rule profiles)
+
+After `001` (re-applies `log_trade` + `simulate_trade` with profile logic):
+
+1. SQL Editor → paste **`migrations/004_rule_profiles.sql`** → **Run**.
+2. Confirm column:
+
+```sql
+select column_name from information_schema.columns
+where table_schema = 'public' and table_name = 'trading_accounts' and column_name = 'rule_profile';
+```
+
+Tell Cursor: **`F-039 applied`** when profile switch saves in the dashboard.
