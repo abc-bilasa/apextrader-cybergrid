@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
 - **Session focus:** F-028 level history panel; `app-features/INDEX` counts fixed  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (last deploy `20e875a` — **F-028 not deployed yet**)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `c8e551b`, 2026-10-18 — F-028 level history)  
 
 ---
 
@@ -82,7 +82,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | F-001–F-028 (incl. level history panel); deploy pending for F-028 |
+| Dashboard | F-001–F-028 (incl. level history panel) on production |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -95,7 +95,7 @@ Do this before writing code:
 
 **Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-028 done** in repo
 
-**Next:** Push/deploy F-028; optional trade journal table (F-029+), Vitest, Playwright.
+**Next:** Optional trade journal table (F-029+), Vitest, Playwright.
 
 ---
 
@@ -210,3 +210,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | START: Session 3 — sync deploy (uncommitted F-025–F-027) or post-MVP maintenance. |
 | 2026-10-18 | Deploy `20e875a` — F-025 responsive + F-026/F-027 sign-off docs; Pages #14 success. |
 | 2026-10-18 | F-028 level history panel + INDEX counts (IMP-050). Next: commit + deploy. |
+| 2026-10-18 | Deploy `c8e551b` — F-028 to Pages (Actions success). |

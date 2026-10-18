@@ -32,6 +32,6 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-025 | Responsive pass | yes | yes | n/a | [F-025](./F-025-responsive.md) |
 | F-026 | Manual T1/T4 | n/a | yes | n/a | [F-026](./F-026-test-t1-t4.md) |
 | F-027 | Production smoke | n/a | yes | yes | [F-027](./F-027-prod-smoke.md) |
-| F-028 | Level history panel | yes | yes | no | [F-028](./F-028-level-history-panel.md) |
+| F-028 | Level history panel | yes | yes | yes | [F-028](./F-028-level-history-panel.md) |
 
-**Counts:** Built 26 · Tested 27 (+ partial F-010) · Deployed 6
+**Counts:** Built 26 · Tested 27 (+ partial F-010) · Deployed 7

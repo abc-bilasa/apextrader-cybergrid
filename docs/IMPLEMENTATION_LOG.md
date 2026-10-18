@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-051 | 2026-10-18 | TOOLING | deploy | Push `c8e551b` — F-028 level history to GitHub Pages | `main`, Actions run success | D10 | Cursor |
 | IMP-050 | 2026-10-18 | FEATURE | dashboard | F-028: read `level_history` in dashboard; `LevelHistory` panel + backlog/docs | `src/components/LevelHistory.jsx`, `Dashboard.jsx`, `docs/specs/**`, `app-features/**` | — | Cursor |
 | IMP-049 | 2026-10-18 | TOOLING | deploy | Session 3: push `20e875a` — F-025–F-027 to GitHub Pages (Actions #14) | `main`, `.github/workflows/deploy.yml` | D10 | Cursor |
 | IMP-048 | 2026-10-17 | DOCS | process | Session 2 close: handoff END, README MVP status, DEVELOPMENT map | `docs/SESSION_HANDOFF.md`, `README.md`, `docs/DEVELOPMENT.md` | — | Cursor |
@@ -106,4 +107,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-051**
+**IMP-052**
