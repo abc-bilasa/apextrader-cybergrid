@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
 - **Session focus:** F-029 risk headroom meter (local; deploy pending)  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `b3efe26`, 2026-10-18 — F-034–F-036)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `9a14b3e`, 2026-10-18 — F-037 CSV import)  
 
 ---
 
@@ -82,7 +82,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | F-001–F-036 on production (apply `002`/`003` for preview + reviews) |
+| Dashboard | F-001–F-037 on production (apply `002`/`003` for preview + reviews) |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -93,9 +93,9 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-036 shipped**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-037 shipped**
 
-**Next:** Deploy F-037; apply `002`/`003`; F-038 cool-down.
+**Next:** Apply `002`/`003` in Supabase; F-038 cool-down.
 
 ---
 
@@ -225,3 +225,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | F-036 trade journal table (IMP-063). |
 | 2026-10-18 | Deploy `b3efe26` — F-034–F-036 to Pages. |
 | 2026-10-18 | F-037 CSV import (IMP-065). |
+| 2026-10-18 | Deploy `9a14b3e` — F-037 to Pages. |

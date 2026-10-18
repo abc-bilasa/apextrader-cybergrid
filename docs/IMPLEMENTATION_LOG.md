@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-066 | 2026-10-18 | TOOLING | deploy | Push `9a14b3e` — F-037 CSV import to GitHub Pages | `main` | D10 | Cursor |
 | IMP-065 | 2026-10-18 | FEATURE | trading | F-037: CSV P&L import panel → aggregated `log_trade` | `csvTradeImport.js`, `CsvImportPanel.jsx` | — | Cursor |
 | IMP-064 | 2026-10-18 | TOOLING | deploy | Push `b3efe26` — F-034–F-036 to GitHub Pages | `main` | D10 | Cursor |
 | IMP-063 | 2026-10-18 | FEATURE | ui | F-036: paginated trade journal table with profit/loss filter | `TradeJournalTable.jsx`, `Dashboard.jsx` | — | Cursor |
@@ -121,4 +122,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-066**
+**IMP-067**
