@@ -95,7 +95,7 @@ Do this before writing code:
 
 **Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-036 shipped**
 
-**Next:** Deploy F-034–F-036; apply `002`/`003`; F-037 CSV import.
+**Next:** Deploy F-037; apply `002`/`003`; F-038 cool-down.
 
 ---
 
@@ -224,3 +224,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | F-035 session review (IMP-062). |
 | 2026-10-18 | F-036 trade journal table (IMP-063). |
 | 2026-10-18 | Deploy `b3efe26` — F-034–F-036 to Pages. |
+| 2026-10-18 | F-037 CSV import (IMP-065). |

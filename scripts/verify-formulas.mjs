@@ -4,6 +4,8 @@
  * Exit 0 = pass, 1 = fail (for CI later).
  */
 
+import { parseTradeCsv } from '../src/lib/csvTradeImport.js';
+
 const LEVELS = [1, 2, 3, 4, 42];
 
 function getLevelMetrics(level) {
@@ -143,6 +145,16 @@ if (!consOk.applicable || consOk.breached || Math.abs(consOk.headroomToday - 333
 const consBad = getConsistencyMetrics(10000, 5000);
 if (!consBad.breached) {
   console.error('Consistency @5k/10k total: expected breach', consBad);
+  failed = true;
+}
+
+const csvSample = `Symbol,Realized P&L
+RELIANCE,"1,200.50"
+TCS,-300`;
+
+const csvResult = parseTradeCsv(csvSample);
+if (!csvResult.ok || csvResult.rowCount !== 2 || Math.abs(csvResult.totalPnl - 900.5) > 0.01) {
+  console.error('CSV import parse failed', csvResult);
   failed = true;
 }
 

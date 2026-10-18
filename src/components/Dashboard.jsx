@@ -14,6 +14,7 @@ import ConsistencyPanel from './ConsistencyPanel';
 import DisciplinePanel from './DisciplinePanel';
 import SessionReviewPanel from './SessionReviewPanel';
 import TradeJournalTable from './TradeJournalTable';
+import CsvImportPanel from './CsvImportPanel';
 
 const DEFAULT_LEVEL = 1;
 const DEFAULT_CAPITAL = 10000;
@@ -268,6 +269,7 @@ export default function Dashboard({ session }) {
           <MilestonesPanel level={level} />
           <DailyPacingPanel level={level} trades={trades} />
           <TradeLogger onTradeLogged={handleTradeLogged} />
+          <CsvImportPanel onTradeLogged={handleTradeLogged} />
           <LevelHistory entries={levelHistory} />
           <SessionReviewPanel userId={session?.user?.id} />
         </div>

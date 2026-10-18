@@ -29,7 +29,7 @@ Market-backed ideas from journal/risk/prop-firm research (2025–2026). **Not sc
 | 6 | **F-034** | **Discipline & behavior analytics** — **shipped** | 4 | 3 | 5 | See [F-034 spec](./features/F-034-discipline-analytics.md). |
 | 7 | **F-035** | **Guided 5-minute session review** — **shipped** | 4 | 3 | 5 | See [F-035 spec](./features/F-035-session-review.md); apply `003`. |
 | 8 | **F-036** | **Trade journal table (paginated history)** — **shipped** | 4 | 3 | 5 | See [F-036 spec](./features/F-036-trade-journal-table.md). |
-| 9 | **F-037** | **Broker CSV import → session P&L** | 5 | 4 | 6 | Indian F&O traders need Kite/Console path; aggregate fills to one `log_trade` per day/session. Large TAM; parsing + validation + UX cost. |
+| 9 | **F-037** | **Broker CSV import → session P&L** — **shipped** | 5 | 4 | 6 | See [F-037 spec](./features/F-037-csv-import.md). |
 | 10 | **F-038** | **Loss-streak cool-down / optional trade lock** | 4 | 4 | 4 | Revenge trading after consecutive losses; soft UI timer or hard RPC gate. Requires DECISIONS on enforcement vs advisory. |
 | 11 | **F-039** | **Multi-account / rule profiles** | 5 | 5 | 5 | Personal Cyber-Grid vs prop/sim presets (different DD/targets); `002_*.sql`, RPC parameterization, migration. Strategic but largest build. |
 

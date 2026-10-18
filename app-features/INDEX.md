@@ -41,5 +41,6 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-034 | Discipline analytics | yes | yes | yes | [F-034](./F-034-discipline-analytics.md) |
 | F-035 | Session review | yes | partial | yes | [F-035](./F-035-session-review.md) |
 | F-036 | Trade journal table | yes | yes | yes | [F-036](./F-036-trade-journal-table.md) |
+| F-037 | CSV import | yes | yes | no | [F-037](./F-037-csv-import.md) |
 
-**Counts:** Built 34 · Tested 33 (+ partial F-010, F-032, F-035 DB) · Deployed 15
+**Counts:** Built 35 · Tested 34 (+ partial F-010, F-032, F-035 DB) · Deployed 15

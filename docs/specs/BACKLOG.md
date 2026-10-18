@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _F-037 CSV import — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
+**Next feature to build:** _F-038 loss-streak cool-down — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -43,10 +43,11 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-034 | Discipline analytics | 30m | F-014 | done | [F-034](./features/F-034-discipline-analytics.md) |
 | F-035 | Session review form | 30m | F-010 | done | [F-035](./features/F-035-session-review.md) |
 | F-036 | Trade journal table | 30m | F-014 | done | [F-036](./features/F-036-trade-journal-table.md) |
+| F-037 | Broker CSV import | 45m | F-016 | done | [F-037](./features/F-037-csv-import.md) |
 
 ## Progress
 
-- **Done:** 36 / 36 (F-001–F-036)  
+- **Done:** 37 / 37 (F-001–F-037)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”
