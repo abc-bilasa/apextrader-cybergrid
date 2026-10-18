@@ -20,6 +20,65 @@ export function getLevelMetrics(level) {
   };
 }
 
+/**
+ * Headroom vs `log_trade` promotion/demotion (30% baseline DD, 50% promotion target).
+ * Max DD (60%) is advisory only (DECISIONS — not enforced in RPC).
+ * @param {number} level
+ * @param {number} currentCapital
+ */
+export function getHeadroomMetrics(level, currentCapital) {
+  const { level: l, baseCapital, dailyDrawdownLimit, maxDrawdownLimit, targetPlanned, finalCapital } =
+    getLevelMetrics(level);
+  const capital = Number(currentCapital);
+  const safeCapital = Number.isFinite(capital) ? capital : baseCapital;
+
+  const drawdownFromBase = Math.max(0, baseCapital - safeCapital);
+  const profitAboveBase = safeCapital - baseCapital;
+
+  const dailyDrawdownRemaining = Math.max(0, dailyDrawdownLimit - drawdownFromBase);
+  const demotionFloorCapital = baseCapital - dailyDrawdownLimit;
+  const maxLossBeforeDemotion = Math.max(0, safeCapital - demotionFloorCapital);
+
+  const dailyDrawdownUsedPct =
+    dailyDrawdownLimit > 0 ? Math.min(1.5, drawdownFromBase / dailyDrawdownLimit) : 0;
+
+  let dailyDrawdownTier = 'safe';
+  if (drawdownFromBase >= dailyDrawdownLimit) dailyDrawdownTier = 'breached';
+  else if (dailyDrawdownUsedPct >= 0.9) dailyDrawdownTier = 'critical';
+  else if (dailyDrawdownUsedPct >= 0.75) dailyDrawdownTier = 'warning';
+  else if (dailyDrawdownUsedPct >= 0.5) dailyDrawdownTier = 'caution';
+
+  const maxDrawdownRemaining = Math.max(0, maxDrawdownLimit - drawdownFromBase);
+
+  const canPromote = l < 42 && profitAboveBase >= targetPlanned;
+  const promotionGapCapital = l < 42 ? Math.max(0, targetPlanned - profitAboveBase) : 0;
+  const promotionProgressPct =
+    l < 42 && targetPlanned > 0
+      ? Math.min(1, Math.max(0, profitAboveBase / targetPlanned))
+      : l >= 42
+        ? 1
+        : 0;
+
+  return {
+    level: l,
+    baseCapital,
+    dailyDrawdownLimit,
+    maxDrawdownLimit,
+    targetPlanned,
+    demotionFloorCapital,
+    drawdownFromBase,
+    dailyDrawdownRemaining,
+    dailyDrawdownUsedPct,
+    dailyDrawdownTier,
+    maxDrawdownRemaining,
+    maxLossBeforeDemotion,
+    canPromote,
+    promotionGapCapital,
+    promotionProgressPct,
+    finalCapital,
+  };
+}
+
 export function formatINR(val) {
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',

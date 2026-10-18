@@ -10,11 +10,32 @@ function getLevelMetrics(level) {
   const l = Math.max(1, Math.min(42, parseInt(level, 10) || 1));
   const baseCapital = 10000 * Math.pow(1.5, l - 1);
   return {
+    level: l,
     baseCapital,
     dailyDrawdownLimit: baseCapital * 0.3,
     maxDrawdownLimit: baseCapital * 0.6,
     targetPlanned: baseCapital * 0.5,
     finalCapital: baseCapital * 1.5,
+  };
+}
+
+function getHeadroomMetrics(level, currentCapital) {
+  const { level: l, baseCapital, dailyDrawdownLimit, maxDrawdownLimit, targetPlanned } =
+    getLevelMetrics(level);
+  const capital = Number(currentCapital);
+  const drawdownFromBase = Math.max(0, baseCapital - capital);
+  const profitAboveBase = capital - baseCapital;
+  const dailyDrawdownRemaining = Math.max(0, dailyDrawdownLimit - drawdownFromBase);
+  const demotionFloorCapital = baseCapital - dailyDrawdownLimit;
+  const maxLossBeforeDemotion = Math.max(0, capital - demotionFloorCapital);
+  const canPromote = l < 42 && profitAboveBase >= targetPlanned;
+  const promotionGapCapital = l < 42 ? Math.max(0, targetPlanned - profitAboveBase) : 0;
+  return {
+    demotionFloorCapital,
+    dailyDrawdownRemaining,
+    maxLossBeforeDemotion,
+    canPromote,
+    promotionGapCapital,
   };
 }
 
@@ -54,6 +75,26 @@ for (const level of LEVELS) {
       }
     }
   }
+}
+
+const headroomL1 = getHeadroomMetrics(1, 10000);
+if (headroomL1.demotionFloorCapital !== 7000 || headroomL1.dailyDrawdownRemaining !== 3000) {
+  console.error('Headroom L1 @10k: floor/remaining mismatch', headroomL1);
+  failed = true;
+}
+if (headroomL1.maxLossBeforeDemotion !== 3000 || headroomL1.promotionGapCapital !== 5000) {
+  console.error('Headroom L1 @10k: max loss / promotion gap mismatch', headroomL1);
+  failed = true;
+}
+const headroomL1Dd = getHeadroomMetrics(1, 7000);
+if (headroomL1Dd.dailyDrawdownRemaining !== 0 || headroomL1Dd.maxLossBeforeDemotion !== 0) {
+  console.error('Headroom L1 @7k: at demotion floor mismatch', headroomL1Dd);
+  failed = true;
+}
+const headroomL1Promo = getHeadroomMetrics(1, 15000);
+if (!headroomL1Promo.canPromote || headroomL1Promo.promotionGapCapital !== 0) {
+  console.error('Headroom L1 @15k: promotion ready mismatch', headroomL1Promo);
+  failed = true;
 }
 
 if (failed) {

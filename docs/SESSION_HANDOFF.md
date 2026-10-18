@@ -38,7 +38,7 @@ Do this before writing code:
 
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
-- **Session focus:** F-028 level history panel; `app-features/INDEX` counts fixed  
+- **Session focus:** F-029 risk headroom meter (local; deploy pending)  
 - **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `c8e551b`, 2026-10-18 — F-028 level history)  
 
 ---
@@ -82,7 +82,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | F-001–F-028 (incl. level history panel) on production |
+| Dashboard | F-001–F-029 in repo; F-029 deploy pending |
 | `formulas.js` / theme / charts tokens | Implemented |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -93,9 +93,9 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-028 done** in repo
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-029 done** in repo (uncommitted F-029 until push)
 
-**Next:** Optional trade journal table (F-029+), Vitest, Playwright.
+**Next:** Deploy F-029; then **F-030** quick-log per [FEATURE_CANDIDATES.md](./specs/FEATURE_CANDIDATES.md).
 
 ---
 
@@ -211,3 +211,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | Deploy `20e875a` — F-025 responsive + F-026/F-027 sign-off docs; Pages #14 success. |
 | 2026-10-18 | F-028 level history panel + INDEX counts (IMP-050). Next: commit + deploy. |
 | 2026-10-18 | Deploy `c8e551b` — F-028 to Pages (Actions success). |
+| 2026-10-18 | F-029 headroom panel (IMP-053); verify + build pass. |

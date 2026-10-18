@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _none — backlog F-001–F-028 complete (MVP + F-028 level history)_  
+**Next feature to build:** _F-030 quick-log — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -35,10 +35,11 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-026 | Manual tests T1/T4 sign-off | 15m | F-017 | done | [F-026](./features/F-026-test-t1-t4.md) |
 | F-027 | Production smoke P1–P4 | 15m | F-007, F-010 | done | [F-027](./features/F-027-prod-smoke.md) |
 | F-028 | Level history panel | 30m | F-017 | done | [F-028](./features/F-028-level-history-panel.md) |
+| F-029 | Drawdown & promotion headroom | 30m | F-019 | done | [F-029](./features/F-029-headroom-meter.md) |
 
 ## Progress
 
-- **Done:** 27 / 27  
+- **Done:** 29 / 29 (F-001–F-029)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

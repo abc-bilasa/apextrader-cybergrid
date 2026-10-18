@@ -8,6 +8,7 @@ import DailyPnlChart from './DailyPnlChart';
 import EquityChart from './EquityChart';
 import LevelGrid from './LevelGrid';
 import LevelHistory from './LevelHistory';
+import HeadroomPanel from './HeadroomPanel';
 
 const DEFAULT_LEVEL = 1;
 const DEFAULT_CAPITAL = 10000;
@@ -258,6 +259,7 @@ export default function Dashboard({ session }) {
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 md:gap-6 mt-6 min-w-0">
         <div className="xl:col-span-4 flex flex-col gap-4 md:gap-6 min-w-0">
           <RiskMetricsPanel level={level} />
+          <HeadroomPanel level={level} currentCapital={capital} />
           <MilestonesPanel level={level} />
           <TradeLogger onTradeLogged={handleTradeLogged} />
           <LevelHistory entries={levelHistory} />

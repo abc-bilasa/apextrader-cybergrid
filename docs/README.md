@@ -8,7 +8,8 @@ Use this folder for everything needed to **build**, **test**, and **deploy** acr
 |-----|----------------|
 | [RULEBOOK.md](./RULEBOOK.md) | **Master rules** — conflicts, efficiency, architecture, UI, sessions |
 | [SPEC_DRIVEN.md](./SPEC_DRIVEN.md) | **15-min features** — how to build one spec at a time |
-| [specs/BACKLOG.md](./specs/BACKLOG.md) | Ordered feature list F-001–F-027 |
+| [specs/BACKLOG.md](./specs/BACKLOG.md) | Shipped backlog F-001–F-028 |
+| [specs/FEATURE_CANDIDATES.md](./specs/FEATURE_CANDIDATES.md) | **Post-MVP ideas** F-029+ ranked by impact vs complexity |
 | [app-features/](../app-features/) | **Built / tested / deployed** record per feature |
 | [EFFICIENT_WORKFLOW.md](./EFFICIENT_WORKFLOW.md) | **Recommended:** fast path, deploy timing, token-saving Cursor prompts |
 | [ROADMAP.md](./ROADMAP.md) | Planning work by week/session |
