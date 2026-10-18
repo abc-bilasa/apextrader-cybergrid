@@ -34,6 +34,6 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-027 | Production smoke | n/a | yes | yes | [F-027](./F-027-prod-smoke.md) |
 | F-028 | Level history panel | yes | yes | yes | [F-028](./F-028-level-history-panel.md) |
 | F-029 | Risk headroom meter | yes | yes | yes | [F-029](./F-029-headroom-meter.md) |
-| F-030 | Quick-log presets | yes | yes | no | [F-030](./F-030-quick-log.md) |
+| F-030 | Quick-log presets | yes | yes | yes | [F-030](./F-030-quick-log.md) |
 
-**Counts:** Built 28 · Tested 29 (+ partial F-010) · Deployed 8
+**Counts:** Built 28 · Tested 29 (+ partial F-010) · Deployed 9
