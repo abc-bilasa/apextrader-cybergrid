@@ -38,8 +38,8 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-031 | Intraday D1–D4 pacing | yes | yes | yes | [F-031](./F-031-intraday-pacing.md) |
 | F-032 | Trade simulate preview | yes | partial | yes | [F-032](./F-032-simulate-trade.md) |
 | F-033 | Consistency rule 40% | yes | yes | yes | [F-033](./F-033-consistency-rule.md) |
-| F-034 | Discipline analytics | yes | yes | no | [F-034](./F-034-discipline-analytics.md) |
-| F-035 | Session review | yes | partial | no | [F-035](./F-035-session-review.md) |
-| F-036 | Trade journal table | yes | yes | no | [F-036](./F-036-trade-journal-table.md) |
+| F-034 | Discipline analytics | yes | yes | yes | [F-034](./F-034-discipline-analytics.md) |
+| F-035 | Session review | yes | partial | yes | [F-035](./F-035-session-review.md) |
+| F-036 | Trade journal table | yes | yes | yes | [F-036](./F-036-trade-journal-table.md) |
 
-**Counts:** Built 34 · Tested 33 (+ partial F-010, F-032, F-035) · Deployed 12
+**Counts:** Built 34 · Tested 33 (+ partial F-010, F-032, F-035 DB) · Deployed 15

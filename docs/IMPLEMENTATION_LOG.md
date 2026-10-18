@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-064 | 2026-10-18 | TOOLING | deploy | Push `b3efe26` — F-034–F-036 to GitHub Pages | `main` | D10 | Cursor |
 | IMP-063 | 2026-10-18 | FEATURE | ui | F-036: paginated trade journal table with profit/loss filter | `TradeJournalTable.jsx`, `Dashboard.jsx` | — | Cursor |
 | IMP-062 | 2026-10-18 | SQL | database | F-035: `session_reviews` table + SessionReviewPanel | `003_session_reviews.sql`, `SessionReviewPanel.jsx` | D13 | Cursor |
 | IMP-061 | 2026-10-18 | FEATURE | dashboard | F-034: discipline stats (streak, revenge window, level counts) | `disciplineStats.js`, `DisciplinePanel.jsx` | — | Cursor |
@@ -119,4 +120,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-064**
+**IMP-065**
