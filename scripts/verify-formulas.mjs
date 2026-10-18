@@ -16,6 +16,10 @@ function getLevelMetrics(level) {
     maxDrawdownLimit: baseCapital * 0.6,
     targetPlanned: baseCapital * 0.5,
     finalCapital: baseCapital * 1.5,
+    d1: baseCapital * 0.1,
+    d2: baseCapital * 0.1,
+    d3: baseCapital * 0.1,
+    d4: baseCapital * 0.2,
   };
 }
 
@@ -94,6 +98,51 @@ if (headroomL1Dd.dailyDrawdownRemaining !== 0 || headroomL1Dd.maxLossBeforeDemot
 const headroomL1Promo = getHeadroomMetrics(1, 15000);
 if (!headroomL1Promo.canPromote || headroomL1Promo.promotionGapCapital !== 0) {
   console.error('Headroom L1 @15k: promotion ready mismatch', headroomL1Promo);
+  failed = true;
+}
+
+function getIntradayPacingMetrics(level, todayPnl) {
+  const m = getLevelMetrics(level);
+  const { d1, d2, d3, d4, targetPlanned } = m;
+  const milestones = [
+    { cumulative: d1 },
+    { cumulative: d1 + d2 },
+    { cumulative: d1 + d2 + d3 },
+    { cumulative: d1 + d2 + d3 + d4 },
+  ];
+  let completedCount = 0;
+  for (const row of milestones) {
+    if (todayPnl >= row.cumulative) completedCount += 1;
+  }
+  return { completedCount, targetPlanned, finalCumulative: milestones[3].cumulative };
+}
+
+const pacingL1 = getIntradayPacingMetrics(1, 2500);
+if (pacingL1.completedCount !== 2 || pacingL1.finalCumulative !== 5000) {
+  console.error('Pacing L1 @2500: expected D2 complete', pacingL1);
+  failed = true;
+}
+
+function getConsistencyMetrics(totalProfit, todayProfit, maxDayShare = 0.4) {
+  const total = Number(totalProfit);
+  const today = Number(todayProfit);
+  const r = maxDayShare;
+  const prior = total - today;
+  if (total <= 0) return { applicable: false };
+  const maxTodayAllowed = prior > 0 ? (r * prior) / (1 - r) : r * total;
+  const headroomToday = Math.max(0, maxTodayAllowed - today);
+  const breached = today > maxTodayAllowed + 0.005;
+  return { applicable: true, maxTodayAllowed, headroomToday, breached };
+}
+
+const consOk = getConsistencyMetrics(10000, 2000);
+if (!consOk.applicable || consOk.breached || Math.abs(consOk.headroomToday - 3333.33) > 1) {
+  console.error('Consistency @2k/10k total: expected headroom ~3333', consOk);
+  failed = true;
+}
+const consBad = getConsistencyMetrics(10000, 5000);
+if (!consBad.breached) {
+  console.error('Consistency @5k/10k total: expected breach', consBad);
   failed = true;
 }
 

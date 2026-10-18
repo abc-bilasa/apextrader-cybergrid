@@ -32,3 +32,20 @@ Expected: 3 tables; `log_trade` executable by `authenticated`.
 3. Tell Cursor: **`F-002 applied`** to close the feature record.
 
 **D13:** Do not edit `001_initial_schema.sql` after this; use `002_*.sql` for changes.
+
+---
+
+## Apply migration 002 (F-032 — trade preview)
+
+After `001` is applied:
+
+1. SQL Editor → paste **`migrations/002_simulate_trade.sql`** → **Run**.
+2. Verify:
+
+```sql
+select routine_name, grantee
+from information_schema.routine_privileges
+where routine_schema = 'public' and routine_name = 'simulate_trade';
+```
+
+Tell Cursor: **`F-032 applied`** when preview works in the app.

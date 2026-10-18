@@ -37,6 +37,9 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-059 | 2026-10-18 | FEATURE | dashboard | F-033: 40% consistency rule panel + `getConsistencyMetrics` | `ConsistencyPanel.jsx`, `formulas.js`, `tradeDay.js` | — | Cursor |
+| IMP-058 | 2026-10-18 | SQL | database | F-032: `simulate_trade` RPC + TradeLogger preview UI | `002_simulate_trade.sql`, `TradeSimPreview.jsx`, `TradeLogger.jsx` | D13 | Cursor |
+| IMP-057 | 2026-10-18 | FEATURE | dashboard | F-031: `tradeDay.js`, intraday D1–D4 pacing panel | `DailyPacingPanel.jsx`, `formulas.js`, `DailyPnlChart.jsx` | D11 | Cursor |
 | IMP-056 | 2026-10-18 | TOOLING | deploy | Push `b05115f` — F-030 quick-log to GitHub Pages | `main` | D10 | Cursor |
 | IMP-055 | 2026-10-18 | FEATURE | trading | F-030: one-tap P&L presets + collapsible notes in TradeLogger | `src/components/TradeLogger.jsx` | — | Cursor |
 | IMP-054 | 2026-10-18 | TOOLING | deploy | Push `43281ea` — F-029 headroom to GitHub Pages | `main`, Actions #39123227588 | D10 | Cursor |
@@ -112,4 +115,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-057**
+**IMP-060**

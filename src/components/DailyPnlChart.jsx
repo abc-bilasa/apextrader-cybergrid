@@ -10,16 +10,8 @@ import {
   YAxis,
 } from 'recharts';
 import { formatINR } from '../lib/formulas';
+import { localDateKey } from '../lib/tradeDay';
 import { chartTheme, chartTooltipStyle } from '../lib/chartTheme';
-
-/** D11: calendar day from `created_at` in the user's local timezone. */
-function localDateKey(iso) {
-  const d = new Date(iso);
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
-}
 
 function formatDayLabel(dateKey) {
   const [y, m, d] = dateKey.split('-').map(Number);

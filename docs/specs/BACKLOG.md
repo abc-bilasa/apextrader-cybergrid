@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _F-031 D1–D4 pacing — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
+**Next feature to build:** _F-034 discipline analytics — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -37,10 +37,13 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-028 | Level history panel | 30m | F-017 | done | [F-028](./features/F-028-level-history-panel.md) |
 | F-029 | Drawdown & promotion headroom | 30m | F-019 | done | [F-029](./features/F-029-headroom-meter.md) |
 | F-030 | Quick-log trade capture | 30m | F-016 | done | [F-030](./features/F-030-quick-log.md) |
+| F-031 | D1–D4 intraday pacing | 30m | F-020 | done | [F-031](./features/F-031-intraday-pacing.md) |
+| F-032 | `simulate_trade` preview | 45m | F-016 | done | [F-032](./features/F-032-simulate-trade.md) |
+| F-033 | Consistency rule (40%) | 30m | F-022 | done | [F-033](./features/F-033-consistency-rule.md) |
 
 ## Progress
 
-- **Done:** 30 / 30 (F-001–F-030)  
+- **Done:** 33 / 33 (F-001–F-033)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

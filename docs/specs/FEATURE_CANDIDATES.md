@@ -23,9 +23,9 @@ Market-backed ideas from journal/risk/prop-firm research (2025–2026). **Not sc
 |------|-------------|---------|--------|------------|-------|------------------------|
 | 1 | **F-029** | **Drawdown & promotion headroom meter** — **shipped** | 5 | 2 | 8 | See [F-029 spec](./features/F-029-headroom-meter.md). |
 | 2 | **F-030** | **Quick-log / low-friction trade capture** — **shipped** | 5 | 2 | 8 | See [F-030 spec](./features/F-030-quick-log.md). |
-| 3 | **F-031** | **D1–D4 intraday pacing** | 4 | 2 | 6 | PRD milestones become a live session plan: today’s cumulative P&L vs D1→D4 for active level. Reduces early oversizing and “all-or-nothing” target thinking. |
-| 4 | **F-032** | **Pre-submit outcome preview (`simulate_trade`)** | 5 | 3 | 7 | Demotion feels unfair if discovered only after submit; read-only RPC mirroring `log_trade` shows capital, level, `trigger` before commit. Reinforces server-side truth moat. |
-| 5 | **F-033** | **Prop-style consistency rule tracker** | 4 | 3 | 5 | Single-day profit cap (% of period total) is a common payout failure mode; extends existing daily P&L grouping (D11). High value for challenge-minded users. |
+| 3 | **F-031** | **D1–D4 intraday pacing** — **shipped** | 4 | 2 | 6 | See [F-031 spec](./features/F-031-intraday-pacing.md). |
+| 4 | **F-032** | **Pre-submit outcome preview (`simulate_trade`)** — **shipped** | 5 | 3 | 7 | See [F-032 spec](./features/F-032-simulate-trade.md); apply `002` in Supabase. |
+| 5 | **F-033** | **Prop-style consistency rule tracker** — **shipped** | 4 | 3 | 5 | See [F-033 spec](./features/F-033-consistency-rule.md). |
 | 6 | **F-034** | **Discipline & behavior analytics** | 4 | 3 | 5 | Loss streaks, trades/day, time-between-trades, demotion rate—no broker API. Positions app as discipline OS vs chart-only journals. |
 | 7 | **F-035** | **Guided 5-minute session review** | 4 | 3 | 5 | Short end-of-day process score (plan followed, best/worst decision); avoids heavy “emotion builder” features that see zero usage when logging fails. |
 | 8 | **F-036** | **Trade journal table (paginated history)** | 4 | 3 | 5 | ROADMAP gap: browse `trades` with notes, filters, export—complements charts; expected in any “journal” positioning. |

@@ -1,6 +1,7 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { PlusCircle, Zap } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import TradeSimPreview from './TradeSimPreview';
 
 const QUICK_AMOUNTS = [-1000, -500, 500, 1000];
 
@@ -25,6 +26,55 @@ export default function TradeLogger({ onTradeLogged }) {
   const [fieldError, setFieldError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [quickAmount, setQuickAmount] = useState(null);
+  const [simResult, setSimResult] = useState(null);
+  const [simLoading, setSimLoading] = useState(false);
+  const [simError, setSimError] = useState('');
+  const [simUnavailable, setSimUnavailable] = useState(false);
+
+  useEffect(() => {
+    const parsed = parsePnl(pnl);
+    if (!parsed.ok) {
+      setSimResult(null);
+      setSimError('');
+      setSimUnavailable(false);
+      setSimLoading(false);
+      return undefined;
+    }
+
+    setSimLoading(true);
+    setSimError('');
+
+    const timer = window.setTimeout(async () => {
+      try {
+        const { data, error } = await supabase.rpc('simulate_trade', { p_pnl: parsed.value });
+        if (error) {
+          const missing =
+            error.code === 'PGRST202' ||
+            error.message?.includes('simulate_trade') ||
+            error.message?.includes('Could not find the function');
+          if (missing) {
+            setSimUnavailable(true);
+            setSimResult(null);
+            setSimError('');
+          } else {
+            setSimUnavailable(false);
+            setSimError(error.message);
+            setSimResult(null);
+          }
+          return;
+        }
+        setSimUnavailable(false);
+        setSimResult(data);
+      } catch {
+        setSimError('Could not simulate trade.');
+        setSimResult(null);
+      } finally {
+        setSimLoading(false);
+      }
+    }, 400);
+
+    return () => window.clearTimeout(timer);
+  }, [pnl]);
 
   const commitTrade = useCallback(
     async (value, noteText) => {
@@ -43,6 +93,7 @@ export default function TradeLogger({ onTradeLogged }) {
 
         setPnl('');
         setNotes('');
+        setSimResult(null);
         if (onTradeLogged) await onTradeLogged(data);
       } catch {
         setFieldError('Trade could not be saved. Check your connection and try again.');
@@ -156,6 +207,13 @@ export default function TradeLogger({ onTradeLogged }) {
             </div>
           </div>
         </div>
+
+        <TradeSimPreview
+          result={simResult}
+          loading={simLoading}
+          error={simError}
+          unavailable={simUnavailable}
+        />
 
         <details className="group">
           <summary className="cyber-label cursor-pointer list-none flex items-center gap-2 text-slate-400 hover:text-cyan-300 [&::-webkit-details-marker]:hidden">

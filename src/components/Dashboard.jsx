@@ -9,6 +9,8 @@ import EquityChart from './EquityChart';
 import LevelGrid from './LevelGrid';
 import LevelHistory from './LevelHistory';
 import HeadroomPanel from './HeadroomPanel';
+import DailyPacingPanel from './DailyPacingPanel';
+import ConsistencyPanel from './ConsistencyPanel';
 
 const DEFAULT_LEVEL = 1;
 const DEFAULT_CAPITAL = 10000;
@@ -261,6 +263,7 @@ export default function Dashboard({ session }) {
           <RiskMetricsPanel level={level} />
           <HeadroomPanel level={level} currentCapital={capital} />
           <MilestonesPanel level={level} />
+          <DailyPacingPanel level={level} trades={trades} />
           <TradeLogger onTradeLogged={handleTradeLogged} />
           <LevelHistory entries={levelHistory} />
         </div>
@@ -268,6 +271,7 @@ export default function Dashboard({ session }) {
         <div className="xl:col-span-5 flex flex-col gap-4 md:gap-6 min-w-0">
           <EquityChart trades={trades} initialCapital={chartBase} />
           <DailyPnlChart trades={trades} />
+          <ConsistencyPanel trades={trades} />
         </div>
 
         <div className="cyber-dashboard-level-panel xl:col-span-3 min-w-0 min-h-0">

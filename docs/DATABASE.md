@@ -25,6 +25,11 @@ The file is **complete** and authoritative (includes `GRANT EXECUTE`, `search_pa
 | `handle_new_user` | Trigger function | Seed account on `auth.users` insert |
 | `on_auth_user_created` | Trigger | Calls handler |
 | `log_trade(p_pnl, p_notes)` | RPC `SECURITY DEFINER` | Atomic trade + rules |
+| `simulate_trade(p_pnl)` | RPC `SECURITY DEFINER` | F-032 read-only preview (`002_simulate_trade.sql`) |
+
+## Migration 002 (F-032)
+
+Run `supabase/migrations/002_simulate_trade.sql` in SQL Editor after `001`. Grants `simulate_trade` to `authenticated`. Does not change tables.
 
 Extensions: `uuid-ossp` (or `gen_random_uuid()` on newer Postgres—align with Supabase default).
 

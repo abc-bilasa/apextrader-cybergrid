@@ -95,7 +95,7 @@ Do this before writing code:
 
 **Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-030 shipped**
 
-**Next:** Deploy F-030; then **F-031** intraday D1–D4 pacing.
+**Next:** Deploy F-031–F-033; apply `002_simulate_trade.sql`; then F-034 discipline stats.
 
 ---
 
@@ -103,7 +103,7 @@ Do this before writing code:
 
 | Blocker | Owner | Notes |
 |---------|--------|-------|
-| _none_ | — | — |
+| Apply `002_simulate_trade.sql` | Amit | Required for F-032 preview in prod/local |
 
 ---
 
@@ -215,3 +215,6 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | Deploy `43281ea` — F-029 to Pages (Actions success). |
 | 2026-10-18 | F-030 quick-log presets (IMP-055); build pass. |
 | 2026-10-18 | Deploy `b05115f` — F-030 to Pages. |
+| 2026-10-18 | F-031 intraday pacing (IMP-057). |
+| 2026-10-18 | F-032 simulate_trade + preview UI (IMP-058). |
+| 2026-10-18 | F-033 consistency rule panel (IMP-059). |
