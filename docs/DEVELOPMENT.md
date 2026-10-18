@@ -34,6 +34,11 @@ Solo dev may commit directly to `main` once CI is green.
 | `src/lib/tradeDay.js` | D11 | Local day keys + sum today P&L |
 | `src/components/DailyPacingPanel.jsx` | F-031 | Today vs D1–D4 cumulative |
 | `src/components/ConsistencyPanel.jsx` | F-033 | 40% single-day vs total profit |
+| `src/lib/disciplineStats.js` | F-034 | Streaks, revenge window, level events |
+| `src/components/DisciplinePanel.jsx` | F-034 | Behavior stats panel |
+| `src/components/SessionReviewPanel.jsx` | F-035 | End-of-day review form |
+| `supabase/migrations/003_session_reviews.sql` | F-035 | Apply after `001` |
+| `src/components/TradeJournalTable.jsx` | F-036 | Paginated trade list + filters |
 | `src/components/TradeLogger.jsx` | §5.2 | F-015/016/030/032 log + simulate preview |
 | `src/components/TradeSimPreview.jsx` | F-032 | Pre-commit RPC outcome card |
 | `supabase/migrations/002_simulate_trade.sql` | F-032 | Apply in Supabase after `001` |

@@ -26,9 +26,9 @@ Market-backed ideas from journal/risk/prop-firm research (2025–2026). **Not sc
 | 3 | **F-031** | **D1–D4 intraday pacing** — **shipped** | 4 | 2 | 6 | See [F-031 spec](./features/F-031-intraday-pacing.md). |
 | 4 | **F-032** | **Pre-submit outcome preview (`simulate_trade`)** — **shipped** | 5 | 3 | 7 | See [F-032 spec](./features/F-032-simulate-trade.md); apply `002` in Supabase. |
 | 5 | **F-033** | **Prop-style consistency rule tracker** — **shipped** | 4 | 3 | 5 | See [F-033 spec](./features/F-033-consistency-rule.md). |
-| 6 | **F-034** | **Discipline & behavior analytics** | 4 | 3 | 5 | Loss streaks, trades/day, time-between-trades, demotion rate—no broker API. Positions app as discipline OS vs chart-only journals. |
-| 7 | **F-035** | **Guided 5-minute session review** | 4 | 3 | 5 | Short end-of-day process score (plan followed, best/worst decision); avoids heavy “emotion builder” features that see zero usage when logging fails. |
-| 8 | **F-036** | **Trade journal table (paginated history)** | 4 | 3 | 5 | ROADMAP gap: browse `trades` with notes, filters, export—complements charts; expected in any “journal” positioning. |
+| 6 | **F-034** | **Discipline & behavior analytics** — **shipped** | 4 | 3 | 5 | See [F-034 spec](./features/F-034-discipline-analytics.md). |
+| 7 | **F-035** | **Guided 5-minute session review** — **shipped** | 4 | 3 | 5 | See [F-035 spec](./features/F-035-session-review.md); apply `003`. |
+| 8 | **F-036** | **Trade journal table (paginated history)** — **shipped** | 4 | 3 | 5 | See [F-036 spec](./features/F-036-trade-journal-table.md). |
 | 9 | **F-037** | **Broker CSV import → session P&L** | 5 | 4 | 6 | Indian F&O traders need Kite/Console path; aggregate fills to one `log_trade` per day/session. Large TAM; parsing + validation + UX cost. |
 | 10 | **F-038** | **Loss-streak cool-down / optional trade lock** | 4 | 4 | 4 | Revenge trading after consecutive losses; soft UI timer or hard RPC gate. Requires DECISIONS on enforcement vs advisory. |
 | 11 | **F-039** | **Multi-account / rule profiles** | 5 | 5 | 5 | Personal Cyber-Grid vs prop/sim presets (different DD/targets); `002_*.sql`, RPC parameterization, migration. Strategic but largest build. |

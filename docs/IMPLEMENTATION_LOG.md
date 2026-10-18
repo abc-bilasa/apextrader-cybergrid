@@ -37,6 +37,9 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-063 | 2026-10-18 | FEATURE | ui | F-036: paginated trade journal table with profit/loss filter | `TradeJournalTable.jsx`, `Dashboard.jsx` | — | Cursor |
+| IMP-062 | 2026-10-18 | SQL | database | F-035: `session_reviews` table + SessionReviewPanel | `003_session_reviews.sql`, `SessionReviewPanel.jsx` | D13 | Cursor |
+| IMP-061 | 2026-10-18 | FEATURE | dashboard | F-034: discipline stats (streak, revenge window, level counts) | `disciplineStats.js`, `DisciplinePanel.jsx` | — | Cursor |
 | IMP-060 | 2026-10-18 | TOOLING | deploy | Push `af0dfaa` — F-031–F-033 to GitHub Pages | `main` | D10 | Cursor |
 | IMP-059 | 2026-10-18 | FEATURE | dashboard | F-033: 40% consistency rule panel + `getConsistencyMetrics` | `ConsistencyPanel.jsx`, `formulas.js`, `tradeDay.js` | — | Cursor |
 | IMP-058 | 2026-10-18 | SQL | database | F-032: `simulate_trade` RPC + TradeLogger preview UI | `002_simulate_trade.sql`, `TradeSimPreview.jsx`, `TradeLogger.jsx` | D13 | Cursor |
@@ -116,4 +119,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-061**
+**IMP-064**

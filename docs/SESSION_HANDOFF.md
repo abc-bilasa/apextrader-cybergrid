@@ -95,7 +95,7 @@ Do this before writing code:
 
 **Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-033 shipped**
 
-**Next:** Deploy F-031–F-033; apply `002_simulate_trade.sql`; then F-034 discipline stats.
+**Next:** Deploy F-034–F-036; apply `002`/`003`; F-037 CSV import.
 
 ---
 
@@ -103,7 +103,8 @@ Do this before writing code:
 
 | Blocker | Owner | Notes |
 |---------|--------|-------|
-| Apply `002_simulate_trade.sql` | Amit | Required for F-032 preview in prod/local |
+| Apply `002_simulate_trade.sql` | Amit | F-032 trade preview |
+| Apply `003_session_reviews.sql` | Amit | F-035 save reviews |
 
 ---
 
@@ -219,3 +220,6 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | F-032 simulate_trade + preview UI (IMP-058). |
 | 2026-10-18 | F-033 consistency rule panel (IMP-059). |
 | 2026-10-18 | Deploy `af0dfaa` — F-031–F-033 to Pages. |
+| 2026-10-18 | F-034 discipline panel (IMP-061). |
+| 2026-10-18 | F-035 session review (IMP-062). |
+| 2026-10-18 | F-036 trade journal table (IMP-063). |

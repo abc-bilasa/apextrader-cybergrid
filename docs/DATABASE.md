@@ -31,6 +31,10 @@ The file is **complete** and authoritative (includes `GRANT EXECUTE`, `search_pa
 
 Run `supabase/migrations/002_simulate_trade.sql` in SQL Editor after `001`. Grants `simulate_trade` to `authenticated`. Does not change tables.
 
+## Migration 003 (F-035)
+
+Run `supabase/migrations/003_session_reviews.sql` — table `session_reviews` (one review per user per `review_day` text `YYYY-MM-DD`).
+
 Extensions: `uuid-ossp` (or `gen_random_uuid()` on newer Postgres—align with Supabase default).
 
 ## Business rules (RPC)

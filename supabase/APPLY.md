@@ -49,3 +49,14 @@ where routine_schema = 'public' and routine_name = 'simulate_trade';
 ```
 
 Tell Cursor: **`F-032 applied`** when preview works in the app.
+
+---
+
+## Apply migration 003 (F-035 — session reviews)
+
+After `001` (and optionally `002`):
+
+1. SQL Editor → paste **`migrations/003_session_reviews.sql`** → **Run**.
+2. Confirm table `session_reviews` exists.
+
+Tell Cursor: **`F-035 applied`** when save review works.
