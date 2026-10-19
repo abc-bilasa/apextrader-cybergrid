@@ -4,20 +4,18 @@ import { LogOut, Zap } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { formatINR, getLevelMetrics } from '../lib/formulas';
 import { DEFAULT_RULE_PROFILE } from '../lib/ruleProfiles';
-import RuleProfilePanel from './RuleProfilePanel';
+import AppNav from './AppNav';
+import ProfilePage from './ProfilePage';
 import TradeLogger from './TradeLogger';
 import DailyPnlChart from './DailyPnlChart';
 import PnlCalendarPanel from './PnlCalendarPanel';
 import EquityChart from './EquityChart';
 import LevelGrid from './LevelGrid';
-import LevelHistory from './LevelHistory';
 import HeadroomPanel from './HeadroomPanel';
 import DailyPacingPanel from './DailyPacingPanel';
 import ConsistencyPanel from './ConsistencyPanel';
 import DisciplinePanel from './DisciplinePanel';
-import SessionReviewPanel from './SessionReviewPanel';
 import TradeJournalTable from './TradeJournalTable';
-import CsvImportPanel from './CsvImportPanel';
 import CooldownPanel from './CooldownPanel';
 import { useLossStreakCooldown } from '../hooks/useLossStreakCooldown';
 
@@ -143,6 +141,7 @@ export default function Dashboard({ session }) {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState('');
+  const [activeView, setActiveView] = useState('dashboard');
 
   const loadDashboardData = useCallback(async ({ showLoader = true } = {}) => {
     if (showLoader) setLoading(true);
@@ -245,7 +244,9 @@ export default function Dashboard({ session }) {
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm w-full sm:w-auto sm:justify-end">
+        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 w-full sm:w-auto sm:justify-end">
+          <AppNav activeView={activeView} onChange={setActiveView} />
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm sm:justify-end">
           <span className="font-mono cyber-metric text-slate-100">
             LV <span className="text-cyan-400">{level}</span>/42
           </span>
@@ -267,6 +268,7 @@ export default function Dashboard({ session }) {
             <span className="hidden sm:inline">Sign out</span>
           </button>
         </div>
+        </div>
       </header>
 
       {error ? (
@@ -275,6 +277,20 @@ export default function Dashboard({ session }) {
         </div>
       ) : null}
 
+      {activeView === 'profile' ? (
+        <ProfilePage
+          session={session}
+          account={account}
+          level={level}
+          capital={capital}
+          ruleProfileId={ruleProfileId}
+          levelHistory={levelHistory}
+          tradeLoggingBlocked={tradeLoggingBlocked}
+          onProfileChanged={handleRuleProfileChanged}
+          onTradeLogged={handleTradeLogged}
+        />
+      ) : (
+        <>
       {!error && trades.length === 0 ? (
         <p
           className="mt-4 text-xs text-slate-400 border border-cyan-500/15 rounded-lg px-4 py-3 bg-slate-900/40"
@@ -287,11 +303,6 @@ export default function Dashboard({ session }) {
 
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 md:gap-6 mt-6 min-w-0">
         <div className="xl:col-span-4 flex flex-col gap-4 md:gap-6 min-w-0">
-          <RuleProfilePanel
-            accountId={account?.id}
-            ruleProfileId={ruleProfileId}
-            onProfileChanged={handleRuleProfileChanged}
-          />
           <RiskMetricsPanel level={level} ruleProfileId={ruleProfileId} />
           <HeadroomPanel level={level} currentCapital={capital} ruleProfileId={ruleProfileId} />
           <MilestonesPanel level={level} ruleProfileId={ruleProfileId} />
@@ -305,12 +316,6 @@ export default function Dashboard({ session }) {
             onTradeLogged={handleTradeLogged}
             tradeLoggingBlocked={tradeLoggingBlocked}
           />
-          <CsvImportPanel
-            onTradeLogged={handleTradeLogged}
-            tradeLoggingBlocked={tradeLoggingBlocked}
-          />
-          <LevelHistory entries={levelHistory} />
-          <SessionReviewPanel userId={session?.user?.id} />
         </div>
 
         <div className="xl:col-span-5 flex flex-col gap-4 md:gap-6 min-w-0">
@@ -326,6 +331,8 @@ export default function Dashboard({ session }) {
           <LevelGrid activeLevel={level} ruleProfileId={ruleProfileId} />
         </div>
       </div>
+        </>
+      )}
     </div>
   );
 }

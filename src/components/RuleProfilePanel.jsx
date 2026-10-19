@@ -3,7 +3,12 @@ import { SlidersHorizontal } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { RULE_PROFILES, resolveRuleProfile } from '../lib/ruleProfiles';
 
-export default function RuleProfilePanel({ accountId, ruleProfileId, onProfileChanged }) {
+export default function RuleProfilePanel({
+  accountId,
+  ruleProfileId,
+  onProfileChanged,
+  embedded = false,
+}) {
   const active = resolveRuleProfile(ruleProfileId);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -40,7 +45,15 @@ export default function RuleProfilePanel({ accountId, ruleProfileId, onProfileCh
   };
 
   return (
-    <section className="cyber-card p-4 rounded-xl border border-cyan-500/10">
+    <section
+      className={
+        embedded
+          ? ''
+          : 'cyber-card p-4 rounded-xl border border-cyan-500/10'
+      }
+    >
+      {!embedded ? (
+        <>
       <h2 className="cyber-section-title text-sm mb-1 flex items-center gap-2">
         <SlidersHorizontal className="w-4 h-4 text-cyan-400 shrink-0" aria-hidden />
         Rule profile
@@ -49,6 +62,8 @@ export default function RuleProfilePanel({ accountId, ruleProfileId, onProfileCh
         Promotion and daily drawdown rules for <code className="text-cyan-600/80">log_trade</code>{' '}
         (F-039). Does not reset level or capital.
       </p>
+        </>
+      ) : null}
 
       {error ? (
         <div className="cyber-alert-error mb-3 text-xs" role="alert">{error}</div>

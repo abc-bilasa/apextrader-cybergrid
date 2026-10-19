@@ -4,7 +4,11 @@ import { supabase } from '../lib/supabase';
 import { formatINR } from '../lib/formulas';
 import { parseTradeCsv } from '../lib/csvTradeImport';
 
-export default function CsvImportPanel({ onTradeLogged, tradeLoggingBlocked = false }) {
+export default function CsvImportPanel({
+  onTradeLogged,
+  tradeLoggingBlocked = false,
+  embedded = false,
+}) {
   const inputRef = useRef(null);
   const [parsed, setParsed] = useState(null);
   const [parseError, setParseError] = useState('');
@@ -65,7 +69,11 @@ export default function CsvImportPanel({ onTradeLogged, tradeLoggingBlocked = fa
   };
 
   return (
-    <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">
+    <section
+      className={embedded ? '' : 'cyber-card p-5 rounded-xl border border-cyan-500/10'}
+    >
+      {!embedded ? (
+        <>
       <h2 className="cyber-section-title mb-1 flex items-center gap-2">
         <FileUp className="w-4 h-4 text-cyan-400 shrink-0" aria-hidden />
         Import CSV
@@ -74,6 +82,8 @@ export default function CsvImportPanel({ onTradeLogged, tradeLoggingBlocked = fa
         Sum P&amp;L column → one <code className="text-cyan-600/80">log_trade</code> (Zerodha tax P&amp;L
         or any CSV with pnl / Realized P&amp;L).
       </p>
+        </>
+      ) : null}
 
       {fieldError ? (
         <div className="cyber-alert-error mb-3 text-xs" role="alert">{fieldError}</div>

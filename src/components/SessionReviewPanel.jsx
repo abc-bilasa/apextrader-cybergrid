@@ -9,7 +9,7 @@ const PLAN_OPTIONS = [
   { value: 'NO', label: 'No' },
 ];
 
-export default function SessionReviewPanel({ userId }) {
+export default function SessionReviewPanel({ userId, embedded = false }) {
   const reviewDay = todayLocalDateKey();
   const [planFollowed, setPlanFollowed] = useState('PARTIAL');
   const [bestNote, setBestNote] = useState('');
@@ -107,7 +107,11 @@ export default function SessionReviewPanel({ userId }) {
   };
 
   return (
-    <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">
+    <section
+      className={embedded ? '' : 'cyber-card p-5 rounded-xl border border-cyan-500/10'}
+    >
+      {!embedded ? (
+        <>
       <h2 className="cyber-section-title mb-1 flex items-center gap-2">
         <ClipboardCheck className="w-4 h-4 text-cyan-400 shrink-0" aria-hidden />
         Session review
@@ -115,6 +119,10 @@ export default function SessionReviewPanel({ userId }) {
       <p className="text-[10px] text-slate-500 mb-4">
         ~2 min — process over P&amp;L · {reviewDay}
       </p>
+        </>
+      ) : (
+        <p className="text-[10px] text-slate-500 mb-4">Today · {reviewDay}</p>
+      )}
 
       {unavailable ? (
         <p className="text-xs text-amber-200/90 border border-amber-500/30 rounded-lg px-3 py-2 bg-amber-950/20">

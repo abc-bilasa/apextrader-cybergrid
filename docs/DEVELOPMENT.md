@@ -27,7 +27,12 @@ Solo dev may commit directly to `main` once CI is green.
 | File | PRD reference | Status |
 |------|---------------|--------|
 | `src/components/Auth.jsx` | §5.2 | Sign-up/in + errors (F-009–F-010) |
-| `src/components/Dashboard.jsx` | §5.2 | Dashboard F-012–F-039 panels + data load |
+| `src/components/Dashboard.jsx` | §5.2 | Trading cockpit + `AppNav` (F-043) |
+| `src/components/AppNav.jsx` | F-043 | Dashboard \| Profile tabs |
+| `src/components/ProfilePage.jsx` | F-043 | Themed profile sections |
+| `src/components/ProfileSection.jsx` | F-043 | Section shell (cyber-card) |
+| `src/components/MigrationStatusPanel.jsx` | F-043 | Client migration probe UI |
+| `src/lib/migrationProbe.js` | F-043 | Signed-in RPC/table probes |
 | `src/components/LevelHistory.jsx` | ROADMAP optional | F-028 level transition list |
 | `src/components/HeadroomPanel.jsx` | F-029 | DD/promotion headroom vs `log_trade` rules |
 | `src/lib/formulas.js` | §5.1 | Level metrics + headroom/pacing/consistency; optional `ruleProfileId` (D15) |

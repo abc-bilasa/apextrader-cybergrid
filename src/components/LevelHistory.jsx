@@ -20,10 +20,12 @@ function formatWhen(iso) {
   }
 }
 
-export default function LevelHistory({ entries = [] }) {
+export default function LevelHistory({ entries = [], embedded = false }) {
   return (
-    <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">
-      <h2 className="cyber-section-title mb-3">Level transitions</h2>
+    <section
+      className={embedded ? '' : 'cyber-card p-5 rounded-xl border border-cyan-500/10'}
+    >
+      {!embedded ? <h2 className="cyber-section-title mb-3">Level transitions</h2> : null}
       {entries.length === 0 ? (
         <p className="text-xs text-slate-400" role="status">
           No level changes yet. Promotion or drawdown events appear here after trades that move

@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-083 | 2026-10-19 | FEATURE | ui | F-043: Profile page with themed sections + migration status | `ProfilePage.jsx`, `AppNav.jsx` | — | Cursor |
 | IMP-082 | 2026-10-19 | TOOLING | deploy | Push `67bba87` — F-042 journal CRUD UI to GitHub Pages | `main` | D10 | Cursor |
 | IMP-080 | 2026-10-19 | DECISION | process | D16 journal replay on edit/delete | `DECISIONS.md` | D16 | Cursor |
 | IMP-079 | 2026-10-19 | SQL | database | F-042: `update_trade` / `delete_trade` + journal rebuild | `005_trade_journal_crud.sql` | D13, D16 | Cursor |
@@ -138,4 +139,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-083**
+**IMP-084**

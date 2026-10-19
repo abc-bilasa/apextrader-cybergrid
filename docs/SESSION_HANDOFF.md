@@ -29,16 +29,16 @@ Do this before writing code:
 - [x] **Blockers** updated
 - [x] **Session log** appended (`END Session 3`)
 - [x] [DEVELOPMENT.md](./DEVELOPMENT.md) file map current
-- [x] [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) through **IMP-073**
+- [x] [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) through **IMP-083**
 - [x] [DECISIONS.md](./DECISIONS.md) — D14/D15 DEFAULT added (F-038/F-039); D4-A LOCKED unchanged
 
 ---
 
 ## Last updated
 
-- **Date:** 2026-10-18  
+- **Date:** 2026-10-19  
 - **By:** Amit + Cursor  
-- **Session focus:** Session 3 closed — F-038/F-039 shipped + deployed  
+- **Session focus:** F-043 profile page (local); prior deploy F-042  
 - **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `67bba87`, 2026-10-19 — F-042 journal edit/delete)  
 
 ---
@@ -82,26 +82,26 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | F-001–F-039 on production (UI); DB migrations `002`–`004` **not applied** by Amit yet |
+| Dashboard | F-001–F-042 on production; **F-043** profile nav local (not deployed); migrations `002`–`005` **apply in Supabase** |
 | `formulas.js` / theme / charts tokens | Implemented; profile-aware metrics (D15) |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
 | Local git | `main` synced with `origin/main` @ `2e4229a` (app features @ `1c33fbb`) |
-| Documentation | Backlog 39/39; partial TESTING matrix; handoff blockers = Supabase apply |
+| Documentation | Backlog 43/43; partial TESTING matrix; handoff blockers = Supabase apply |
 
 ---
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-039 shipped**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-043 shipped (F-043 deploy pending)**
 
-**START prompt:** `Read SESSION_HANDOFF.md — apply Supabase 002/003/004, prod smoke, then pick F-040 from FEATURE_CANDIDATES or tell Cursor your priority.`
+**START prompt:** `Read SESSION_HANDOFF.md — deploy F-043 if ready, apply Supabase 002–005, npm run check:migrations, prod smoke.`
 
 **Next (Amit):**
 
-1. SQL Editor: run `002`, `003`, `004` per [supabase/APPLY.md](../supabase/APPLY.md)  
-2. Prod smoke: simulate preview, session review save, rule profile switch + one test trade  
-3. Optional: promote **F-040** in BACKLOG; doc cleanup (Session 0 table is historical only)
+1. SQL Editor: run `002`–`005` per [supabase/APPLY.md](../supabase/APPLY.md); `npm run check:migrations`  
+2. Local: **Dashboard | Profile** — rules, CSV import, session review, level history on Profile; trading cockpit on Dashboard  
+3. Say **deploy** to push F-043 to Pages
 
 ---
 
@@ -112,6 +112,7 @@ Do this before writing code:
 | Apply `002_simulate_trade.sql` | Amit | F-032 trade preview |
 | Apply `003_session_reviews.sql` | Amit | F-035 save reviews |
 | Apply `004_rule_profiles.sql` | Amit | F-039 profile switch + RPC rules |
+| Apply `005_trade_journal_crud.sql` | Amit | F-042 journal edit/delete |
 
 ---
 
@@ -240,3 +241,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-19 | START: Apply Supabase `002`–`004`, prod smoke F-032/F-035/F-039; then F-040 or commit pending handoff docs. |
 | 2026-10-19 | F-040 trade journal CSV export (IMP-075). |
 | 2026-10-19 | Deploy `996495a` — F-040 to Pages (IMP-076). |
+| 2026-10-19 | F-043 profile page + migration status panel (IMP-083); build pass; deploy pending. |

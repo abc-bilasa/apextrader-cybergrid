@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _Post–F-042 candidates TBD — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
+**Next feature to build:** _Post–F-043 candidates TBD — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -49,10 +49,11 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-040 | Trade journal CSV export | 30m | F-036 | done | [F-040](./features/F-040-trade-export-csv.md) |
 | F-041 | P&L calendar | 45m | F-022 | done | [F-041](./features/F-041-pnl-calendar.md) |
 | F-042 | Trade journal edit/delete | 60m | F-036 | done | [F-042](./features/F-042-trade-journal-crud.md) |
+| F-043 | User profile page | 45m | F-012 | done | [F-043](./features/F-043-profile-page.md) |
 
 ## Progress
 
-- **Done:** 42 / 42 (F-001–F-042)  
+- **Done:** 43 / 43 (F-001–F-043)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

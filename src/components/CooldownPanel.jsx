@@ -4,13 +4,19 @@ export default function CooldownPanel({
   cooldown,
   overrideEnabled,
   onOverrideChange,
+  embedded = false,
 }) {
+  const shell = embedded
+    ? ''
+    : 'cyber-card p-4 rounded-xl border border-cyan-500/10';
   const { streak, threshold, durationMinutes, active, remainingMs } = cooldown;
 
   if (streak < threshold) {
     return (
-      <section className="cyber-card p-4 rounded-xl border border-cyan-500/10">
+      <section className={shell}>
+        {!embedded ? (
         <h2 className="cyber-section-title text-sm mb-1">Loss-streak cool-down</h2>
+        ) : null}
         <p className="text-[10px] text-slate-500" role="status">
           {streak === 0
             ? 'No active loss streak.'
@@ -22,12 +28,20 @@ export default function CooldownPanel({
 
   return (
     <section
-      className={`cyber-card p-4 rounded-xl border ${
-        active ? 'border-rose-500/35 bg-rose-950/20' : 'border-cyan-500/10'
-      }`}
+      className={
+        embedded
+          ? active
+            ? 'rounded-lg border border-rose-500/35 bg-rose-950/20 p-3'
+            : ''
+          : `cyber-card p-4 rounded-xl border ${
+              active ? 'border-rose-500/35 bg-rose-950/20' : 'border-cyan-500/10'
+            }`
+      }
       aria-live="polite"
     >
+      {!embedded ? (
       <h2 className="cyber-section-title text-sm mb-1">Loss-streak cool-down</h2>
+      ) : null}
       <p className="text-[10px] text-slate-500 mb-3">
         Advisory pause after {threshold}+ losses ({durationMinutes}m from last loss). F-038 / D14.
       </p>
