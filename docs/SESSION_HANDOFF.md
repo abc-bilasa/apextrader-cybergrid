@@ -38,8 +38,8 @@ Do this before writing code:
 
 - **Date:** 2026-10-19  
 - **By:** Amit + Cursor  
-- **Session focus:** F-043 profile page (local); prior deploy F-042  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `67bba87`, 2026-10-19 — F-042 journal edit/delete)  
+- **Session focus:** F-043 profile page deployed  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `7673b98`, 2026-10-19 — F-043 profile page)  
 
 ---
 
@@ -82,7 +82,7 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | F-001–F-042 on production; **F-043** profile nav local (not deployed); migrations `002`–`005` **apply in Supabase** |
+| Dashboard | F-001–F-043 on production; migrations `002`–`005` **apply in Supabase** |
 | `formulas.js` / theme / charts tokens | Implemented; profile-aware metrics (D15) |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
@@ -93,7 +93,7 @@ Do this before writing code:
 
 ## Next session — spec-driven
 
-**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-043 shipped (F-043 deploy pending)**
+**Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-043 shipped**
 
 **START prompt:** `Read SESSION_HANDOFF.md — deploy F-043 if ready, apply Supabase 002–005, npm run check:migrations, prod smoke.`
 
@@ -242,3 +242,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-19 | F-040 trade journal CSV export (IMP-075). |
 | 2026-10-19 | Deploy `996495a` — F-040 to Pages (IMP-076). |
 | 2026-10-19 | F-043 profile page + migration status panel (IMP-083); build pass; deploy pending. |
+| 2026-10-19 | Deploy `7673b98` — F-043 to Pages (IMP-084). |
