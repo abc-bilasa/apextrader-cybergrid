@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
 - **Session focus:** Session 3 closed — F-038/F-039 shipped + deployed  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `996495a`, 2026-10-19 — F-040 CSV export)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `3f959bb`, 2026-10-19 — F-041 P&L calendar)  
 
 ---
 
