@@ -86,7 +86,7 @@ Do this before writing code:
 | `formulas.js` / theme / charts tokens | Implemented; profile-aware metrics (D15) |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
-| Local git | `main` synced with `origin/main` @ `af85674` |
+| Local git | `main` synced with `origin/main` @ `2e4229a` (app features @ `1c33fbb`) |
 | Documentation | Backlog 39/39; partial TESTING matrix; handoff blockers = Supabase apply |
 
 ---

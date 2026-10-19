@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-074 | 2026-10-19 | TOOLING | deploy | Push `2e4229a` — docs/handoff sync; app bundle unchanged (`1c33fbb`) | `main` | D10 | Cursor |
 | IMP-073 | 2026-10-18 | DOCS | process | END Session 3 — handoff, blockers, DEVELOPMENT file map | `SESSION_HANDOFF.md`, `DEVELOPMENT.md` | — | Cursor |
 | IMP-072 | 2026-10-18 | TOOLING | deploy | Push `1c33fbb` — F-038–F-039 to GitHub Pages | `main` | D10 | Cursor |
 | IMP-071 | 2026-10-18 | DECISION | process | D15 DEFAULT: rule profile keys + RPC/UI alignment | `DECISIONS.md` | D15 | Cursor |
@@ -129,4 +130,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-074**
+**IMP-075**
