@@ -46,6 +46,6 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-039 | Rule profiles | yes | yes | yes | [F-039](./F-039-rule-profiles.md) |
 | F-040 | Trade CSV export | yes | yes | yes | [F-040](./F-040-trade-export-csv.md) |
 | F-041 | P&L calendar | yes | yes | yes | [F-041](./F-041-pnl-calendar.md) |
-| F-042 | Journal edit/delete | yes | yes | no | [F-042](./F-042-trade-journal-crud.md) |
+| F-042 | Journal edit/delete | yes | yes | yes | [F-042](./F-042-trade-journal-crud.md) |
 
-**Counts:** Built 40 · Tested 39 (+ partial F-010, F-032, F-035/F-039/005 DB) · Deployed 20
+**Counts:** Built 40 · Tested 39 (+ partial F-010, F-032, F-035/F-039/005 DB) · Deployed 21
