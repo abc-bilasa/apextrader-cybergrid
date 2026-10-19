@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-087 | 2026-10-19 | DOCS | process | Repository map: all paths and purposes | `docs/REPOSITORY_MAP.md` | — | Cursor |
 | IMP-086 | 2026-10-19 | TOOLING | deploy | Push `36c3ad9` — F-044 landing & pricing to GitHub Pages | `main` | D10 | Cursor |
 | IMP-085 | 2026-10-19 | FEATURE | ui | F-044: SaaS landing page + INR pricing tiers | `LandingPage.jsx`, `PricingSection.jsx` | — | Cursor |
 | IMP-084 | 2026-10-19 | TOOLING | deploy | Push `7673b98` — F-043 profile page to GitHub Pages | `main` | D10 | Cursor |
@@ -142,4 +143,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-087**
+**IMP-088**

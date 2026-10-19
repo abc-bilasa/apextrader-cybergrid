@@ -6,6 +6,7 @@
 |----------|----------|
 | Product requirements (source of truth) | [`PRD.txt`](PRD.txt) |
 | All build/deploy/test docs | [`docs/README.md`](docs/README.md) |
+| Full repo file map | [`docs/REPOSITORY_MAP.md`](docs/REPOSITORY_MAP.md) |
 | Rule book | [`docs/RULEBOOK.md`](docs/RULEBOOK.md) |
 | Spec-driven features | [`docs/SPEC_DRIVEN.md`](docs/SPEC_DRIVEN.md) · [`docs/specs/BACKLOG.md`](docs/specs/BACKLOG.md) |
 | Feature ship status | [`app-features/INDEX.md`](app-features/INDEX.md) |

@@ -245,3 +245,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-19 | Deploy `7673b98` — F-043 to Pages (IMP-084). |
 | 2026-10-19 | F-044 landing page + subscription tiers UI (IMP-085); deploy pending. |
 | 2026-10-19 | Deploy `36c3ad9` — F-044 to Pages (IMP-086). |
+| 2026-10-19 | `docs/REPOSITORY_MAP.md` — full repo file/folder guide (IMP-087). |

@@ -28,6 +28,7 @@ Use this folder for everything needed to **build**, **test**, and **deploy** acr
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | How frontend, Supabase, and RPC fit together |
 | [DATABASE.md](./DATABASE.md) | Migrations, RLS, `log_trade`, verification queries |
 | [DEVELOPMENT.md](./DEVELOPMENT.md) | Day-to-day coding, conventions, file map |
+| [REPOSITORY_MAP.md](./REPOSITORY_MAP.md) | **Every folder/file** in the repo and its purpose |
 | [UI_STYLE_GUIDE.md](./UI_STYLE_GUIDE.md) | **Global UI/theme** — required for all screens & components |
 | [DECISIONS.md](./DECISIONS.md) | Product/tech choices (change only via this doc) |
 
