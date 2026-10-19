@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-19  
 - **By:** Amit + Cursor  
 - **Session focus:** F-043 profile page deployed  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `7673b98`, 2026-10-19 — F-043 profile page)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `36c3ad9`, 2026-10-19 — F-044 landing & pricing)  
 
 ---
 
@@ -244,3 +244,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-19 | F-043 profile page + migration status panel (IMP-083); build pass; deploy pending. |
 | 2026-10-19 | Deploy `7673b98` — F-043 to Pages (IMP-084). |
 | 2026-10-19 | F-044 landing page + subscription tiers UI (IMP-085); deploy pending. |
+| 2026-10-19 | Deploy `36c3ad9` — F-044 to Pages (IMP-086). |
