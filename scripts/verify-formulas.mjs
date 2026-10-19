@@ -6,6 +6,7 @@
 
 import { parseTradeCsv } from '../src/lib/csvTradeImport.js';
 import { buildTradesCsv } from '../src/lib/tradeCsvExport.js';
+import { aggregateTradesByLocalDay, buildMonthGrid } from '../src/lib/pnlCalendar.js';
 import {
   COOLDOWN_LOSS_THRESHOLD,
   getLossStreakCooldown,
@@ -151,6 +152,22 @@ const cooldownClear = getLossStreakCooldown(
 );
 if (cooldownClear.active || cooldownClear.streak !== 0) {
   console.error('Loss-streak cooldown: profit should clear streak', cooldownClear);
+  failed = true;
+}
+
+const calTrades = [
+  { id: 'a', created_at: '2026-10-19T09:00:00.000Z', pnl: 100 },
+  { id: 'b', created_at: '2026-10-19T15:00:00.000Z', pnl: -50 },
+];
+const calMap = aggregateTradesByLocalDay(calTrades);
+const calKey = '2026-10-19';
+const calRow = calMap.get(calKey);
+if (!calRow || calRow.pnl !== 50 || calRow.count !== 2) {
+  console.error('P&L calendar aggregate failed', calRow);
+  failed = true;
+}
+if (buildMonthGrid(2026, 10).length % 7 !== 0) {
+  console.error('P&L calendar grid not full weeks');
   failed = true;
 }
 

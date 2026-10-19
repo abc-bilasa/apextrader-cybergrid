@@ -53,6 +53,8 @@ Solo dev may commit directly to `main` once CI is green.
 | `supabase/migrations/004_rule_profiles.sql` | F-039 | Column + profile-aware `log_trade` / `simulate_trade` |
 | `src/components/EquityChart.jsx` | §5.2 | F-021 Recharts area chart |
 | `src/components/DailyPnlChart.jsx` | §5.2 | F-022 daily P&L bars |
+| `src/lib/pnlCalendar.js` | F-041, D11 | Daily P&L aggregation + month grid |
+| `src/components/PnlCalendarPanel.jsx` | F-041 | Calendar + selected-day trades |
 | `src/components/LevelGrid.jsx` | §5.2 | F-023 42-level matrix |
 | `src/lib/supabase.js` | §5.1 | Implemented |
 | `src/lib/chartTheme.js` | UI_STYLE_GUIDE | Implemented |

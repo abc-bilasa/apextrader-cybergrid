@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _Post–F-040 candidates TBD — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
+**Next feature to build:** _Post–F-041 candidates TBD — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -47,10 +47,11 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-038 | Loss-streak cool-down | 30m | F-034 | done | [F-038](./features/F-038-loss-streak-cooldown.md) |
 | F-039 | Rule profiles | 45m | F-014 | done | [F-039](./features/F-039-rule-profiles.md) |
 | F-040 | Trade journal CSV export | 30m | F-036 | done | [F-040](./features/F-040-trade-export-csv.md) |
+| F-041 | P&L calendar | 45m | F-022 | done | [F-041](./features/F-041-pnl-calendar.md) |
 
 ## Progress
 
-- **Done:** 40 / 40 (F-001–F-040)  
+- **Done:** 41 / 41 (F-001–F-041)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

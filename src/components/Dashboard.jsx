@@ -7,6 +7,7 @@ import { DEFAULT_RULE_PROFILE } from '../lib/ruleProfiles';
 import RuleProfilePanel from './RuleProfilePanel';
 import TradeLogger from './TradeLogger';
 import DailyPnlChart from './DailyPnlChart';
+import PnlCalendarPanel from './PnlCalendarPanel';
 import EquityChart from './EquityChart';
 import LevelGrid from './LevelGrid';
 import LevelHistory from './LevelHistory';
@@ -315,6 +316,7 @@ export default function Dashboard({ session }) {
         <div className="xl:col-span-5 flex flex-col gap-4 md:gap-6 min-w-0">
           <EquityChart trades={trades} initialCapital={chartBase} />
           <DailyPnlChart trades={trades} />
+          <PnlCalendarPanel trades={trades} />
           <ConsistencyPanel trades={trades} />
           <DisciplinePanel trades={trades} levelHistory={levelHistory} />
           <TradeJournalTable trades={trades} />

@@ -45,5 +45,6 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-038 | Loss-streak cool-down | yes | yes | yes | [F-038](./F-038-loss-streak-cooldown.md) |
 | F-039 | Rule profiles | yes | yes | yes | [F-039](./F-039-rule-profiles.md) |
 | F-040 | Trade CSV export | yes | yes | yes | [F-040](./F-040-trade-export-csv.md) |
+| F-041 | P&L calendar | yes | yes | no | [F-041](./F-041-pnl-calendar.md) |
 
-**Counts:** Built 38 · Tested 37 (+ partial F-010, F-032, F-035/F-039 DB) · Deployed 19
+**Counts:** Built 39 · Tested 37 (+ partial F-010, F-032, F-035/F-039 DB) · Deployed 19

@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-077 | 2026-10-19 | FEATURE | dashboard | F-041: monthly P&L calendar + day trade drill-down | `pnlCalendar.js`, `PnlCalendarPanel.jsx` | D11 | Cursor |
 | IMP-076 | 2026-10-19 | TOOLING | deploy | Push `996495a` — F-040 CSV export to GitHub Pages | `main` | D10 | Cursor |
 | IMP-075 | 2026-10-19 | FEATURE | trading | F-040: export filtered trade journal to downloadable CSV | `tradeCsvExport.js`, `TradeJournalTable.jsx` | — | Cursor |
 | IMP-074 | 2026-10-19 | TOOLING | deploy | Push `2e4229a` — docs/handoff sync; app bundle unchanged (`1c33fbb`) | `main` | D10 | Cursor |
@@ -132,4 +133,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-077**
+**IMP-078**
