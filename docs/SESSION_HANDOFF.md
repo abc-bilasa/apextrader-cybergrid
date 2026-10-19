@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-19  
 - **By:** Amit + Cursor  
 - **Session focus:** F-043 profile page deployed  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `36c3ad9`, 2026-10-19 — F-044 landing & pricing)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (app @ `36c3ad9`; docs `04890ea` REPOSITORY_MAP)  
 
 ---
 
