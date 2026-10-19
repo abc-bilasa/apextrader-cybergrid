@@ -37,6 +37,9 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-080 | 2026-10-19 | DECISION | process | D16 journal replay on edit/delete | `DECISIONS.md` | D16 | Cursor |
+| IMP-079 | 2026-10-19 | SQL | database | F-042: `update_trade` / `delete_trade` + journal rebuild | `005_trade_journal_crud.sql` | D13, D16 | Cursor |
+| IMP-081 | 2026-10-19 | FEATURE | trading | F-042: journal edit dialog + delete actions | `TradeJournalTable.jsx`, `TradeJournalEditDialog.jsx` | D16 | Cursor |
 | IMP-078 | 2026-10-19 | TOOLING | deploy | Push `3f959bb` — F-041 P&L calendar to GitHub Pages | `main` | D10 | Cursor |
 | IMP-077 | 2026-10-19 | FEATURE | dashboard | F-041: monthly P&L calendar + day trade drill-down | `pnlCalendar.js`, `PnlCalendarPanel.jsx` | D11 | Cursor |
 | IMP-076 | 2026-10-19 | TOOLING | deploy | Push `996495a` — F-040 CSV export to GitHub Pages | `main` | D10 | Cursor |
@@ -134,4 +137,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-079**
+**IMP-082**

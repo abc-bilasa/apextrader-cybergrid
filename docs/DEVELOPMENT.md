@@ -43,7 +43,9 @@ Solo dev may commit directly to `main` once CI is green.
 | `src/components/DisciplinePanel.jsx` | F-034 | Behavior stats panel |
 | `src/components/SessionReviewPanel.jsx` | F-035 | End-of-day review form |
 | `supabase/migrations/003_session_reviews.sql` | F-035 | Apply after `001` |
-| `src/components/TradeJournalTable.jsx` | F-036, F-040 | Paginated trade list, filters, CSV export |
+| `src/components/TradeJournalTable.jsx` | F-036, F-040, F-042 | Journal list, export, edit/delete |
+| `src/components/TradeJournalEditDialog.jsx` | F-042 | Edit P&L, time, notes via `update_trade` |
+| `supabase/migrations/005_trade_journal_crud.sql` | F-042 | Apply after `004` |
 | `src/lib/tradeCsvExport.js` | F-040 | Build/download journal CSV |
 | `src/lib/csvTradeImport.js` | F-037 | CSV P&L column detect + sum |
 | `src/components/CsvImportPanel.jsx` | F-037 | File upload → one `log_trade` |

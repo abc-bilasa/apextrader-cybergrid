@@ -76,3 +76,19 @@ where table_schema = 'public' and table_name = 'trading_accounts' and column_nam
 ```
 
 Tell Cursor: **`F-039 applied`** when profile switch saves in the dashboard.
+
+---
+
+## Apply migration 005 (F-042 — edit/delete trades)
+
+After **`004`** (uses `rule_profile_pcts`):
+
+1. SQL Editor → paste **`migrations/005_trade_journal_crud.sql`** → **Run**.
+2. Verify RPCs exist (signed-in app, or SQL):
+
+```sql
+select routine_name from information_schema.routines
+where routine_schema = 'public' and routine_name in ('update_trade', 'delete_trade');
+```
+
+Tell Cursor: **`F-042 applied`** when edit/delete works in Trade journal.

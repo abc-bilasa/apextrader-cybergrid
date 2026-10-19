@@ -319,7 +319,7 @@ export default function Dashboard({ session }) {
           <PnlCalendarPanel trades={trades} />
           <ConsistencyPanel trades={trades} />
           <DisciplinePanel trades={trades} levelHistory={levelHistory} />
-          <TradeJournalTable trades={trades} />
+          <TradeJournalTable trades={trades} onJournalChange={handleTradeLogged} />
         </div>
 
         <div className="cyber-dashboard-level-panel xl:col-span-3 min-w-0 min-h-0">

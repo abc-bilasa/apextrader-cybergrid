@@ -84,6 +84,14 @@ const results = {
   '003 session_reviews table': await probeTable('session_reviews'),
   '004 rule_profile column': await probeRuleProfileColumn(),
   '004 log_trade (exists)': await probeRpc('log_trade', { p_pnl: 0, p_notes: null }),
+  '005 update_trade': await probeRpc('update_trade', {
+    p_trade_id: '00000000-0000-0000-0000-000000000000',
+    p_pnl: 0,
+    p_notes: null,
+  }),
+  '005 delete_trade': await probeRpc('delete_trade', {
+    p_trade_id: '00000000-0000-0000-0000-000000000000',
+  }),
 };
 
 let failed = false;

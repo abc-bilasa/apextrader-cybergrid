@@ -139,6 +139,16 @@ Record **product and technical choices** here so future sessions (and agents) do
 
 ---
 
+## D16 — Journal edit / delete
+
+| | |
+|---|---|
+| **Status** | DEFAULT (F-042, 2026-10-19) |
+| **Decision** | **Add** trades only via `log_trade`. **Edit** (`update_trade`) and **delete** (`delete_trade`) replay the ordered journal from L1 @ ₹10,000 and rewrite `trades` snapshot fields, `trading_accounts`, and `level_history`. |
+| **Rejected** | Client-side UPDATE on `trades` without replay; editing level/capital on account directly. |
+
+---
+
 ## D15 — Rule profiles (promotion / daily DD)
 
 | | |
@@ -181,3 +191,4 @@ These must be **LOCKED** or explicitly accepted in [PRE_BUILD_SIGNOFF.md](./PRE_
 | 2026-10-17 | D4 | LOCKED D4-A via feature F-001 (IMP-019) |
 | 2026-10-18 | D14 | DEFAULT advisory loss-streak cool-down (F-038) |
 | 2026-10-18 | D15 | DEFAULT rule profiles on trading account (F-039) |
+| 2026-10-19 | D16 | DEFAULT journal edit/delete with full replay (F-042) |

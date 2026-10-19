@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react';
-import { Download } from 'lucide-react';
+import { Download, Pencil, Trash2 } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 import { formatINR } from '../lib/formulas';
 import { localDateKey } from '../lib/tradeDay';
 import { exportTradesCsv } from '../lib/tradeCsvExport';
+import TradeJournalEditDialog from './TradeJournalEditDialog';
 
 const PAGE_SIZE = 10;
 
@@ -31,9 +33,12 @@ function matchesFilter(trade, filterId) {
   return true;
 }
 
-export default function TradeJournalTable({ trades = [] }) {
+export default function TradeJournalTable({ trades = [], onJournalChange }) {
   const [filter, setFilter] = useState('all');
   const [page, setPage] = useState(0);
+  const [editingTrade, setEditingTrade] = useState(null);
+  const [actionError, setActionError] = useState('');
+  const [deletingId, setDeletingId] = useState(null);
 
   const filtered = useMemo(() => {
     const rows = [...trades]
@@ -53,6 +58,35 @@ export default function TradeJournalTable({ trades = [] }) {
   const onFilterChange = (id) => {
     setFilter(id);
     setPage(0);
+  };
+
+  const handleDelete = async (trade) => {
+    if (
+      !window.confirm(
+        `Delete this trade (${formatINR(Number(trade.pnl))})? Level and capital will be recalculated.`,
+      )
+    ) {
+      return;
+    }
+    setActionError('');
+    setDeletingId(trade.id);
+    try {
+      const { data, error } = await supabase.rpc('delete_trade', { p_trade_id: trade.id });
+      if (error) {
+        const missing = error.code === 'PGRST202' || error.message?.includes('delete_trade');
+        setActionError(
+          missing
+            ? 'Apply migration 005_trade_journal_crud.sql in Supabase to delete trades.'
+            : error.message,
+        );
+        return;
+      }
+      if (onJournalChange) await onJournalChange(data);
+    } catch {
+      setActionError('Could not delete trade.');
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   return (
@@ -91,6 +125,15 @@ export default function TradeJournalTable({ trades = [] }) {
         </div>
       </div>
 
+      {actionError ? (
+        <div className="cyber-alert-error mb-3 text-xs" role="alert">{actionError}</div>
+      ) : null}
+
+      <p className="text-[10px] text-slate-500 mb-3">
+        <strong className="text-slate-400">Add</strong> via Log trade. Edit/delete need SQL{' '}
+        <code className="text-cyan-600/80">005_trade_journal_crud.sql</code> (after 004).
+      </p>
+
       {filtered.length === 0 ? (
         <p className="text-xs text-slate-500" role="status">No trades match this filter.</p>
       ) : (
@@ -103,7 +146,8 @@ export default function TradeJournalTable({ trades = [] }) {
                   <th className="py-2 pr-3 font-medium">Lv</th>
                   <th className="py-2 pr-3 font-medium">P&amp;L</th>
                   <th className="py-2 pr-3 font-medium">After</th>
-                  <th className="py-2 font-medium">Notes</th>
+                  <th className="py-2 pr-3 font-medium">Notes</th>
+                  <th className="py-2 font-medium w-20">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -129,8 +173,29 @@ export default function TradeJournalTable({ trades = [] }) {
                       <td className="py-2.5 pr-3 font-mono tabular-nums text-slate-300">
                         {formatINR(Number(trade.ending_capital))}
                       </td>
-                      <td className="py-2.5 text-slate-400 max-w-[12rem] truncate" title={trade.notes ?? ''}>
+                      <td className="py-2.5 pr-3 text-slate-400 max-w-[10rem] truncate" title={trade.notes ?? ''}>
                         {trade.notes?.trim() ? trade.notes : '—'}
+                      </td>
+                      <td className="py-2.5">
+                        <div className="flex gap-1">
+                          <button
+                            type="button"
+                            className="p-1.5 rounded border border-slate-600 text-slate-400 hover:border-cyan-500/40 hover:text-cyan-300"
+                            aria-label="Edit trade"
+                            onClick={() => setEditingTrade(trade)}
+                          >
+                            <Pencil className="w-3.5 h-3.5" />
+                          </button>
+                          <button
+                            type="button"
+                            disabled={deletingId === trade.id}
+                            className="p-1.5 rounded border border-slate-600 text-slate-400 hover:border-rose-500/40 hover:text-rose-300 disabled:opacity-40"
+                            aria-label="Delete trade"
+                            onClick={() => handleDelete(trade)}
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   );
@@ -165,6 +230,13 @@ export default function TradeJournalTable({ trades = [] }) {
           </div>
         </>
       )}
+
+      <TradeJournalEditDialog
+        trade={editingTrade}
+        open={Boolean(editingTrade)}
+        onClose={() => setEditingTrade(null)}
+        onSaved={onJournalChange}
+      />
     </section>
   );
 }
