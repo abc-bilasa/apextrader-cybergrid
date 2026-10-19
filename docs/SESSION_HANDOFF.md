@@ -22,15 +22,15 @@ Do this before writing code:
 
 **Cursor:** invoke skill `apextrader-session-close` (or say “close session”).
 
-- [x] **Last updated** date + who *(2026-10-17, Session 2 close — Amit + Cursor)*
+- [x] **Last updated** date + who *(2026-10-18, Session 3 close — Amit + Cursor)*
 - [x] **Current state** table accurate
-- [x] **Next session** set (MVP complete — optional deploy / automation)
+- [x] **Next session** set (Supabase `002`–`004` + F-040 planning)
 - [x] **Completed checklist** updated
 - [x] **Blockers** updated
-- [x] **Session log** appended (`END Session 2`)
+- [x] **Session log** appended (`END Session 3`)
 - [x] [DEVELOPMENT.md](./DEVELOPMENT.md) file map current
-- [x] [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) through **IMP-048**
-- [x] [DECISIONS.md](./DECISIONS.md) — no new locks (D4-A LOCKED)
+- [x] [IMPLEMENTATION_LOG.md](./IMPLEMENTATION_LOG.md) through **IMP-073**
+- [x] [DECISIONS.md](./DECISIONS.md) — D14/D15 DEFAULT added (F-038/F-039); D4-A LOCKED unchanged
 
 ---
 
@@ -38,8 +38,8 @@ Do this before writing code:
 
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
-- **Session focus:** F-039 rule profiles (local; deploy pending)  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `1c33fbb`, 2026-10-18 — F-038 cool-down, F-039 rule profiles)  
+- **Session focus:** Session 3 closed — F-038/F-039 shipped + deployed  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (feature `1c33fbb`, docs `af85674`, 2026-10-18)  
 
 ---
 
@@ -82,12 +82,12 @@ Do this before writing code:
 | `.env.local` | Created (gitignored); dev on :5173 |
 | SQL migration file | Ready — `supabase/migrations/001_initial_schema.sql` |
 | Auth | F-008–F-010 done (sign-up/in, sign-out) |
-| Dashboard | F-001–F-037 on production (apply `002`/`003` for preview + reviews) |
-| `formulas.js` / theme / charts tokens | Implemented |
+| Dashboard | F-001–F-039 on production (UI); DB migrations `002`–`004` **not applied** by Amit yet |
+| `formulas.js` / theme / charts tokens | Implemented; profile-aware metrics (D15) |
 | CI workflow file | Present — `.github/workflows/deploy.yml` |
 | Production URL | https://abc-bilasa.github.io/apextrader-cybergrid/ |
-| Local git | `main` synced with `origin/main` @ `20e875a` |
-| Documentation | MVP docs + TESTING sign-offs complete |
+| Local git | `main` synced with `origin/main` @ `af85674` |
+| Documentation | Backlog 39/39; partial TESTING matrix; handoff blockers = Supabase apply |
 
 ---
 
@@ -95,7 +95,13 @@ Do this before writing code:
 
 **Backlog:** [specs/BACKLOG.md](./specs/BACKLOG.md) — **F-001–F-039 shipped**
 
-**Next:** Apply `002`–`004` in Supabase; deploy F-038 + F-039; promote next candidate in FEATURE_CANDIDATES.
+**START prompt:** `Read SESSION_HANDOFF.md — apply Supabase 002/003/004, prod smoke, then pick F-040 from FEATURE_CANDIDATES or tell Cursor your priority.`
+
+**Next (Amit):**
+
+1. SQL Editor: run `002`, `003`, `004` per [supabase/APPLY.md](../supabase/APPLY.md)  
+2. Prod smoke: simulate preview, session review save, rule profile switch + one test trade  
+3. Optional: promote **F-040** in BACKLOG; doc cleanup (Session 0 table is historical only)
 
 ---
 
@@ -164,7 +170,7 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 
 ## Notes for next developer / AI
 
-- **Start prompt:** `MVP done. Read SESSION_HANDOFF.md — deploy if needed, or add Vitest per TESTING.md.`  
+- **Start prompt:** see **Next session** above.  
 - PRD: [`../PRD.txt`](../PRD.txt)  
 - UI work: always [UI_STYLE_GUIDE.md](./UI_STYLE_GUIDE.md)  
 - Do not re-scaffold or duplicate docs unless a gap is found  
@@ -227,3 +233,8 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | Deploy `b3efe26` — F-034–F-036 to Pages. |
 | 2026-10-18 | F-037 CSV import (IMP-065). |
 | 2026-10-18 | Deploy `9a14b3e` — F-037 to Pages. |
+| 2026-10-18 | F-038 loss-streak cool-down (IMP-067/068, D14). |
+| 2026-10-18 | F-039 rule profiles + `004_rule_profiles.sql` (IMP-069–071, D15). |
+| 2026-10-18 | Deploy `1c33fbb` — F-038/F-039 to Pages; docs `af85674` (IMP-072). |
+| 2026-10-18 | **END Session 3:** Backlog 39/39. Next session = Supabase `002`–`004` + smoke + F-040 planning. |
+| 2026-10-19 | START: Apply Supabase `002`–`004`, prod smoke F-032/F-035/F-039; then F-040 or commit pending handoff docs. |

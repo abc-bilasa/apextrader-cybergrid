@@ -27,10 +27,15 @@ Solo dev may commit directly to `main` once CI is green.
 | File | PRD reference | Status |
 |------|---------------|--------|
 | `src/components/Auth.jsx` | §5.2 | Sign-up/in + errors (F-009–F-010) |
-| `src/components/Dashboard.jsx` | §5.2 | Dashboard F-012–F-025 + F-028 level history load |
+| `src/components/Dashboard.jsx` | §5.2 | Dashboard F-012–F-039 panels + data load |
 | `src/components/LevelHistory.jsx` | ROADMAP optional | F-028 level transition list |
 | `src/components/HeadroomPanel.jsx` | F-029 | DD/promotion headroom vs `log_trade` rules |
-| `src/lib/formulas.js` | §5.1 | `getLevelMetrics`, `getHeadroomMetrics`, `getIntradayPacingMetrics`, `formatINR` |
+| `src/lib/formulas.js` | §5.1 | Level metrics + headroom/pacing/consistency; optional `ruleProfileId` (D15) |
+| `src/lib/ruleProfiles.js` | F-039 | Profile keys aligned with `004_rule_profiles.sql` |
+| `src/lib/lossStreakCooldown.js` | F-038 | Advisory cool-down math (D14) |
+| `src/hooks/useLossStreakCooldown.js` | F-038 | Live countdown for cool-down UI |
+| `src/components/CooldownPanel.jsx` | F-038 | Timer + override; blocks log/CSV when active |
+| `src/components/RuleProfilePanel.jsx` | F-039 | Switch `trading_accounts.rule_profile` |
 | `src/lib/tradeDay.js` | D11 | Local day keys + sum today P&L |
 | `src/components/DailyPacingPanel.jsx` | F-031 | Today vs D1–D4 cumulative |
 | `src/components/ConsistencyPanel.jsx` | F-033 | 40% single-day vs total profit |
@@ -44,6 +49,7 @@ Solo dev may commit directly to `main` once CI is green.
 | `src/components/TradeLogger.jsx` | §5.2 | F-015/016/030/032 log + simulate preview |
 | `src/components/TradeSimPreview.jsx` | F-032 | Pre-commit RPC outcome card |
 | `supabase/migrations/002_simulate_trade.sql` | F-032 | Apply in Supabase after `001` |
+| `supabase/migrations/004_rule_profiles.sql` | F-039 | Column + profile-aware `log_trade` / `simulate_trade` |
 | `src/components/EquityChart.jsx` | §5.2 | F-021 Recharts area chart |
 | `src/components/DailyPnlChart.jsx` | §5.2 | F-022 daily P&L bars |
 | `src/components/LevelGrid.jsx` | §5.2 | F-023 42-level matrix |
