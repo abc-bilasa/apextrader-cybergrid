@@ -10,7 +10,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "verify:formulas": "node scripts/verify-formulas.mjs"
+    "verify:formulas": "node scripts/verify-formulas.mjs",
+    "check:migrations": "node scripts/check-migrations.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
