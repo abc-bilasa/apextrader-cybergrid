@@ -5,6 +5,7 @@
  */
 
 import { parseTradeCsv } from '../src/lib/csvTradeImport.js';
+import { buildTradesCsv } from '../src/lib/tradeCsvExport.js';
 import {
   COOLDOWN_LOSS_THRESHOLD,
   getLossStreakCooldown,
@@ -150,6 +151,23 @@ const cooldownClear = getLossStreakCooldown(
 );
 if (cooldownClear.active || cooldownClear.streak !== 0) {
   console.error('Loss-streak cooldown: profit should clear streak', cooldownClear);
+  failed = true;
+}
+
+const exportSample = buildTradesCsv([
+  {
+    created_at: '2026-10-19T10:00:00.000Z',
+    level: 1,
+    trade_type: 'PROFIT',
+    pnl: 500,
+    starting_capital: 10000,
+    ending_capital: 10500,
+    notes: 'Test, "quoted"',
+  },
+]);
+const exportParsed = parseTradeCsv(exportSample);
+if (!exportParsed.ok || exportParsed.rowCount !== 1 || exportParsed.totalPnl !== 500) {
+  console.error('Trade CSV export round-trip failed', exportParsed);
   failed = true;
 }
 

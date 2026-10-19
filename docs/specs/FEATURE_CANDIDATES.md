@@ -32,6 +32,7 @@ Market-backed ideas from journal/risk/prop-firm research (2025–2026). **Not sc
 | 9 | **F-037** | **Broker CSV import → session P&L** — **shipped** | 5 | 4 | 6 | See [F-037 spec](./features/F-037-csv-import.md). |
 | 10 | **F-038** | **Loss-streak cool-down / optional trade lock** — **shipped** | 4 | 4 | 4 | See [F-038 spec](./features/F-038-loss-streak-cooldown.md); D14 advisory UI. |
 | 11 | **F-039** | **Multi-account / rule profiles** — **shipped (phase 1)** | 5 | 5 | 5 | Rule profile switcher + `004_rule_profiles.sql`; multi-row accounts deferred. |
+| 12 | **F-040** | **Export trade journal to CSV** — **shipped** | 4 | 2 | 6 | See [F-040 spec](./features/F-040-trade-export-csv.md); pairs with F-037 import. |
 
 ---
 

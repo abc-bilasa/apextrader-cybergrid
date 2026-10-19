@@ -44,5 +44,6 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-037 | CSV import | yes | yes | yes | [F-037](./F-037-csv-import.md) |
 | F-038 | Loss-streak cool-down | yes | yes | yes | [F-038](./F-038-loss-streak-cooldown.md) |
 | F-039 | Rule profiles | yes | yes | yes | [F-039](./F-039-rule-profiles.md) |
+| F-040 | Trade CSV export | yes | yes | no | [F-040](./F-040-trade-export-csv.md) |
 
-**Counts:** Built 37 · Tested 36 (+ partial F-010, F-032, F-035/F-039 DB) · Deployed 18
+**Counts:** Built 38 · Tested 37 (+ partial F-010, F-032, F-035/F-039 DB) · Deployed 18

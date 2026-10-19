@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
+import { Download } from 'lucide-react';
 import { formatINR } from '../lib/formulas';
 import { localDateKey } from '../lib/tradeDay';
+import { exportTradesCsv } from '../lib/tradeCsvExport';
 
 const PAGE_SIZE = 10;
 
@@ -57,7 +59,18 @@ export default function TradeJournalTable({ trades = [] }) {
     <section className="cyber-card p-5 rounded-xl border border-cyan-500/10">
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <h2 className="cyber-section-title">Trade journal</h2>
-        <div className="flex gap-1.5" role="tablist" aria-label="Filter trades">
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            disabled={filtered.length === 0}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded text-[10px] uppercase tracking-wider border border-cyan-500/30 text-cyan-300 hover:bg-cyan-950/40 disabled:opacity-40 disabled:cursor-not-allowed"
+            aria-label={`Export ${filtered.length} trades as CSV`}
+            onClick={() => exportTradesCsv(filtered, filter)}
+          >
+            <Download className="w-3.5 h-3.5" aria-hidden />
+            Export CSV
+          </button>
+          <div className="flex gap-1.5" role="tablist" aria-label="Filter trades">
           {FILTERS.map((f) => (
             <button
               key={f.id}
@@ -74,6 +87,7 @@ export default function TradeJournalTable({ trades = [] }) {
               {f.label}
             </button>
           ))}
+          </div>
         </div>
       </div>
 

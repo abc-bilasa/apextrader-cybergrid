@@ -238,3 +238,4 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | Deploy `1c33fbb` — F-038/F-039 to Pages; docs `af85674` (IMP-072). |
 | 2026-10-18 | **END Session 3:** Backlog 39/39. Next session = Supabase `002`–`004` + smoke + F-040 planning. |
 | 2026-10-19 | START: Apply Supabase `002`–`004`, prod smoke F-032/F-035/F-039; then F-040 or commit pending handoff docs. |
+| 2026-10-19 | F-040 trade journal CSV export (IMP-075); deploy pending. |
