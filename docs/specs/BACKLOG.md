@@ -1,6 +1,6 @@
 # Feature backlog (spec-driven)
 
-**Next feature to build:** _Post–F-043 candidates TBD — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
+**Next feature to build:** _Post–F-044 candidates TBD — see [FEATURE_CANDIDATES.md](./FEATURE_CANDIDATES.md)_  
 **Process:** [SPEC_DRIVEN.md](../SPEC_DRIVEN.md)
 
 Status: `pending` | `in_progress` | `done` | `blocked`
@@ -50,10 +50,11 @@ Status: `pending` | `in_progress` | `done` | `blocked`
 | F-041 | P&L calendar | 45m | F-022 | done | [F-041](./features/F-041-pnl-calendar.md) |
 | F-042 | Trade journal edit/delete | 60m | F-036 | done | [F-042](./features/F-042-trade-journal-crud.md) |
 | F-043 | User profile page | 45m | F-012 | done | [F-043](./features/F-043-profile-page.md) |
+| F-044 | Landing & subscription tiers | 60m | F-008 | done | [F-044](./features/F-044-landing-pricing.md) |
 
 ## Progress
 
-- **Done:** 43 / 43 (F-001–F-043)  
+- **Done:** 44 / 44 (F-001–F-044)  
 - **Session 0** (scaffold/docs) is outside this backlog — do not repeat.
 
 ## Updating “Next feature”

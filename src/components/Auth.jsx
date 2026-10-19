@@ -1,9 +1,13 @@
 import { useState } from 'react';
-import { Zap } from 'lucide-react';
+import { ArrowLeft, Zap } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
-export default function Auth() {
-  const [mode, setMode] = useState('sign-in');
+export default function Auth({
+  initialMode = 'sign-in',
+  selectedPlan = null,
+  onBack,
+}) {
+  const [mode, setMode] = useState(initialMode);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -43,12 +47,32 @@ export default function Auth() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-cyber-dark">
-      <div className="cyber-card p-8 rounded-2xl w-full max-w-md border border-cyan-500/30">
-        <div className="flex flex-col items-center text-center mb-8">
+      <div className="cyber-card p-8 rounded-2xl w-full max-w-md border border-cyan-500/30 relative">
+        {onBack ? (
+          <button
+            type="button"
+            className="absolute left-4 top-4 cyber-btn-ghost inline-flex items-center gap-1 text-xs"
+            onClick={onBack}
+          >
+            <ArrowLeft className="w-4 h-4" aria-hidden />
+            Home
+          </button>
+        ) : null}
+        <div className="flex flex-col items-center text-center mb-8 mt-6">
           <Zap className="w-10 h-10 text-cyan-400 animate-pulse mb-3" aria-hidden />
           <h1 className="text-2xl font-black tracking-wider text-cyan-400">APEX TRADER</h1>
           <p className="text-xs uppercase tracking-widest text-slate-400 mt-1">Cyber-Grid journal</p>
         </div>
+
+        {selectedPlan && mode === 'sign-up' ? (
+          <p
+            className="text-xs text-center text-cyan-200/90 border border-cyan-500/25 rounded-lg px-3 py-2 mb-5 bg-cyan-950/30"
+            role="status"
+          >
+            Selected plan: <strong>{selectedPlan.name}</strong> — billing connects at launch; full
+            app access during beta.
+          </p>
+        ) : null}
 
         {error ? (
           <div className="cyber-alert-error mb-5" role="alert">

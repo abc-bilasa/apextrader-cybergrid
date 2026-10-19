@@ -26,7 +26,10 @@ Solo dev may commit directly to `main` once CI is green.
 
 | File | PRD reference | Status |
 |------|---------------|--------|
-| `src/components/Auth.jsx` | §5.2 | Sign-up/in + errors (F-009–F-010) |
+| `src/components/LandingPage.jsx` | F-044 | Marketing shell (logged-out) |
+| `src/components/PricingSection.jsx` | F-044 | Plan cards + billing toggle |
+| `src/lib/subscriptionPlans.js` | F-044 | Tier copy & INR prices (no checkout) |
+| `src/components/Auth.jsx` | §5.2 | Sign-up/in + errors (F-009–F-010); plan intent (F-044) |
 | `src/components/Dashboard.jsx` | §5.2 | Trading cockpit + `AppNav` (F-043) |
 | `src/components/AppNav.jsx` | F-043 | Dashboard \| Profile tabs |
 | `src/components/ProfilePage.jsx` | F-043 | Themed profile sections |

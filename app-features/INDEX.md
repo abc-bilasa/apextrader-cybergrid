@@ -48,5 +48,6 @@ Update this table when each `app-features/F-*.md` is created or status changes.
 | F-041 | P&L calendar | yes | yes | yes | [F-041](./F-041-pnl-calendar.md) |
 | F-042 | Journal edit/delete | yes | yes | yes | [F-042](./F-042-trade-journal-crud.md) |
 | F-043 | User profile page | yes | partial | yes | [F-043](./F-043-profile-page.md) |
+| F-044 | Landing & pricing | yes | partial | no | [F-044](./F-044-landing-pricing.md) |
 
-**Counts:** Built 43 · Tested 40 (+ partial F-010, F-032, F-035/F-039/005 DB, F-043) · Deployed 22
+**Counts:** Built 44 · Tested 41 (+ partial F-010, F-032, F-035/F-039/005 DB, F-043–F-044) · Deployed 22
