@@ -39,7 +39,7 @@ Do this before writing code:
 - **Date:** 2026-10-18  
 - **By:** Amit + Cursor  
 - **Session focus:** Session 3 closed — F-038/F-039 shipped + deployed  
-- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (feature `1c33fbb`, docs `af85674`, 2026-10-18)  
+- **Production:** https://abc-bilasa.github.io/apextrader-cybergrid/ (deploy `996495a`, 2026-10-19 — F-040 CSV export)  
 
 ---
 
@@ -238,4 +238,5 @@ Level-1 account baseline: capital ₹10,000. Method: mirror `log_trade` rules in
 | 2026-10-18 | Deploy `1c33fbb` — F-038/F-039 to Pages; docs `af85674` (IMP-072). |
 | 2026-10-18 | **END Session 3:** Backlog 39/39. Next session = Supabase `002`–`004` + smoke + F-040 planning. |
 | 2026-10-19 | START: Apply Supabase `002`–`004`, prod smoke F-032/F-035/F-039; then F-040 or commit pending handoff docs. |
-| 2026-10-19 | F-040 trade journal CSV export (IMP-075); deploy pending. |
+| 2026-10-19 | F-040 trade journal CSV export (IMP-075). |
+| 2026-10-19 | Deploy `996495a` — F-040 to Pages (IMP-076). |

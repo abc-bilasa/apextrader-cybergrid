@@ -37,6 +37,7 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 | ID | Date | Type | Area | Summary | Artifacts | Decisions | By |
 |----|------|------|------|---------|-----------|-----------|-----|
+| IMP-076 | 2026-10-19 | TOOLING | deploy | Push `996495a` — F-040 CSV export to GitHub Pages | `main` | D10 | Cursor |
 | IMP-075 | 2026-10-19 | FEATURE | trading | F-040: export filtered trade journal to downloadable CSV | `tradeCsvExport.js`, `TradeJournalTable.jsx` | — | Cursor |
 | IMP-074 | 2026-10-19 | TOOLING | deploy | Push `2e4229a` — docs/handoff sync; app bundle unchanged (`1c33fbb`) | `main` | D10 | Cursor |
 | IMP-073 | 2026-10-18 | DOCS | process | END Session 3 — handoff, blockers, DEVELOPMENT file map | `SESSION_HANDOFF.md`, `DEVELOPMENT.md` | — | Cursor |
@@ -131,4 +132,4 @@ Chat history is **not** a record—every shipped change gets a row here.
 
 ## Next ID
 
-**IMP-076**
+**IMP-077**
